@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- 
+			<img src= ""/> 이미지
+			<audio controls>
+				<source src = "경로">
+			</audio>
+			<video controls>
+				<source src = "경로">
+			</video>
+			* controls를 빼면 화면에서 컨트롤러가 사라져서 재생할 수 없음.
+			<iframe></iframe>: 외부 멀티미디어 출력
+			
+				절대경로 : 모든 경로 - 이렇게 쓰면..X
+		 		상대경로 : 현재 문서의 위치 기준의 상대적인 경로
+		 			./ : 현재경로 (./ 생략가능)
+		 			../ : 상위이동
+		 			
+		 			1. 만약에 같은 폴더내이면 : ./파일명 또는  파일명
+		 			2. 만약에 상위 폴더에 존재하면 : ../파일명
+		 			3. 만약 상상위 폴더에 존재하면 : ../../파일명
+		 			4.  만약 상위 폴더내 하위 폴더에 존재하면 : ../폴더명/파일명
+		 -->
+		 <h6>절대경로</h6>
+		 <img src="C:\Users\504\eclipse-workspace\frontend\public\puppy.jpg">
+		 
+		 <h6>상대경로 : 현재문서와 사진이 같은 폴더일 때</h6>
+		 <img src= "./이미지/puppy.jpg"/>
+		 <h6>상대경로 : 현재문서와 같은 폴더내 사진일때</h6>
+		 <img src= "./이미지/puppy.jpg"/>
+		 <h6>상대경로 : 현재문서의 상위폴더내 사진일때</h6>
+		 <img src= "../img/puppy.jpg">
+		 
+		 <audio controls>
+		 	<source src="sound.mp3">
+		 </audio>
+		 
+		 <video controls>
+		 	<source src = "cat(540p).mp4">
+		 </video>
+		 
+		 <iframe width="560" height="315" src="https://www.youtube.com/embed/l_iXA_KZSEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.3116048328097!2d126.86119725325094!3d37.31144594158737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6f31c65fff09%3A0xd7e38613178a0078!2z7JWI7IKw7Iud66y87JuQ!5e0!3m2!1sko!2skr!4v1686127438791!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</body>
+</html>
