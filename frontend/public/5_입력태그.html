@@ -6,19 +6,24 @@
 </head>
 <body>
 	<form>
-		<input value="유재석" readonly="readonly">							<br/>
-		<input type= "text" value="인사과" disabled="disabled">			<br/>
-		<input type="password" autofocus="autofocus">			<br/>
-		<input type="email" maxlength="5">			<br/>
+		<fieldset>
+			<legend>그룹제목</legend>
+			<input text="text" placeholder="가이드라인">
+			<input value="유재석" readonly="readonly">							<br/>
+			<input type= "text" value="인사과" disabled="disabled"><br/>
+			<input type="password" autofocus="autofocus"><br/>
+			<input type="email" maxlength="5"><br/>
+		</fieldset>
 		원형체크버튼 [단일선택이 목적]
 			<input type="radio" name="confirm">예
-			<input type="radio" name="confirm">아니요		<br/>
+			<input type="radio" name="confirm">아니요	<br/>
 		네모체크버튼[복수선택이 목적]
 			<input type="checkbox" name="confirm2">뉴스
-			<input type="checkbox" name="confirm2">드라마			<br/>
+			<input type="checkbox" name="confirm2">드라마	<br/>
 		첨부파일
 			<input type="file" value="">
-			<input type="file" multiple="multiple">				<br/>
+			<input type="file" multiple="multiple">	<br/>
+		<hr/>
 		<input type="color">			<br/>
 		<input type="date">				<br/>
 		<input type="datetime-local">	<br/>
@@ -27,17 +32,14 @@
 		<input type="week">				<br/>
 		<input type="range">			<br/>
 		<input type="number">			<br/>
-		<input type="button" value="이벤트버튼">	<br/>
+		<input type="button" value="이벤트버튼"><br/>
 		<input type="submit" value="전송버튼">	<br/>
 		<input type="reset" value="입력초기화">	<br/>
-		
 		<select>
 			<option>네이버</option>
 			<option>카카오</option>
 			<option>네이트</option>
-		
 		</select> <br/>
-		
 		<textarea rows = "10" cols="10"></textarea>
 	</form>
 </body>
