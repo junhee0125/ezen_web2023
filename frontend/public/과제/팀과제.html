@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend >삼성 제품 이용 만족도 조사</legend>
+			<table>
+				<tr>
+					<th>이 름</th>
+					<td><input type="text" placeholder="홍길동"></td>
+					<td rowspan=3><img src="samsung.png" width="200"></td>
+				</tr>
+				<tr>
+					<th>연령대</th>
+					<td>
+						<select>
+							<option>10대</option>
+							<option>20대</option>
+							<option>30대</option>
+							<option>40대</option>
+							<option>50대</option>
+							<option>60대</option>
+							<option>70대</option>
+							<option>80대이상</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>성 별</th>
+					<td>
+						<input type="radio" name="sex">남자
+						<input type="radio" name="sex">여자
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<table border ="1" style="border-collapse: collapse;">
+							<tr>
+								<td>질문1</td>
+								<td>사용중이신 삼성제품을 모두 선택해주세요 <br/>
+									<input type="checkbox" name="prod">TV
+									<input type="checkbox" name="prod">냉장고
+									<input type="checkbox" name="prod">에어컨
+									<input type="checkbox" name="prod">청소기
+									<input type="checkbox" name="prod">휴대폰
+								</td>
+							</tr>
+							<tr>
+								<td>질문2</td>
+								<td>Tv를 사용중이시라면 제품에 대해 얼마나 만족하시나요?<br/>
+								(단. 사용중이 아니시라면 미사용에 체크해주세요<br/>
+									<input type="radio" name="tv_score">5점
+									<input type="radio" name="tv_score">4점
+									<input type="radio" name="tv_score">3점
+									<input type="radio" name="tv_score">2점
+									<input type="radio" name="tv_score">1점
+									<input type="radio" name="tv_score">미사용
+								</td>
+							</tr>
+							<tr>
+								<td>질문3</td>
+								<td>냉장고를 사용중이시라면 제품에 대해 얼마나 만족하시나요?<br/>
+								(단. 사용중이 아니시라면 미사용에 체크해주세요)<br/>
+									<input type="radio" name="fr_score">5점
+									<input type="radio" name="fr_score">4점
+									<input type="radio" name="fr_score">3점
+									<input type="radio" name="fr_score">2점
+									<input type="radio" name="fr_score">1점
+									<input type="radio" name="fr_score">미사용
+								</td>
+							</tr>
+							<tr>
+								<td>질문4</td>
+								<td>에어컨를 사용중이시라면 제품에 대해 얼마나 만족하시나요?<br/>
+								(단. 사용중이 아니시라면 미사용에 체크해주세요)<br/>
+									<input type="radio" name="air_score">5점
+									<input type="radio" name="air_score">4점
+									<input type="radio" name="air_score">3점
+									<input type="radio" name="air_score">2점
+									<input type="radio" name="air_score">1점
+									<input type="radio" name="air_score">미사용
+								</td>
+							</tr>
+							<tr>
+								<td>질문5</td>
+								<td>청소기를 사용중이시라면 제품에 대해 얼마나 만족하시나요?<br/>
+								(단. 사용중이 아니시라면 미사용에 체크해주세요)<br/>
+									<input type="radio" name="va_score">5점
+									<input type="radio" name="va_score">4점
+									<input type="radio" name="va_score">3점
+									<input type="radio" name="va_score">2점
+									<input type="radio" name="va_score">1점
+									<input type="radio" name="va_score">미사용
+								</td>
+							</tr>
+							<tr>
+								<td>질문6</td>
+								<td>휴대폰를 사용중이시라면 제품에 대해 얼마나 만족하시나요?<br/>
+								(단. 사용중이 아니시라면 미사용에 체크해주세요)<br/>
+									<input type="radio" name="ph_score">5점
+									<input type="radio" name="ph_score">4점
+									<input type="radio" name="ph_score">3점
+									<input type="radio" name="ph_score">2점
+									<input type="radio" name="ph_score">1점
+									<input type="radio" name="ph_score">미사용
+								</td>
+							</tr>
+							<tr>
+								<td>질문7</td>
+								<td>사용중이신 삼성 제품에 대해 전반적으로 얼마나 만족하시나요?<br/>
+								(단. 사용중이 아니시라면 미사용에 체크해주세요)<br/>
+									<input type="radio" name="score">5점
+									<input type="radio" name="score">4점
+									<input type="radio" name="score">3점
+									<input type="radio" name="score">2점
+									<input type="radio" name="score">1점
+									<input type="radio" name="score">미사용
+								</td>
+							</tr>
+						</table>		
+					</td>
+				</tr>
+				<tr>
+					<th>건의사항</th>
+					<td colspan=2></td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<textarea rows="5" cols="68" placeholder="바라는 점이 있으시면 적어주세요."></textarea>
+					</td>
+				</tr>	
+				<tr>
+					<td>응답일</td>
+					<td colspan="2"><input type="datetime-local"></td>
+				</tr>
+			</table>
+	
+		</fieldset>
+		<table align="center">
+			<tr>
+				<td>
+					<input type="submit" value="제출하기">
+					<input type="reset" value="다시작성">
+					
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
