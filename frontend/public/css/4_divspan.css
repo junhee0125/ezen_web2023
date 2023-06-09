@@ -1,0 +1,22 @@
+@charset "UTF-8";
+div{
+	border:solid 1px red;
+	margin:20px;
+	background-color:gray;
+}
+
+span{
+	border:solid 1px orange;
+	width:200px; 
+	height: 200px;
+	
+}
+.s1{ display: inline; /*크기설정불가(내용크기만큼 자동설정)*/}
+.s2{ display:block; /*크기[width/height] 설정 가능*/}
+.s3{ display : inline-block; /*inline과 같음 크기설정이 가능*/}
+.s4{ display:none;}
+.d1{ display:inline; width:200px; height: 200px;}
+.d1{ display:inline; width:200px; height: 200px;}
+.d2{ display:block; width:200px; height: 200px;}
+.d3{ display:inline-block; width:200px; height: 200px;}
+.d4{ display:none; width:200px;	height: 200px;}

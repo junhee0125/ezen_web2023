@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.title1{
+	display:inline-block;
+	color: orange;
+}
+.title2{
+	display:inline-block;
+}
+.content{
+	background-color: #008080;
+	color:#ffffff;
+	padding:5px 20px;
+	line-height:150%;
+}
+.point{
+	color:orange;
+	font-weight: bold;	 
+}

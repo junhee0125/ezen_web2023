@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/**{padding:0px;margin:0px;}/*기본여백제거*/
+
+.title{
+	border-left:solid 5px green;
+	padding-left:10px;	
+	
+	margin-top:10px;
+}
+
+.content{
+	width:400px;
+	margin:10px;
+	margin-bottom:20px;
+	padding:40px;
+	border:solid 1px gray;
+	border-radius: 15px ;
+	background-color: #e8e8e8;	
+}
+.list{
+	margin-bottom: 15px;
+}
+.info{
+	border: solid 1px #e8e8e8;	
+	border-radius:30px;
+	width:300px;
+	padding:20px;
+	margin:20px 40px;
+	
+}
+.p{
+	border-bottom: dotted 1px gray;
+	padding-bottom: 20px;
+}
+.h{
+	text-align: right;
+	margin-top:10px;
+}
