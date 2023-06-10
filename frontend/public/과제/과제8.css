@@ -38,10 +38,7 @@
 	font-size: 15px;
 
 }
-.login .check{
-	border:none;
-
-}
+.login .check{ border:none; }
 .login .button1{
 	width:360px;
 	height:45px;
@@ -50,7 +47,6 @@
 	border-radius: 5px;
 	color:gray;
 	font-weight:bold;
-
 }
 .login .button2{
 	width:360px;
@@ -60,8 +56,6 @@
 	border-radius: 5px;
     color:gray;
     font-weight:bold;
-
-
 }
 .login .txt00{
 	color:gray;
