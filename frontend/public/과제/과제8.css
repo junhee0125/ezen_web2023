@@ -4,33 +4,95 @@
 	width:400px;
 	border:solid 1px #eeeeee;
 	padding:50px 80px;
-	margin :0 auto;
+	margin :0 auto 50px auto;
+
+
 }
 .login{
-	
+
 }
 .login .row1{
 	border-bottom: solid 2px #eeeeee;
+	margin:20px;
+	list-style: none;
+}
+.login .row2{
+
+    margin:20px;
+    list-style: none;
+}
+.login .row3{
+	margin: 30px 0 20px 20px;
+    padding-right:20px;
+    list-style: none;
+    text-align: right;
+    font-family:"돋움";
+    font-size:12px;
+    color:gray;
+
 }
 .login .input{
 	border:none;
 	width:400px;
 	height:25px;
-	
+	font-size: 15px;
+
 }
-.login .radio{
-	font-size:15px;
-	font-weight: bold;
+.login .check{
+	border:none;
+
 }
 .login .button1{
-	width:400px;
-	height:25px;
+	width:360px;
+	height:45px;
 	background-color: yellow;
-	
+	border:none;
+	border-radius: 5px;
+	color:gray;
+	font-weight:bold;
+
 }
 .login .button2{
+	width:360px;
+	height:45px;
+	background-color: #eeeeee;
+	border:none;
+	border-radius: 5px;
+    color:gray;
+    font-weight:bold;
+
+
+}
+.login .txt00{
+	color:gray;
+	font-size:12px;
+    font-weight: bold;
+}
+
+.bottom{
+    margin: 0 auto;
 	width:400px;
-	height:25px;
-	background-color: gray;
-	
+	text-align:center;
+	color:gray;
+}
+.bottom .selectlang{
+	border:none;
+	font-size:11px;
+	color:gray;
+}
+.bottom .bmenu{
+	font-family:"돋움";
+	font-size:11px;
+
+}
+.bottom .bcopyright{
+	font-family:"돋움";
+    font-size:9px;
+    color:lightgray;
+}
+.bold0{
+	font-weight:bold;
+}
+.fontblack{
+    color:darkgray;
 }
