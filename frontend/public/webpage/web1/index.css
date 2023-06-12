@@ -71,6 +71,9 @@ li{list-style: none;} /*리스트의 글머리 제거*/
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 }
+.main_contents .main_logo{
+	text-align: center;
+}
 /*footer*/
 #footer{
 	margin-top:30px;
