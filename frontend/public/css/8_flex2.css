@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.container{
+	display: flex;
+}
+.box{
+	width:10%;
+	height:50%;
+	background-color: black;
+	color:white;
+	border: solid 1px red;
+}
+/* 1. 정렬*/
+#flexbox1{ justify-content:flex-start;} /*기본값, 왼쪽정렬*/
+#flexbox2{ justify-content:flex-end;} /*오른쪽정렬*/
+#flexbox3{ justify-content:center;} /*중앙정렬*/
+#flexbox4{ justify-content:space-between;} /*여백 균등배치 좌우는 공간없음*/
+#flexbox5{ justify-content:space-around;} /*여백 균등배치 좌우 공간은 50%의 여백 */
+#flexbox6{ justify-content:space-evenly;} /*양끝의 컨텐츠도 모두 균등한 여백*/
