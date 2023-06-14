@@ -1,0 +1,69 @@
+@charset "UTF-8";
+*{
+    padding:0px;
+    margin:0px;
+    font-family: "맑은 고딕";
+    list-style: none;
+}
+body{
+	background-color: #F5F6F7;
+}
+a{ color:black; text-decoration: none;}
+*:focus{outline: none}
+#wrap{ width: 460px;  margin: 0 auto; }
+.top{ width:460px;}
+#header .h_logo{
+	text-align: center;
+	margin: 50px 0 40px 0;
+}
+#header .h_logo img{ height: 50px; }
+.signup{
+	width:460px;
+	padding-top:10px;
+}
+.signup h5{margin-top: 5px;}
+.input01{
+	border:none;
+	width:100%;
+	height:30px;
+}
+.input_text{
+	border: solid 1px #DADADA;
+	background-color:white;
+	margin:10px 0;
+	padding:10px 5px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.at{ color:#ADADAD;}
+.lock_icon{
+    background-image: url("https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png");
+    background-size: 120px 75px;
+    width:25px;
+    height:25px;
+}
+.birth_date{ display: flex;}
+.birthM { margin-left:22px; margin-right: 21px; }
+.birthY , .birthM, .birthD{ width: 130px; }
+.txt_deco{ font-size:8px; color:#ADADAD;}
+.num_auth{display: flex; margin-bottom:0px;}
+.num{width:320px; margin-right: 5px;}
+.auth{
+    width:130px;
+    background-color: #03C75A;
+    color:white;
+    font-weight: bold
+}
+.disable{background-color: #F5F6F7;}
+.signup_btn{
+	background-color: #03C75A;
+	color:white;
+	font-size:18px;
+    font-weight: bold;
+}
+#footer{ text-align: center; margin:30px 0 50px 0; color:#B6B7B7;}
+.f_sub{font-size:5px; }
+.f_sub img{width:50px; margin-right:10px;}
+.f_top{font-size: 8px; margin-bottom: 10px;}
+.f_top a, .txt_deco1{color:#B6B7B7}
