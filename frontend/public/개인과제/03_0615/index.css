@@ -72,17 +72,19 @@ li{list-style: none;}
 .goods_hot{
 	width: 100%;
     padding:60px 0px;
-    text-align: center;
+
 }
 .goods_hot .section_title{
 	font-weight: bolder;
 	font-size: 25px;
 	padding:10px 0;
+	text-align: center;
 }
 .goods_hot .section_info{
 
     font-size: 12px;
     color:#999999;
+    text-align: center;
 }
 .items {
 	display: flex;
@@ -92,7 +94,7 @@ li{list-style: none;}
 	margin:0 auto;
 	margin-top:30px;
 }
-.item {width:380px;}
+.item {width:380px; margin-bottom:50px;  }
 .color_info {
 	display: flex;
 	justify-content: space-between;
@@ -129,4 +131,12 @@ li{list-style: none;}
 .ft_top {
 	display: flex;
 	justify-content: space-between;
+}
+.ft_sub{
+    padding:50px 0;
+	text-align: center;
+	color:#999999;
+	font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
 }
