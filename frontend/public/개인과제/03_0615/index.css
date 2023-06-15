@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/*전체 기본값 설정*/
+*{
+	padding:0px;
+	margin:0px;
+	font-family: '맑은고딕';
+	font-size:12px;
+}
+*:focus{outline: none;}
+a{color:black; text-decoration: none;}
+li{list-style: none;}
+
+.h_top{
+	width:100%;
+	margin: 0 auto;
+}
+.htop_menu{
+	display: flex;
+	justify-content: flex-end;
+	padding:15px 20px;
+	border-bottom: solid 1px #DBDBDB;
+}
+.htop_menu .bar{ margin: 0 20px;}
+.htop_menu img { width:20px;}
+
+#wrap{
+	width:100%;
+}
+/*헤더 하단 메뉴*/
+.h_menu{
+	position:sticky;
+	z-index:2;
+	top:0;
+	display: flex;
+	background-color:white;
+	justify-content: space-between;
+	align-items: center;
+	padding:20px 40px;
+    opacity:0.8;
+	height:30px;
+}
+.hmenu_left{
+    display: flex;
+    justify-content: space-between;
+
+}
+.hmenu_box{
+	display: flex;
+    justify-content: flex-start;
+
+ }
+ .hmenu_box li{
+    margin-right: 30px;
+ }
+.hmenu_left img {height:20px;  margin-right:40px;}
+.hmenu_right{ width:300px;text-align: right}
+.hmenu_right .search{  border-bottom: solid 1px black; padding-right:0px }
+.hmenu_right img{width:20px; padding:5px 10px}
+.hmenu_right input{border:none}
+
+/* main img*/
+.main_img{
+	background-image: url('img/main.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	width:100%;
+	height: 500px;
+}
+
+/*Hot item section*/
+
+.goods_hot{
+	width: 100%;
+    padding:60px 0px;
+    text-align: center;
+}
+.goods_hot .section_title{
+	font-weight: bolder;
+	font-size: 25px;
+	padding:10px 0;
+}
+.goods_hot .section_info{
+
+    font-size: 12px;
+    color:#999999;
+}
+.items {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width:1600px;
+	margin:0 auto;
+	margin-top:30px;
+}
+.item {width:380px;}
+.color_info {
+	display: flex;
+	justify-content: space-between;
+}
+.item img{width:380px;}
+.item .goods_color{
+	display:inline-block;
+	width: 10px;
+	height:10px;
+	border: solid 1px #DBDBDB;
+}
+.review{ color:#808080;}
+.goods_name{text-align:left; padding:10px 0;}
+.price{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom:20px;
+}
+.org_price {text-decoration: line-through; color:#8e8d8d;}
+.disc_price { }
+.disc_rate{font-size: 14px;
+    color:red;
+    font-weight: bold; }
+.icon img{ width:40px; }
+
+/* footer*/
+#footer{background-color: #F7F7F7}
+.footer_box{
+	width:1200px;
+	margin:0 auto;
+	background-color: #F7F7F7;
+	padding:50px 0;
+}
+.ft_top {
+	display: flex;
+	justify-content: space-between;
+}
