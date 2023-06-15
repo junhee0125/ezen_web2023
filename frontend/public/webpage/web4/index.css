@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/*공통부분*/
+*{ 
+	padding:0px; 
+	margin:0px; 
+	font-size: 12px;
+	font-family: '맑은 고딕';
+}
+*:focus{outline: none;}
+a{ color:black; text-decoration: none;}
+li{ list-style: none;}
+
+/*웹폰트*/
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+/*
+	리스트 아이템을 가로배열하는 방법
+	1. ul에  display: flex;
+	2. li태그에  display:inlin-block;
+*/
+.top_menu{ 
+	display: flex;
+	justify-content: flex-end;
+	align-items:center;
+	border-bottom: solid 1px #DBDBDB;
+	padding:10px;
+	font-size: 10px;
+	margin-right: 20px;
+}
+
+.line{ padding:0px 10px;}
+/*하위 요소가 아닌 자신의 세로 정렬을 맞출때는 vertical-align*/
+.top_menu_icon{width:20px; vertical-align: middle;}
+	
+.main_menu{	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:0 50px;
+	font-family: 'SUITE-Regular';
+	position:sticky;
+	/*
+		sticky의 사용조건
+		1. 상위 부모의 높이 사이즈 안에서 고정 vs fixed
+		2. top right left bottom 1개이상 필수
+		3. 부모요소 overflow 속성 사용 금지
+	*/
+	top:0px;
+	z-index:1;
+	background-color:white;
+	height:65px;
+	opacity:0.8; /*요소 투명도/ 1=100%(투명도 없다), 0.5= 50%*/
+	
+}
+.wrap_menu{
+	/*border:solid 1px red;*/
+	display: flex;
+	width:75%;
+	align-items: center;
+}
+.logo_img {margin-right:30px; width:155px;}
+.menu_item{margin-right:30px;}
+.input_text{ border:none; height:20px;}
+.h_search{
+		display:flex;
+		justify-content:flex-end;
+		flex-wrap:nowrap;
+		border-bottom: solid 1px black; 		
+		padding-bottom:5px;
+}
+.search_icon{width:20px;}
+.new{color:red;}
+
+/*drop_down*/
+.drop_menu{
+	position:relative;
+}
+.sub_menu li{ padding-bottom: 5px; font-size: 7px;}
+.drop_menu .sub_menu {
+	display: none; /*숨김*/
+	position:absolute;
+	padding:10px 0;
+	left:-40px;
+	top:30px;
+	width:120px;	
+	text-align:center;	
+	background-color:white;
+	z-index:1;
+}
+.menu_item:hover { font-weight:bold; color:gray;}
+.drop_menu:hover .sub_menu{
+	display:block;
+}
+#main_img{width:100%;}
+/*메인*/
+#content{
+	width:1600px;
+	margin:0 auto;
+	padding:50px 0;
+}
+#content .title{
+	font-size: 17px;
+	text-align: center;
+	font-weight: bold;
+}
+#content .section_info{
+	font-size: 12px;
+	text-align: center;
+	color:#999999;
+	margin: 20px 0px;
+}
+.items{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	
+}
+.item{ width:380px;  margin-bottom: 150px;}
+.item img{width:100%;}
+.color span{
+	display:inline-block;
+	width:10px; height:10px;
+	border:1px solid #DBDBDB;
+}
+.color_info{
+	display: flex;
+	justify-content: space-between;
+}
+.review{ color:#808080;}
+
+
+.name_info{ margin:5px 0 10px 0;}
+.name_info .size{ font-size:11px; color:#595959;}
+
+.price_info{position: relative;}
+.discount{
+	position: absolute; 
+	right:0; top:0px;
+	font-size: 14px;
+	color:red;
+	font-weight: bold;	
+}
+.price {text-decoration: line-through; color:#8e8d8d;}
+.item_icon img{width:40px;}
+
+/* 푸터 */
+.footer_top{ 
+	background-color:#F7F7F7;
+	height:250px;
+}
+.fmenu_box{
+	width:1400px;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items:flex-start;
+	padding:50px;
+}
+.fmenu_box h3{margin:10px 0px; font-size: 16px;}
+.fmenu_box li{margin-top: 5px;}
+.footer{ 
+	width:1000px; 
+	margin:0 auto; 
+	text-align: center;
+	padding:50px;
+}
+.footer p{
+	color:#999999; 
+	font-size: 11px; 
+	font-weight: bold; 
+	line-height: 16px;
+}
+#popup_wrap{
+	position: fixed;
+	right:0px;
+	top:30%;
+}
+
+#popup_wrap li{ 
+	position:relative;
+	width:25px; height:25px;
+	background-color: #f7f7f7;
+	padding:10px;
+	border:solid 1px #dbdbdb;
+	text-align: center;
+}
+#popup_wrap img{height:20px;}
+.sub_item{ 
+	position: absolute;
+	display:none;
+	width:80px;
+	height:20px;
+	background-color: black;
+	right:50px; top:5px;
+	color:white;
+	padding:10px;
+	border-radius: 10px;
+}
+.popup_item:hover .sub_item{ display:block;}
