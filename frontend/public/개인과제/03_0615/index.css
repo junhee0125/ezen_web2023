@@ -114,7 +114,7 @@ li{list-style: none;}
 	padding-bottom:20px;
 }
 .org_price {text-decoration: line-through; color:#8e8d8d;}
-.disc_price { }
+
 .disc_rate{font-size: 14px;
     color:red;
     font-weight: bold; }
@@ -139,4 +139,23 @@ li{list-style: none;}
 	font-size: 11px;
     font-weight: bold;
     line-height: 16px;
+}
+/*fixed icon*/
+.fixed_menu{
+	position: fixed;
+	top:30%;
+	right:0px;
+	width:40px;
+	border:solid 1px #DBDBDB; 
+	background-color: #FAFAFA
+	
+}
+.fiexd_menu li{ 
+	border: solid 1px #DBDBDB;
+}
+.fixed_menu img{	
+	height:20px;
+	padding:10px;
+	
+	
 }
