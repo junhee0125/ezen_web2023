@@ -1,9 +1,0 @@
-@charset "UTF-8";
-/*기본 세팅*/
-*{ padding:0px; margin:0px; }
-*:focus{outline: none;}
-a {color:black; text-decoration: none;}
-il{list-style: none;}
-
-/* 로그인 */
-
