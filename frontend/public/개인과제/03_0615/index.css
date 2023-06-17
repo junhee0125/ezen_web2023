@@ -86,12 +86,8 @@ li{list-style: none;}
 	padding:25px 0 20px 0
 }
 a.hmenu_item:hover { color:#e8e8e8; font-weight: bold}
-.drop_menu:hover .sub_menu{
-	display:block;
-}
-.drop_menu:hover .sub_menu1{
-	display:block;
-}
+.drop_menu:hover .sub_menu{	display:block;}
+.drop_menu:hover .sub_menu1{display:block;}
 
 /* main img*/
 .main_img{
@@ -193,37 +189,29 @@ a.hmenu_item:hover { color:#e8e8e8; font-weight: bold}
 	position: fixed;
 	top:30%;
 	right:0px;
-	width:40px;
-	border:solid 1px #DBDBDB; 
-	background-color: #FAFAFA
-	
 }
-.fiexd_menu li{ 
+.fixed_menu li{
+	background-color: #f7f7f7;
 	border:solid 1px #dbdbdb;
 	position:relative;
-	width:25px; height:25px;
-	background-color: #f7f7f7;
 	padding:10px;
-	
-	text-align: center;
+	position: relative;
+
 }
-.fixed_menu img{	
+.fixed_menu img{
 	height:20px;
-	padding:10px;	
-	
 }
-.fixed_icon {
-	position: re;
-}
+
 .hover_pop{
+	background-color: black;
+	border-radius: 10px;
 	position: absolute;
 	display:none;
+	right:50px; top:5px;
 	width:80px;
 	height:20px;
-	background-color: black;
-	right:50px; top:5px;
 	color:white;
 	padding:10px;
-	border-radius: 10px;
+	text-align: center;
 }
-.fixed_icon :hover .hover_pop{ display: block;}
+.fixed_icon:hover .hover_pop{ display: block;}

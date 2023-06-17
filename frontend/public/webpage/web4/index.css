@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /*공통부분*/
-*{ 
-	padding:0px; 
-	margin:0px; 
+*{
+	padding:0px;
+	margin:0px;
 	font-size: 12px;
 	font-family: '맑은 고딕';
 }
@@ -22,7 +22,7 @@ li{ list-style: none;}
 	1. ul에  display: flex;
 	2. li태그에  display:inlin-block;
 */
-.top_menu{ 
+.top_menu{
 	display: flex;
 	justify-content: flex-end;
 	align-items:center;
@@ -35,8 +35,8 @@ li{ list-style: none;}
 .line{ padding:0px 10px;}
 /*하위 요소가 아닌 자신의 세로 정렬을 맞출때는 vertical-align*/
 .top_menu_icon{width:20px; vertical-align: middle;}
-	
-.main_menu{	
+
+.main_menu{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -54,7 +54,7 @@ li{ list-style: none;}
 	background-color:white;
 	height:65px;
 	opacity:0.8; /*요소 투명도/ 1=100%(투명도 없다), 0.5= 50%*/
-	
+
 }
 .wrap_menu{
 	/*border:solid 1px red;*/
@@ -69,7 +69,7 @@ li{ list-style: none;}
 		display:flex;
 		justify-content:flex-end;
 		flex-wrap:nowrap;
-		border-bottom: solid 1px black; 		
+		border-bottom: solid 1px black;
 		padding-bottom:5px;
 }
 .search_icon{width:20px;}
@@ -86,8 +86,8 @@ li{ list-style: none;}
 	padding:10px 0;
 	left:-40px;
 	top:30px;
-	width:120px;	
-	text-align:center;	
+	width:120px;
+	text-align:center;
 	background-color:white;
 	z-index:1;
 }
@@ -117,7 +117,7 @@ li{ list-style: none;}
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	
+
 }
 .item{ width:380px;  margin-bottom: 150px;}
 .item img{width:100%;}
@@ -138,17 +138,17 @@ li{ list-style: none;}
 
 .price_info{position: relative;}
 .discount{
-	position: absolute; 
+	position: absolute;
 	right:0; top:0px;
 	font-size: 14px;
 	color:red;
-	font-weight: bold;	
+	font-weight: bold;
 }
 .price {text-decoration: line-through; color:#8e8d8d;}
 .item_icon img{width:40px;}
 
 /* 푸터 */
-.footer_top{ 
+.footer_top{
 	background-color:#F7F7F7;
 	height:250px;
 }
@@ -162,25 +162,26 @@ li{ list-style: none;}
 }
 .fmenu_box h3{margin:10px 0px; font-size: 16px;}
 .fmenu_box li{margin-top: 5px;}
-.footer{ 
-	width:1000px; 
-	margin:0 auto; 
+.footer{
+	width:1000px;
+	margin:0 auto;
 	text-align: center;
 	padding:50px;
 }
 .footer p{
-	color:#999999; 
-	font-size: 11px; 
-	font-weight: bold; 
+	color:#999999;
+	font-size: 11px;
+	font-weight: bold;
 	line-height: 16px;
 }
+/* fixed popup menu */
 #popup_wrap{
 	position: fixed;
 	right:0px;
 	top:30%;
 }
 
-#popup_wrap li{ 
+#popup_wrap li{
 	position:relative;
 	width:25px; height:25px;
 	background-color: #f7f7f7;
@@ -189,7 +190,7 @@ li{ list-style: none;}
 	text-align: center;
 }
 #popup_wrap img{height:20px;}
-.sub_item{ 
+.sub_item{
 	position: absolute;
 	display:none;
 	width:80px;

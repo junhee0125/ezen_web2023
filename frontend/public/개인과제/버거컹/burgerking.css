@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*기본설정*/
+*{padding:0px; margin:0px}
+li{list-style: none}
+a{color:color; text-decoration: none;}
+*:focus{outline:none}
+
+/*웹폰트 눈누 - KCC간판체*/
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
