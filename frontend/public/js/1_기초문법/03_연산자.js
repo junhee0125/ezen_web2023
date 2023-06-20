@@ -82,9 +82,34 @@ let sum =kor+eng+math
  
  //문제3 : prompt 함수 로 두 실수를 입력받아서 앞실수의 값이 뒤실수의 값의 몇%인지 출력
  console.log("문제 3")
- let a = parseFloat(prompt('값 A를 입력하세요'))
- let b = parseFloat(prompt('값 B를 입력하세요'))
+ let a = prompt('값 A를 입력하세요')
+ let b = prompt('값 B를 입력하세요')
  console.log('A는 B의' +(a/b *100) + '% 입니다.')
+ 
+ //2.  비교연산자
+console.log('초과 : ' +(10>3)) //true
+console.log('미만 : ' +(10<3)) //false
+console.log('이상 : ' +(10>=3)) //true
+console.log('이하 : ' +(10<=3)) //false
+console.log('같다 : ' +(10==3)) //false
+console.log('같지않다 : ' +(10!=3)) //true
+
+//3. 관계연산자
+console.log('이면서 : ' +(10>3 &&20>15)) //10은 3보다 크면서 20은 15보다 크다 //true
+console.log('이면서 : ' +(10>3 &&10>30)) //false
+console.log('이거나 :' +(10>3 || 20>15)) //조건중 하나만 true이면 true
+console.log('이거나 : ' +(10>3 ||20>30)) //true
+console.log('부정 : ' +!(10>3)) //true =>false
 
 
+/*
+   -문제4 : prompt 함수 로 정수를 입력받아 홀수[true] / 짝수[false] 여부 출력
+   -문제5 : prompt 함수 로 정수를 입력받아 7배수이면 true / 아니면 false 출력
+   -문제6 : prompt 함수 로 십만원 단위의 금액을 입력받아 지폐 개수 세기 
+         356789      결과 : 십만원3장 만원5장 천원6장 
+   -문제7 : prompt 함수 로 아이디와 비밀번호를 입력받아 아이디가 admin 이고 비밀번호가 1234 와 일치하면 
+         결과 : true 출력 아니면 false 출력 
+   -문제8 : prompt 함수로 정수를 입력받아 홀수 이면서 7배수이면 true 아니면 false 출력
+
+ */
  
