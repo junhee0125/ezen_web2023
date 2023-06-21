@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="2_과제.css" rel="stylesheet">
+<script src="2_과제.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="box">
+			
+			<div class="signup">
+				<h3>회원가입</h3>
+				<div class="s_input_wrap">
+					<div class="s_input">
+						<span class=s_input_block><p> 아 이 디 </p><input type="text" class="s_id" placeholder="8자 이상 입력해주세요"></span>
+						<span class=s_input_block><p>비밀번호</p> <input type="text" class="s_pwd" placeholder="8자 이상 입력해주세요"></span>
+					</div>
+					
+						<input class="s_btn" onClick="signup()" type="button" value="회원가입">
+					
+				</div>
+				
+			</div>
+			<div class="login">
+				<h3>로그인</h3>
+				<div class="s_input_wrap">
+					<div class="s_input">
+						<span class=s_input_block><p> 아 이 디 </p><input type="text" class="id"></span>
+						<span class=s_input_block><p> 비밀번호 </p><input type="text" class="pwd"></span>
+					</div>
+					<input class="s_btn"  onClick="login()" type="button" value="로그인">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
