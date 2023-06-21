@@ -12,3 +12,38 @@ a{color:color; text-decoration: none;}
     font-weight: normal;
     font-style: normal;
 }
+#header_wrap{
+	width: 100%
+}
+.h_top{
+	width: 1440px;
+	margin:0 auto;
+	display: flex;
+	justify-content: center; /*가로 정렬: 중앙*/
+	align-items: center; /*세로 정렬 : 중앙*/
+	font-family: 'KCC-Ganpan';
+	font-size: 25px;
+}
+.h_logo{}
+.h_menu {
+	display: flex;
+	justify-content: space-between;
+	border:solid 1px red;
+	margin-left:20px;
+
+}
+.h_menu li{
+    margin-right :20px;
+    align-items: center;
+}
+.h_btn_item{
+	display: inline-block;
+	width:168px;
+	height:50px;
+	background-color: #502416;
+	border-radius:25px;
+	font-size:23px;
+	text-align: center;
+	color:#ffffff;
+	margin-top: 10px;
+}

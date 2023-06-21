@@ -16,9 +16,9 @@ input{border:none; 	}
 	margin-bottom: 20px;
 	color:#999999
 }
-.signup{ 
+.signup{
 	width:600px;
-	padding:50px;	
+	padding:50px;
 }
 .s_input_wrap{
 	display: flex;
@@ -37,7 +37,7 @@ input{border:none; 	}
 	background-color: #999999;
 	color:white;
 	font-size:20px;
-	font-weight: bold;	
+	font-weight: bold;
 }
 .s_input_block{
 	display:flex;
@@ -46,25 +46,27 @@ input{border:none; 	}
 	padding:15px;
 	margin:5px 0;
 }
-.s_info p{
-	display: inline-block;
-	font-size:10px;
+.s_info {
+	display: flex;
+	font-size:12px;
 	text-align: right;
+	justify-content: flex-end;
+    text-decoration: underline;
 }
+.text_red{color:red; font-weight: bold;}
 .s_input_block p{
 	font-size:20px;
 	font-weight: bold;
-	color:#999999; 	
+	color:#999999;
 	margin-right:10px;
 }
 .s_input_block input{
 	font-size:18px;
 	width:330px;
 
-	color:#999999; 
+	color:#999999;
 }
-.login{ 
+.login{
 	width:600px;
 	padding:50px
 }
-	
