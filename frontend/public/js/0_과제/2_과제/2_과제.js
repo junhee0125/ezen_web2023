@@ -71,6 +71,9 @@ function login() {
 
 	let indexId = arrId.indexOf(loginId)
 	let indexPwd = arrPwd.indexOf(loginPwd)
+	
+	if(indexId = ''){alert('아이디를 입력하세요')}
+	if(indexPwd = ''){alert('비밀번호를 입력하세요')}
 
 	if(indexId != -1  && indexPwd !=-1){ // 아이디와 패스워드의 인덱스가 모두 존재하면
 		if(indexId == indexPwd) { //아이디와 패스워드의 인덱스가 일치하는지.
