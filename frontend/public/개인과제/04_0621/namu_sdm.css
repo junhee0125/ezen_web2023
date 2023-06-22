@@ -76,7 +76,7 @@ a{color:#424242; text-decoration: none;}
 }
 .header_bmenu a{
     font-size: 17px;
-    font-weight: 600;    
+    font-weight: 600;
     text-align:center;
 }
 .h_search input{ border:none;}
@@ -93,4 +93,36 @@ a{color:#424242; text-decoration: none;}
 	width:39px;
 	height:28px;
 	background-image: url('img/hd_search_btn.png');
+}
+/* main img*/
+.main_img_box {
+	width:1280px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.mimg_link{	position: relative;}
+.mimg_title{
+	position: absolute;
+	left:15px;
+	top:15px;
+	font-size:22px;
+	font-weight: bold;
+	color:white;
+}
+.mimg01{color:#17454c}
+.contents_box{
+	display: flex;
+	justify-content: space-between;
+	width:1280px;
+	margin: 0 auto;
+}
+
+
+.img_meta{
+	width:320px;
+}
+#wrap_footer{
+	border-top:solid 1px #eeeeeee;
+	margin-top: 30px;
 }
