@@ -1,7 +1,6 @@
 
 
 let output=`` //출력용
-
 // 문제1) 입력받은 수 만큼 * 출력 
 console.log('문제1) 입력받은 수 만큼 * 출력') 
 let num = Number(prompt('정수를 입력해주세요'))
@@ -217,14 +216,53 @@ num = prompt('정수를 입력해주세요')
   *       *		6	2	2
 *           *	7	1	0
 */
-console.log('문제10) 입력받은 수 만큼 * 출력') 
-/*output=``
-num = prompt('정수를 입력해주세요')
+console.log('문제10) 입력받은 수 만큼 * 출력 (3이상 홀수 입력)') 
+output=``
+num = Number(prompt('정수를 입력해주세요'))
 for(let i=1 ; i<=num; i++){
-	if(i == 1 || i==7){
-		output='* '
-	}	
+	// 첫번째 라인과 마지막 라인인경우
+
+	if(i == 1 || i== num){
+		//첫번째 별 찍기
+		output +=`*`;
+		//공백찍기
+		for(let j=1 ; j<= 2*num-3;j++){
+			output += ` `;
+		}
+		output += `*`;
+	} else if(i == parseInt(num/2 + 1)) { // 맨가운데 라인
+		
+		for(let j=1 ;j<=num-1;j++){
+			output += ` `;
+		}
+		output +=`*`;
+		for(let j=1 ;j<=num-1;j++){
+			output += ` `;
+		}
+	} else{
+		let total = num*2-5;// 라인에서 별을 제외한 공란의 갯수  
+		let bcount = 0 ;
+		if(i < num/2+1){
+			for(let j=1 ; j<=(i-1)*2 ; j++){
+				output += ` `;
+				bcount += 1; //b
+			}	
+			output +=`*`;
+			for(let j=1;j <=total-bcount;j++){output += ` `;}
+			output +=`*`;
+			for(let j=1 ; j<=(i-1)*2 ; j++){output += ` `;}
+		} else{
+			for(let j=1 ; j<=(i/2-1) ; j++){
+				output += ` `;
+				bcount += 1; //b
+			}	
+			output +=`*`;
+			for(let j=1;j <=total-bcount;j++){output += ` `;}
+			output +=`*`;
+			for(let j=1 ; j<=(i/2-1) ; j++){output += ` `;}
+		}
+	}
+	output += `\n`;			
 }
+console.log(output)	
 	
-}*/
- 

@@ -111,6 +111,38 @@ a{color:#424242; text-decoration: none;}
 	color:white;
 }
 .mimg01{color:#17454c}
+/*-----ㅡmain contents -----*/
+/*aside info*/
+.today_info{
+	display:inline-block;
+	color:#06A78C;
+	font-size:28px;
+	font-weight: bold;
+	line-height: 23px;
+}
+.today_date{
+	display:inline-block;
+	position: relative;
+}
+.today_m{
+
+	background-image: url('img/msec02_today_mon_bg.png');
+	border:solid 1px white;
+	width:45px;
+	height:45px;
+}
+.today_d{
+	background-image: url('img/msec02_today_date_bg.png');
+	width:45px;
+	height:45px;
+}
+.tm {
+	position:absolute;
+	top:0px;
+	left:15px;
+	font-size:30px;
+	
+}
 .contents_box{
 	display: flex;
 	justify-content: space-between;
