@@ -117,12 +117,17 @@ a{color:#424242; text-decoration: none;}
 	width:1280px;
 	margin: 0 auto;
 }
-
-
+.oinfo_li01{
+	display: flex;
+	justify-content: space-between;
+}
+.oinfo_box{
+	display: inline-block;
+}
 .img_meta{
 	width:320px;
 }
 #wrap_footer{
-	border-top:solid 1px #eeeeeee;
+	border-top:solid 1px #eeeeee;
 	margin-top: 30px;
 }
