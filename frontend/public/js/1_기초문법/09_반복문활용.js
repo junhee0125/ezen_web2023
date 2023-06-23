@@ -245,24 +245,31 @@ for(let i=1 ; i<=num; i++){
 		if(i < num/2+1){
 			for(let j=1 ; j<=(i-1)*2 ; j++){
 				output += ` `;
-				bcount += 1; //b
+				bcount++; //b
 			}	
 			output +=`*`;
 			for(let j=1;j <=total-bcount;j++){output += ` `;}
 			output +=`*`;
 			for(let j=1 ; j<=(i-1)*2 ; j++){output += ` `;}
+			console.log('total'+total);
+			console.log('bcount'+bcount);
 		} else{
-			for(let j=1 ; j<=(i/2-1) ; j++){
+			for(let j=1 ; j<=(i-num/2+1)*2 ; j++){
 				output += ` `;
-				bcount += 1; //b
+				bcount ++; //b
 			}	
 			output +=`*`;
 			for(let j=1;j <=total-bcount;j++){output += ` `;}
 			output +=`*`;
-			for(let j=1 ; j<=(i/2-1) ; j++){output += ` `;}
+			for(let j=1 ; j<=(i-num/2+1)*2 ; j++){output += ` `;}
+			console.log('total'+total);
+			console.log('bcount'+bcount);
 		}
 	}
 	output += `\n`;			
 }
 console.log(output)	
+
+
+
 	
