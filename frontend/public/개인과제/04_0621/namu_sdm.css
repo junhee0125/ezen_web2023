@@ -13,16 +13,11 @@ a{color:#424242; text-decoration: none;}
 
 #wrap{ width:100%;}
 /* ---헤더---*/
-#wrap_header{
-
-	margin-bottom: 25px;
-
-}
+#wrap_header{	margin-bottom: 25px;}
 #wrap_header .header_tmenu{
 	background-image: url('img/hd_top_bg.gif');
 	height: 24.8px;
 	width: 100%;
-
 }
 .header_tmenu .h_tmenu_box{
     width:1280px;
@@ -30,7 +25,6 @@ a{color:#424242; text-decoration: none;}
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
 }
 .h_tmenu_box li{
     color:#264f42;
@@ -194,7 +188,6 @@ a{color:#424242; text-decoration: none;}
 	font-size:25px;
 	font-weight: bold;
 	color:#4e5052;
-
 }
 .td {
     position:absolute;
@@ -217,7 +210,6 @@ a{color:#424242; text-decoration: none;}
 	display:flex;
 	justify-content:space-between;
 	font-size: 8px;
-
 }
 .oinfo_li02{
 	text-align: center;
@@ -344,13 +336,11 @@ a{color:#424242; text-decoration: none;}
 	position: absolute;
 	right:15px;
 	top:20px;
-
 }
 .cnews_head .img_play{
     position: absolute;
     right:35px;
     top:20px;
-
 }
 .cnews_sub{
 	padding:5px 15px;
@@ -358,13 +348,9 @@ a{color:#424242; text-decoration: none;}
 	list-style-position: inside; /*리스트 앞에 도트 안쪽으로*/
 	color:#e7e7e7;
 }
-.cnews_sub a:hover {
-	text-decoration: underline;
-}
+.cnews_sub a:hover {text-decoration: underline;}
 
-.img_pause{
-	right:40
-}
+.img_pause{	right:40 }
 
 .cpopup_sub{padding:0 15px; text-align: center;}
 .cpopup_sub img{ width:270px;}
