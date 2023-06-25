@@ -15,8 +15,8 @@ a{color:#424242; text-decoration: none;}
 /* ---헤더---*/
 #wrap_header{
 
-	margin-bottom: 20px;
-	position:relative;
+	margin-bottom: 25px;
+
 }
 #wrap_header .header_tmenu{
 	background-image: url('img/hd_top_bg.gif');
@@ -63,6 +63,7 @@ a{color:#424242; text-decoration: none;}
 	margin:0 auto;
 	margin-top: 20px;
 	border-bottom: solid 1px #eaeaea;
+	position:relative;
 }
 .hmenu_imgbox{ width:291px; }
 .header_bmenu img{	height:40px;}
@@ -74,7 +75,7 @@ a{color:#424242; text-decoration: none;}
 	height:70.8px;
 }
 .header_bmenu:hover .drop_menu{display: block;}
-.header_bmenu:hover .drop_bg{display: block;}
+.header_bmenu:hover .dmenu_box{display: block;}
 
 .hmenu01{ position: relative; /*드랍 메뉴의 postion을  absolute하기 위해서 */ width:90px;}
 .hmenu_wid{ width:120px;}
@@ -89,8 +90,8 @@ a{color:#424242; text-decoration: none;}
 	height:267px;
 	text-align: center;
     z-index: 2
-
 }
+.drop_menu li{line-height: 23pt;}
 .item_xy00{	width:100px; left:-40px; top:50px; background-color: #e6ffff; }
 .item_xy01{ width:120px; left:-40px; top:50px; background-color:#fff;}
 .item_xy02{ width:90px;left:-20px; top:50px; ;background-color: #e6ffff;}
@@ -104,20 +105,18 @@ a{color:#424242; text-decoration: none;}
 .drop_menu a{ font-size: 11px; }
 .drop_menu li:hover{ text-decoration: underline;}
 
-.drop_bg{
-	display:none;
-	position : absolute;
-	width:100%;
-	background-color: #fff;
-	z-index: 1
-}
 .dmenu_box{
 	display:none;
+	position : absolute;
+	background-color: #fff;
 	width:1280px;
+	height:245px;
 	margin: 0 auto;
 	padding-bottom: 35px;
+	top:80px;
+	z-index: 1
 }
-.dmenu_box img {width:250px; margin-top: 20px; margin-bottom: 15px;}
+.dmenu_box img {width:250px;height:150px; margin-top: 20px; margin-bottom: 15px;}
 .dmenu_img_info {font-size: 10px; color:#006000;}
 .dmenu_img_sdm{font-size: 17px; font-weight: bold; color:#006000;}
 .h_search input{ border:none;}
@@ -233,10 +232,8 @@ a{color:#424242; text-decoration: none;}
 	display: flex;
 	justify-content: space-between;
 	align-items:center;
-
 	flex-wrap: wrap;
     font-weight: bold;
-
 }
 .dinfo_bg01{
 	background-image: url('img/msec02_btn_bg01.gif');
@@ -248,7 +245,46 @@ a{color:#424242; text-decoration: none;}
 	color: #fff;
 	position: relative;
 }
-
+.dinfo_bg02{
+    background-image: url('img/msec02_btn_bg02.gif');
+    background-repeat: no-repeat;
+    margin-bottom:5px;
+    padding:15px 0;
+    width:49%;
+    text-align:center;
+    color: #fff;
+    position: relative;
+}
+.btn_hover_s{
+    display:none;
+    background-color: #fff;
+    width:111px;
+    padding:11px 0px;
+    position: absolute;
+    left:4px;
+    top:4px;
+    color: #2da3a6;
+}
+.dinfo_bg03{
+    background-image: url('img/msec02_btn_bg03.gif');
+    background-repeat: no-repeat;
+    margin-bottom:5px;
+    padding:15px 0;
+    width:49%;
+    text-align:center;
+    color: #fff;
+    position: relative;
+}
+.dinfo_bg04{
+    background-image: url('img/msec02_btn_bg04.gif');
+    background-repeat: no-repeat;
+    margin-bottom:5px;
+    padding:15px 0;
+    width:49%;;
+    text-align:center;
+    color: #fff;
+    position: relative;
+}
 .btn_hover_s01{
     display:none;
     background-color: #fff;
@@ -295,48 +331,6 @@ a{color:#424242; text-decoration: none;}
 .dinfo_bg03:hover .btn_hover_s03{display:inline-block;}
 .dinfo_bg04:hover .btn_hover_s04{display:inline-block;}
 
-.dinfo_bg02{
-    background-image: url('img/msec02_btn_bg02.gif');
-    background-repeat: no-repeat;
-    margin-bottom:5px;
-    padding:15px 0;
-    width:49%;
-    text-align:center;
-    color: #fff;
-    position: relative;
-}
-.btn_hover_s{
-    display:none;
-    background-color: #fff;
-    width:111px;
-    padding:11px 0px;
-    position: absolute;
-    left:4px;
-    top:4px;
-    color: #2da3a6;
-}
-
-
-.dinfo_bg03{
-    background-image: url('img/msec02_btn_bg03.gif');
-    background-repeat: no-repeat;
-    margin-bottom:5px;
-    padding:15px 0;
-    width:49%;
-    text-align:center;
-    color: #fff;
-    position: relative;
-}
-.dinfo_bg04{
-    background-image: url('img/msec02_btn_bg04.gif');
-    background-repeat: no-repeat;
-    margin-bottom:5px;
-    padding:15px 0;
-    width:49%;;
-    text-align:center;
-    color: #fff;
-    position: relative;
-}
 
 /* main - 새소식*/
 .c_news{width: 320px;border:solid 1px #ddd ;}
