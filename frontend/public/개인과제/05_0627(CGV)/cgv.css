@@ -1,0 +1,46 @@
+@charset "UTF-8";
+*{padding: 0; margin: 0; font-family: '맑은고딕'}
+a{color:#000; text-decoration: none;}
+a:focus{outline: none;}
+li{list-style: none;}
+/*헤더 상단 배너*/
+.top_ad{
+	width:100%;
+	background-color: #F2F2F2;
+}
+.t_ad_img{
+	width:980px;
+	height:80px;
+    margin: 0 auto;
+    position: relative;
+}
+.t_btn_close{
+	position: absolute;
+    top:10px;
+    right:20px;
+}
+.hmenu{
+	width:990px;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-between;
+
+	border:solid 1px red;
+	padding:40px 0px;
+}
+.hmenu_logo{width:110px;}
+.logo_red{width:100px;}
+.logo_info{width:410px;font-size: 18px; display: flex;align-items:baseline;}
+.h_banner{width:150px;}
+.hmenu_box{
+	display: flex;
+	justify-content: space-between;
+	width:280px;
+
+	font-size: 12px;
+	text-align: center;
+}
+.hmenu_box img {width:35px;}
+.hmenu_box span{
+	display: block;
+}
