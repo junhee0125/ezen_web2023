@@ -1,0 +1,8 @@
+@charset "UTF-8";
+*{padding:0px; margin:0px;}
+body{ font-size:12px;}
+
+.account_list td, th {
+	border:solid 1px #000;
+	border-collapse: collapse;
+}
