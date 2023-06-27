@@ -20,8 +20,7 @@ function 로또구매(){
 	for( let i = 1 ; i<=45 ; i++ ){ // for s 
 		// i는 1부터 45까지 1씩증가 반복
 		// 버튼 하나씩 변수에 추가
-		buttonHTML += `<button 
-							onclick="숫자버튼( ${ i } )" > 
+		buttonHTML += `<button onclick="숫자버튼( ${ i } )" > 
 							${ i } 
 						</button>` // i번째 버튼생성
 						// 인수 = i번째 출력된 버튼 클릭시 i번째 출력된 숫자를 숫자버튼() 함수에게 전달 
