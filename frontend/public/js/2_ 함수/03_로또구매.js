@@ -8,140 +8,156 @@
    5. 당첨번호 = 자동 난수(랜덤) 6개
    6. 선택한 6개 숫자와 당첨번호6개와 비교해서 결과
  */
-console.log(Math.random())
-console.log('JavaScript 실행');
-let 선택한숫자들 = [];
-// 1. 로또구매 함수 정의
- function 로또구매(){
-	 console.log('로또구매() 실행');
-	 let buttonHTML=''
-	 for(let i =1; i <= 45 ;i++){
-		
-	 	buttonHTML += `<button onclick="숫자버튼(${i})">${i}</button>` ; // i 번째 버튼
-	 	//인수 = i번째 출력된 버튼 클릭시 i 번째 출력된 숫자를 숫자버튼() 함수에게 전달
-	 	//JS-> HTML생성 -> 클릭이벤트 실행
-	 	
-	 	if(i%5 == 0){
-			 buttonHTML += '<br/>'
-		 }
-	 }
-	 
-	 //2. for문에서 생성된 버튼 45개를 해당 div에 대입
-	 document.querySelector('.버튼목록구역').innerHTML=buttonHTML;
- }
- 
- function 숫자버튼( 선택된버튼 ){
-	 let buttonHTML01=''
-	 console.log(선택된버튼+'숫자버튼을 클릭했군요.')
-	 //선택한 숫자에 중복이 있는지 여부 체크
-	 if(선택한숫자들.indexOf(선택된버튼) != -1){	 //중복이 있으면	 
-		 let index_c = 선택한숫자들.indexOf(선택된버튼) // 취소될 버튼의 인덱스
-		 선택한숫자들.splice(index_c, 1) //취소될 버튼의 인덱스로부터 1개를 삭제하기
-		 alert(`${선택된버튼}은  선택이 취소되었습니다.`);
-		 선택번호출력()
-		 return; //함수강제 종료 //return 안했을 경우 아래로 실행
-	 } 
-	 
-	 /*숫자 6개를 모두 선택했으면. 당첨번호 확인버튼 표시하기 */
-	 if(선택한숫자들.length == 6 ){
-		alert(`${선택한숫자들} \n 번호 6개를 모두 선택하셨습니다. \n 아래 당첨번호를 누르려서 당첨여부를 확인하세요.`)
-		선택번호출력();
-		buttonHTML01 += '<button onclick="당첨번호()">당첨번호를 확인하세요</botton>';
-		document.querySelector('.당첨결과버튼구역').innerHTML = buttonHTML01;			 
-	 } 
-	 
-	 
-	 선택한숫자들.push(선택된버튼)
-	 
-	 선택번호출력(); 	 
-	 	 
-	 	
-			  
-		  	 
-		  
-	 
-	 
- }
- //3. 선택된 번호들을 출력하는 함수 [실행조건 : 배열에 변화가 있으면 1.추가 / 2삭제 / 3 수정]
- function 선택번호출력(){
-	 document.querySelector('.선택번호출력구역').innerHTML = 선택한숫자들;
-	 if(선택한숫자들.length == 6 ) {
-		  document.querySelector('.당첨결과버튼구역').innerHTML = '<button onclick="당첨번호()">당첨번호를 확인하세요</botton>';
-	 } else {
-		 document.querySelector('.당첨결과버튼구역').innerHTML = '';
-	 }
-	 
- }
- 
- function 당첨번호(){
-	 let min = 1;
-	 let max = 45;
-	 let 당첨번호목록 =[];
-	 let won = 0;
+console.log('js 실행')
+// * 선택된 번호를 저장하는 배열 
+let 선택번호목록 = [ ] 
+
+// 1. 로또 구매 함수 정의 [ 실행조건 : 로또구매 버튼 클릭시  ]
+function 로또구매(){
+	console.log('로또구매() 실행 ');
+	// 1. 1~45개의 button 생성해서 변수에 담기 
+	let buttonHTML = ``;
+	for( let i = 1 ; i<=45 ; i++ ){ // for s 
+		// i는 1부터 45까지 1씩증가 반복
+		// 버튼 하나씩 변수에 추가
+		buttonHTML += `<button 
+							onclick="숫자버튼( ${ i } )" > 
+							${ i } 
+						</button>` // i번째 버튼생성
+						// 인수 = i번째 출력된 버튼 클릭시 i번째 출력된 숫자를 숫자버튼() 함수에게 전달 
+						// JS -> HTML생성 -> 클릭이벤트 실행 
+		// 만약에 i가 5의 배수이면 
+		if( i % 5 == 0 ) buttonHTML+= `<br/>`
+	} // for end 
+	// 2. for에서 생성된 45개 버튼을 해당 div에 대입	
+	document.querySelector('.버튼목록구역').innerHTML = buttonHTML;
+} // F END 
+// 2. 숫자 (선택) 버튼 함수 정의 [ 실행조건 : 1~45 중 1개의 버튼 클릭시  ]
+function 숫자버튼( 선택된번호 ){
+	console.log( 선택된번호 + ' 숫자버튼을 클릭했군요. ')
+	// < push > 배열에 저장하기전에 유효성검사
+	// 1. 중복검사/취소기능 = 배열명.indexOf
+	if( 선택번호목록.indexOf( 선택된번호 ) != -1 ){ // -1 : 동일한 데이터가 배열내 없음 뜻  // != -1 : 배열내 존재하면 
+		alert('이미 선택된 번호 입니다.[해당 숫자는 취소 합니다.]'); // 안내문구 
+		// * 취소기능 : 배열내 해당 인덱스의 데이터 제거 
+		선택번호목록.splice( 선택번호목록.indexOf(선택된번호) , 1 ); // 선택된번호의 인덱스 1개 삭제 
+		선택번호출력(); // 삭제후 배열 상태 출력함수
+		return; // 함수 강제 종료 
+	} // if end
 	
-	 /*1 난수생성 */
-	 //console.log(Math.random())// 0~1 사이의 임의값
-	 for(let i = 1 ;  i <= 6  ; i++){
-		 let rNum = parseInt(Math.random() * max +1);
-		 if(당첨번호목록.indexOf(rNum) == -1){ //랜덤 숫자가 중복이 아닐경우만 			 
-			  당첨번호목록.push(rNum);
-		 } else {
-			 i--; // 중복된경우 i값을 차감시켜 다시한번 반복할 수 있게
-		 }
-		
-	 }
-	 //for(let i = 1; 선택한숫자들.length)
-	 console.log(당첨번호목록);
-	 //4 . 두 배열비교하기
-	//방법 1 
-	for(let i =0 ; i < 선택한숫자들.length ;i++  ){
-		if(당첨번호목록.indexOf(선택한숫자들[i]) != -1 ){
-			won ++;
+	// 2. 6개 초과인지 검사 = 배열명.length	: 배열내 데이터 총개수/길이 
+	if( 선택번호목록.length == 6 ){
+		alert('이미 6개 번호 모두 선택하셨습니다.');
+		return; // 함수 강제 종료 // return 안했을경우 아래보드 실행!!!!
+	} // if  end 
+	
+	// * 배열에 저장 ( 2개의 유효성검사를 모두 통과했을때 배열에 저장 ) 
+	선택번호목록.push( 선택된번호 ); console.log( 선택번호목록 )
+	선택번호출력();	// 추가후 배열 상태 출력함수
+} //. fend 
+
+// 3. 선택된 번호들을 출력 하는 함수 [ 실행조건 : 배열에 변화가 있으면( 1.추가 / 2.삭제 / 3.수정)  ]
+function 선택번호출력(){
+	document.querySelector('.선택번호출력구역').innerHTML = 선택번호목록;
+	
+	// 만약에 모두 선택했으면 
+	if( 선택번호목록.length == 6 ){
+		document.querySelector('.추첨결과버튼구역').innerHTML = 
+				`<button onclick="추첨결과()"> 추첨결과보기 </button>`
+	}// 모두 선택 안했으면 
+	else{ document.querySelector('.추첨결과버튼구역').innerHTML = `` }
+	
+} // f end 
+
+// 4. 추첨 결과 함수 [ 실행조건 : 배열내 6개 숫자존재하고 추첨결과보기 버튼을 클릭했을때 ]
+function 추첨결과(){ alert('로또 추첨 진행 합니다. [ 잠시 대기 ]');
+	// 1. 난수 생성 공식 : Math.random()*마지막번호+시작번호
+	console.log( Math.random() ) // Math.random() : 0~1 사이의 난수(실수) 생성
+	console.log( Math.random()+1 ) // (0~1)+1 => 1~2 사이의 난수(실수) 생성 
+	console.log( Math.random()*45+1 ) // (0~1)*45 => 0~45 사이의 난수(실수) 생성  [ 끝값은 포함x]
+									//  (0~1)*45+1 => 1~46 사이의 난수(실수) 생성 
+	// 2. 실수(소수점 있는) --> 정수(소수점 없는) : parseInt() : 실수->정수(소수점 버림)
+	console.log( parseInt( Math.random()*45+1 ) )	// 1~46(1~45) 사이의 난수(실수-->정수) 생성
+	
+	//* 추첨번호 저장 배열 
+	let 추첨번호목록 = [] // 추첨번호목록은 추첨할때마다 새롭게 등록하기 위해 함수 안에서 선언 
+	
+	// 3. 1~45 사이의 난수생성[중복검사후 push] 6회 반복 
+	for( let i = 1 ; i<=6 ; i++ ){// i는 1부터 6까지 1씩증가 반복
+		let 추첨번호 = parseInt(Math.random()*45+1); // 1~45 정수 난수 생성 
+		if( 추첨번호목록.indexOf(추첨번호) == -1 ){ // [중복x]
+			추첨번호목록.push( 추첨번호 ); // 배열에 저장  // 정상 // i정상 증가 
+		}else{ //[중복] 동일한 추첨번호가 있으면 
+			i--;	// 비정상 // i 차감 // 해당 i 다시한번 실행
+		} // if end 
+	} // for end 
+	console.log( 추첨번호목록 )
+	
+	// 4. 두 배열 비교 하기 [ 선택번호목록 과 추첨번호목록 ]
+		// 배열과 for 활용
+	let 맞은개수 = 0;
+		// 방법1. 일반 for문 ( 인덱스용으로 사용하기때문에 i는 0부터 / 길이는 6 , 인덱스 0~5 ) 
+		for( let i = 0 ; i<선택번호목록.length ; i++ ){
+			if( 추첨번호목록.indexOf( 선택번호목록[i] ) != -1 ){ 맞은개수++;  }
 		}
+	alert( '맞은개수 : ' + 맞은개수 );	맞은개수 = 0;
+	
+		// 방법2. 향상된 for문 [ for( let 반복변수명 in 배열명 ) ]
+		for( let 인덱스 in 선택번호목록 ){ // 자동으로 0번 인덱스부터 마지막 인덱스까지 인덱스를 반복변수에 대입
+			console.log( 인덱스 )
+			if( 추첨번호목록.indexOf( 선택번호목록[인덱스] ) != -1 ){ 맞은개수++; }
+		}
+	alert( '맞은개수 : ' + 맞은개수 );	맞은개수 = 0;
+	
+		// 방법3. 향샹된 for문 [ for( let 반복변수명 of 배열명 ) ]
+		for( let 데이터 of 선택번호목록 ){ // 자동으로 0번 인덱스부터 마지막 인덱스까지의 데이터를 반복변수에 대입
+			console.log( 데이터 )
+			if( 추첨번호목록.indexOf(데이터) != -1 ){ 맞은개수++; }
+		}
+	alert( '맞은개수 : ' + 맞은개수 );	맞은개수 = 0;
+	
+		// 방법4. for 관련함수 [ 배열명.forEach() vs 배열명.map() vs filter() ]
+							// 배열명.forEach( ( 데이터 )=>{ 실행문 } )
+							// 배열명.forEach( ( 데이터 , 인덱스 )=>{ 실행문 } )
+		선택번호목록.forEach( ( 데이터 ,인덱스 )=>{ 
+			console.log( 데이터 ); console.log( 인덱스 );
+			if( 추첨번호목록.indexOf(데이터) != -1 ){ 맞은개수++; }
+		 });		
 		
-	}
-	alert('당첨갯수 : '+won);
-	won = 0;
-	//방법2 향상된 for문 [ for (let 반복변수명 in  배열명)]
-	/*
-		- 배열의 length를 포함하는 
-		- 초기화 변수 = 인덱스 
-		for (let 변수명아무거나(인덱스) in 선택번호목록){ //자동으로 0번 인덱스부터 마지막 인덱스까지 반복변수대입
-			console.log(변수명아무거나)  // 0 , 1,2,3,4,5
-			if(당첨번호목록.indexOf(선택한숫자들[변수명아무거나]) != -1 ){
-				won ++;
-			}
-		}
-		alert('당첨갯수 : '+won);
-		won = 0;
-	
-	 */
-	//방법3 - 향상된 for문 [for (let 반복변수명 of 배열명)]
-	/*
-		for (let 데이터 in 선택번호목록){ //자동으로 0번 인덱스부터 마지막 인덱스까지 반복변수대입
-			console.log(변수명아무거나)  // 0 , 1,2,3,4,5
-			if(당첨번호목록.indexOf(데이터) != -1 ){
-				won ++;
-			}
-		}
-		alert('당첨갯수 : '+won);
-		won = 0;
-	
-	 */
-	//방법4 - for관련 함수 [배열명.forEach()vs 배열명.map() vs filter()]
-	//배열명.forEach((데이터) =>{실행문})
-	//배열명.forEach((데이터, 인덱스) => {실행문})
-	/*
-		선택번호목록.forEach();// 배열명.forEach((반복변수명)=>{실행문});
-		선택번호목록.forEach(데이터, 인덱스)=>{
-			console.log(데이터);
-			console.log(인덱스);
-			if(추첨번호목록.indexOf(데이터)!=-1) {won++}
-		});
-		 alert('당첨갯수 : '+won)
-	 */
-	
- 
- }
+} // f end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 	 
