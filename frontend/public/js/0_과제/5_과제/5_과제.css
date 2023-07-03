@@ -1,0 +1,20 @@
+@charset "UTF-8";
+.wrap{
+	width:1000px;
+	height: 600px;
+	background-image: url('img/게임배경.jfif');
+	background-repeat: no-repeat;
+	background-size: 100%; /*배경이미지 사이즈를 구역 사이즈에 맞춤*/
+	margin:0 auto;
+	position: relative;
+}
+
+.userbox{
+	width:100px; height:100px;
+	background-image: url('img/user01.png');
+	background-repeat: no-repeat;
+	background-size: 90%;
+	position: absolute; /**/
+	top:380px;
+	left:50px;
+}
