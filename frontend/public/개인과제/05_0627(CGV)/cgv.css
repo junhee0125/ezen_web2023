@@ -19,28 +19,144 @@ li{list-style: none;}
     top:10px;
     right:20px;
 }
+/*헤더 상단*/
+.header{ border-bottom: solid 1px #eeeeee;}
 .hmenu{
 	width:990px;
 	margin:0 auto;
 	display: flex;
 	justify-content: space-between;
-
-	border:solid 1px red;
-	padding:40px 0px;
+	padding:25px 0px;
 }
 .hmenu_logo{width:110px;}
-.logo_red{width:100px;}
-.logo_info{width:410px;font-size: 18px; display: flex;align-items:baseline;}
+.logo_red{width:110px;}
+.logo_info{
+	width:440px;
+	font-size: 17px;
+	display: flex;
+	align-items:baseline;
+	vertical-align: bottom;
+	margin-top: 26px;
+	letter-spacing: 5px; /*자간*/
+	color: gray;
+}
 .h_banner{width:150px;}
 .hmenu_box{
 	display: flex;
 	justify-content: space-between;
 	width:280px;
-
 	font-size: 12px;
 	text-align: center;
 }
 .hmenu_box img {width:35px;}
-.hmenu_box span{
-	display: block;
+.hmenu_box span{display: block;}
+
+/*헤더 하단 메뉴*/
+.header_bottom {border-bottom:solid 2px #fb4357 }
+.menu_box{
+	display: flex;
+    width:990px;
+    margin:0 auto;
+    align-items:center;
+    justify-content: space-between;
+    padding:10px 0;
+    position: sticky;
+    top:0px;
+
+}
+.menu {
+	display: flex;
+    width:500px;
+    justify-content: space-between;
+}
+.search_box{
+	display: inline-block;
+	position:relative;
+    align-content:center;
+	border-left:solid 1px gray;
+	border-right:solid 1px gray;
+    width:200px;
+    height:30px;
+    padding: 0 20px;
+}
+.search_txt{
+    width:160px;
+    height:20px;
+    font-size: 16px;
+    border: none;
+    position: absolute;
+    top:5px;
+
+}
+.search_btn{
+	background-image: url('img/search.png');
+	background-repeat:no-repeat;
+	background-size:100%;
+	background-color:#fff;
+	width: 30px;
+	height: 30px;
+	border:none;
+	position: absolute;
+	top: 0px;
+    left:190px;
+}
+
+/* main video*/
+.main_video{
+	position:relative;
+	height: 498px;
+	background-color: #000;
+
+}
+.video_box{
+	width:990px;
+	margin: 0 auto;
+}
+video {
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.main_video video{
+
+	height:498px;
+
+}
+.content_box{
+	width:990px;
+	margin: 0 auto;
+	padding-top:30px;
+}
+.ctitle_bar{
+	display: flex;
+	justify-content: space-between;
+
+}
+.ctitle{
+	width:120px;
+	font-size: 25px;
+	font-weight: bold;
+}
+.ctitle_sub{
+	width:750px;
+	font-size: 23px;
+    color:#eee;
+}
+.more{
+	display:inline-block;
+	justify-content:space-between;
+	border: solid 1px #eee;
+	border-radius: 20px;
+	width: 80px;
+	padding:3px 10px;
+	font-size: 14px;
+
+}
+.more_btn{
+	background-image: url('img/arrowR_8x13.png');
+    background-repeat: no-repeat;
+    background-size:100%;
+    width:8px; height:13px;
+    margin-left: 10px;
+
 }
