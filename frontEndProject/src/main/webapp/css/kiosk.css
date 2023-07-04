@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*외부폰트*/
+
+@font-face {
+    font-family: 'GoryeongStrawberry';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/GoryeongStrawberry.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.kiosk_wrap{
+	font-family: 'GoryeongStrawberry';
+	width: 700px; height: 1000px;
+	margin: 50px auto;
+}
+
+.himg{
+	width:100%;
+	object-fit:cover;
+}
+
+.categorymenu{
+	
+	display: flex;
+	justify-content: space-around;
+	padding-top: 2px;
+}
+
+/*선택 안된 카테고리*/
+.categorymenu li{
+	color:#8e8e8e;
+}
+
+/*선택 된 카테고리*/
+.selected_c{
+	color:red !important;
+	/*
+		위에서  color속성을 사용했으므로 중복됨
+		방법1. id 별도로 해서 속성적용
+		방법2. style속성 
+		방법3. !importand (최우선순위)
+	*/
+	border-bottom: solid 3px red;
+	padding-bottom: 3px;
+}
+/*제품 출력구역*/
+.product_box{
+	height:450px;
+	display: flex;
+	flex-wrap: wrap;
+	overflow-y: scroll;
+	text-align: center;
+	
+}
+.product{
+	width:30%; 
+	text-align: center;
+	padding:5px 10px;;
+}
+.product img{width: 100%}
+.pprice{color:red;}
+/*카트 출력구역*/
+.cart_box{
+	height: 250px;
+	background-color: #e8e8e8;
+	position:relative;
+}
+.cart_top{
+	display: flex;
+	justify-content: space-between;
+	padding:10px 50px 
+}
+.ccount_box{display: flex;}
+.ccount{
+	display: flex;
+	background-color:red;
+	width:30px;
+	border-radius:25px;
+	color:#fff;
+	font-size:14px;
+	justify-content:center;
+	align-items: center;
+	margin-left: 5px;
+ 	padding:3px 3px 0px 3px; 
+}
+.ctotal{ color:red;}
+
+/*카트 하단 : 제품 1개씩의 가격정보 및 취소버튼*/
+.cart_bottom {display: flex;  overflow-x:scroll; } /*가로스크롤*/
+ 
+/*카트내 제품 1*/
+.citem{
+	min-width:20%; /*flex가 사이즈를 줄이지 못하게 */
+	background-color: #fff;
+	padding:10px;
+	margin:5px 10px;
+	position: relative;
+}
+
+.icancel{
+	position: absolute;
+	top:5px;
+	right:10px;
+}
+.iname{width:80%; height:60px;}
+.iprice{color:red;}
+
+/*카트 버튼*/
+.cart_btn{
+	display: flex;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+}
+.cart_btn button{	
+	width:50%;
+	color:white;
+	border:none;
+	padding:20px;
+	font-size: 20px;
+}
+.btn_cancel{ background-color: #000; }
+.btn_order{ background-color: red}

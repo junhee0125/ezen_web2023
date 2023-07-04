@@ -1,1 +1,9 @@
 @charset "UTF-8";
+li{list-style-type: none;}
+#wrap{
+	display: flex;
+	justify-content: space-between;
+}
+.write li {
+	height:30px;
+}
