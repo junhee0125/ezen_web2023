@@ -122,15 +122,19 @@ video {
 	height:498px;
 
 }
+
+/*상영예정작*/
+#wrap_content{background-color: #fafafa; margin-bottom: 50px;}
 .content_box{
 	width:990px;
 	margin: 0 auto;
 	padding-top:30px;
+	background-color: #fafafa;
 }
 .ctitle_bar{
 	display: flex;
 	justify-content: space-between;
-
+    margin-bottom: 20px;
 }
 .ctitle{
 	width:120px;
@@ -160,3 +164,72 @@ video {
     margin-left: 10px;
 
 }
+/*상영예정작*/
+.pre_movie{
+	display: flex;
+	justify-content: space-between;
+
+}
+.pmive_item{
+	width:180px;
+}
+
+.pmovie{
+	position: relative;
+}
+.pm_img{width:180px; border-radius: 10px;}
+.a_age01{
+	display:inline-block;
+	width:20px;
+	height:20px;
+    color:#fff;
+    background-color:orange;
+    padding: 0px 1px 3px 1px;
+    font-weight: bold;
+    position: absolute;
+    top:8px;
+    right:8px;
+}
+.a_age02{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    color:#fff;
+    background-color:green;
+    padding: 0px 1px 3px 1px;
+    font-weight: bold;
+    position: absolute;
+    top:8px;
+    right:8px;
+}
+.dday{
+	display: inline-block;
+    position: absolute;
+    top:35px;
+    right:8px;
+    width:20px;
+    height:20px;
+    font-size: 11px;
+    font-weight:bold;
+    color:orange;
+    background-color: #fff;
+     padding: 2px 1px 0px 1px;
+}
+.pr_rank{
+	display:inline-block;
+	position:absolute;
+	bottom:-5px;
+    left:5px;
+    font-size: 50px;
+    font-weight:bold;
+    color: #fff;
+    font-style: italic;
+}
+.pmovie_name{ color:gray; font-size: 17px; font-weight: bold;}
+.pmovie_rate{ color:gray; font-size: 13px;}
+.pmovie_rate img{width:20px; text-align: center;}
+
+
+/* 이벤트 */
+.event_box{ display: flex;}
+.event_item{width:30%}
