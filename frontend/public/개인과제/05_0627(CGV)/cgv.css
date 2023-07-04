@@ -231,5 +231,6 @@ video {
 
 
 /* 이벤트 */
-.event_box{ display: flex;}
-.event_item{width:30%}
+.event_box{ display: flex; justify-content: space-between; width:990px;}
+.event_item{width:300px;}
+.event_img{width:280px; border-radius: 10px;}
