@@ -130,11 +130,13 @@ video {
 	margin: 0 auto;
 	padding-top:30px;
 	background-color: #fafafa;
+	align-items: center;
 }
 .ctitle_bar{
 	display: flex;
 	justify-content: space-between;
     margin-bottom: 20px;
+
 }
 .ctitle{
 	width:120px;
@@ -146,23 +148,25 @@ video {
 	font-size: 23px;
     color:#eee;
 }
-.more{
+.btn_more{
 	display:inline-block;
 	justify-content:space-between;
+	align-items:center;
 	border: solid 1px #eee;
-	border-radius: 20px;
-	width: 80px;
-	padding:3px 10px;
-	font-size: 14px;
-
-}
-.more_btn{
+	border-radius: 50px;
+    width:120px;
+	height:30px;
 	background-image: url('img/arrowR_8x13.png');
     background-repeat: no-repeat;
-    background-size:100%;
-    width:8px; height:13px;
-    margin-left: 10px;
-
+    background-position:95px;
+    background-size:10px;
+}
+.btn_title{
+	display:block;
+	color:#555;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 20px;
 }
 /*상영예정작*/
 .pre_movie{
@@ -225,12 +229,89 @@ video {
     color: #fff;
     font-style: italic;
 }
-.pmovie_name{ color:gray; font-size: 17px; font-weight: bold;}
+.pmovie_name{ color:#555; font-size: 18px; font-weight: bold;}
 .pmovie_rate{ color:gray; font-size: 13px;}
 .pmovie_rate img{width:20px; text-align: center;}
 
 
 /* 이벤트 */
-.event_box{ display: flex; justify-content: space-between; width:990px;}
-.event_item{width:300px;}
-.event_img{width:280px; border-radius: 10px;}
+.event_box{
+    width:990px;
+    margin: 0 auto;
+    padding-top:30px;
+    background-color: #fff;
+    margin-bottom: 50px;
+}
+.btn_pause{
+	display:inline-block;
+	font-size:0px;
+	background-image: url('img/stop.png');
+	background-repeat:no-repeat;
+	background-size:30%;
+	background-position:center;
+	width:30px; height:30px;
+	border:solid 1px #e3e3e3;
+	border-radius: 50px;
+
+}
+.etitle{display:flex; justify-content:space-between; width:160px; position: relative;}
+.event_cbox{ display: flex; justify-content:space-between; width:990px; }
+.event_img{width:315px; border-radius: 10px;}
+
+.event_subject{color:#555; font-size: 17px; font-weight: bold;}
+.event_period{font-size: 13px;}
+
+
+/* 특별관 */
+.special_items{
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	width:990px;
+	margin: 0 auto;
+}
+.special_item{
+	border-top: solid 1px #eee;
+	width:430px;
+}
+.sitem_box{
+	display:flex;
+	justify-content:space-between;
+	border-bottom: solid 1px #eee;
+	height:70px;
+	align-items:center;
+}
+.s_img{width: 500px;}
+.s_name{width: 200px; font-size: 18px;}
+.s_hash{
+	font-size: 14px;
+	background-color: #eee;
+	border-radius: 5px;
+	padding:3px 5px;}
+
+	/*스토어 상품 - 패키지, 영화관람권, 기프트카드..*/
+.goods_box{
+	width:990px;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-between;
+
+	}
+.g_img{ width:15%; }
+.t_img{ width:30%; }
+.goods_title{
+    display: flex;
+    justify-content: space-between;
+}
+.good_items{
+	width:300px;
+    border: solid 1px #eee;
+    border-radius: 10px;
+}
+.btn_more_s{
+	display:block;
+	width:100px;
+	border: solid 1px #eee;
+	border-radius: 10px;
+	text-align: center;
+}
