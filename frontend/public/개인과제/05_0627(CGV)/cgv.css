@@ -57,7 +57,14 @@ video {
 .hmenu_box span{display: block;}
 
 /*헤더 하단 메뉴*/
-.header_bottom {border-bottom:solid 2px #fb4357 ; z-index: 2;}
+.header_bottom {
+	position: relative;
+	border-bottom:solid 2px #fb4357 ; z-index: 2;
+}
+
+.header_bottom {
+	position: relative;
+}
 .menu_box{
 	display: flex;
     width:990px;
@@ -104,6 +111,35 @@ video {
 	top: 0px;
     left:190px;
 }
+/*하단 메뉴 아래 빨간 라인*/
+.hbar{
+	width:100%;
+	height: 2px;
+	background-color: #fb4357;
+}
+
+/*드롭 다운 메뉴 영역*/
+.menu_box li:hover .hdrop_items_box{display: block;}
+.menu_box li:hover {color:red;}
+.hdrop_section{
+    display:none;
+	position: absolute;
+	height:380px;
+	background-color:red;
+	top:100px;
+}
+.hdrop_items_box{
+ 	display:none;
+	width:990px;
+	height: 380px;
+	margin: 0 auto;}
+
+/*하단 메뉴 아래 빨간 라인*/
+.hbar{
+	width:100%;
+	height: 2px;
+	background-color: #fb4357;
+}
 
 /* main video*/
 .main_video{
@@ -119,6 +155,7 @@ video {
 	width:990px;
 	margin: 0 auto;
 	z-index:3;
+	position:relative;
 }
 video {
     position: absolute;
