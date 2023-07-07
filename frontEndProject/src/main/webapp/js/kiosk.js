@@ -223,3 +223,5 @@ function productOrder(){ alert('주문 했습니다.')
 	console.log( orderList )
 }
 	
+	
+
