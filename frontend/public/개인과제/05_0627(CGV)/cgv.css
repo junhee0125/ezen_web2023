@@ -546,27 +546,15 @@ video {
 }
 
 .btn_pause{
-
     display:inline-block;
-
     font-size:0px;
-
     background-image: url('img/stop.png');
-
     background-repeat:no-repeat;
-
     background-size:30%;
-
     background-position:center;
-
     width:30px; height:30px;
-
     border:solid 1px #e3e3e3;
-
     border-radius: 50px;
-
-
-
 }
 
 .etitle{display:flex; justify-content:space-between; width:160px; position: relative;}
@@ -639,7 +627,7 @@ video {
 
 
 
-    /*스토어 상품 - 패키지, 영화관람권, 기프트카드..*/
+/*스토어 상품 - 패키지, 영화관람권, 기프트카드..*/
 
 .goods_box{
     width:990px;
@@ -651,13 +639,14 @@ video {
 
 .g_img{ width:70px; padding:10px 0 ;}
 
-.t_img{ width:30%; }
+.t_img{ width:70px; padding:3px 0  17px 0; }
 
 .goods_title{
     display: flex;
     justify-content: space-between;
     padding-bottom:10px;
     font-size: 17px;
+
 }
 
 .good_items{
