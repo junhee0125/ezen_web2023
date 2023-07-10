@@ -9,11 +9,8 @@ a:focus{outline: none;}
 li{list-style: none;}
 
 video {
-
     -webkit-mask-image: -webkit-radial-gradient(white, black);
-
     -webkit-backface-visibility: hidden;
-
     -moz-backface-visibility: hidden;
 
 }
@@ -318,11 +315,7 @@ video {
     overflow: clip;
 }
 
-.main_video video{
 
-
-
-}
 
 
 
