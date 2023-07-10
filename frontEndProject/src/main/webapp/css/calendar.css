@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.wrap{
+	width:1200px;
+	margin: 50px auto;
+}
+
+/* 캘린더 상단 메뉴 */
+.caltop{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+/* 캘린더 상단 버튼 둘*/
+.caltop button{
+	background-color: white;
+	border:solid 1px #eee;
+	padding:0 7px;
+	font-size: 25px; color:red;
+	/*
+		커서 마우스 모양 설정
+		pointer: 손모양
+		move: 상하좌우방향의 화살표 
+		help: 화살표에 ? 모양 
+		zoom in / out
+	*/
+	cursor: pointer;
+}
+.caltop h3{margin:0 15px;}
+/* 달력 구역 */
+.calendar{
+	display: flex;
+/* 	justify-content: space-between; */
+	flex-wrap: wrap;
+}
+.calendar div{
+	width:14%;
+/* 	text-align: center; */
+	border: solid 1px #eee;
+	height:100px;
+}
+.week{
+	height:30px !important;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	background-color: #e8e8e8;	
+	padding-top: 5px;
+}
+.sunday{ background-color: red; color:#fff;}
+.today{background-color: #FFD3D3; font-weight: bold; color:#fff;}
+/*모달 전체구역*/
+.modal_wrap{
+	position: fixed; /*화면고정*/
+	width: 100%;
+	height: 100%;
+	top:0px;
+	background-color: rgba(0,0,0,0.3); /*검정색바탕에 투명도 50%*/
+	/*
+		rgb : 0~255 색상조합 / rgba (0 ,0 , 0 , ? ) 투명도 포함
+	*/
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+/* 모달박스구역 */
+.modal{
+	background-color: #fff;
+	width:500px; 
+	height:300px;
+	border-radius: 30px;
+	padding:15px;	
+}
+.modal h4{ color:#666; padding:10px 0px 10px 10px;}
+.modal input{ border:solid 1px #eee; margin-bottom: 20px;}
+.modal textarea{ border:solid 1px #eee; margin-bottom: 10px; padding:5px;}
+.modal button{ 
+	border:solid 1px #eee;
+	border-radius:5px;
+	padding:10px 5px;
+}
+
+/*일정 출력*/
+.todo{
+	background-color: red;
+	font-size:10px;
+	margin:3px;
+	color:#fff;
+	display: block;
+	padding: 2px;
+	border-radius: 3px;
+	
+	/************************해당 구역보다 텍스트 오버플로우 되면.**********************/
+	/*만약 해당구역보다 텍스트가 더 길면 ...로 표현*/
+	overflow:hidden;
+	/*내용물이 오버플로우 될때 자동줄바꿈되는 것을 해제 시킴/*/
+	white-space:nowrap;
+	text-overflow: ellipsis; /*ellipsis : 생략 . .....으로 표시*/
+	/**************************************************************************/
+}
+.overflow{
+	/************************해당 구역보다 텍스트 오버플로우 되면.**********************/
+	/*만약 해당구역보다 텍스트가 더 길면 ...로 표현*/
+	overflow:hidden;
+	/*내용물이 오버플로우 될때 자동줄바꿈되는 것을 해제 시킴/*/
+	white-space:nowrap;
+	text-overflow: ellipsis; /*ellipsis : 생략 . .....으로 표시*/
+	/**************************************************************************/
+}
