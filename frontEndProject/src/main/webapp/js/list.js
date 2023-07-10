@@ -23,7 +23,7 @@ function boardPrint(){
 		
 		html +=	`<tr>
 					<td> ${boardList[i].no} </td> 
-					<td> ${boardList[i].title} </td> 
+					<td onclick="onviewLoad(${boardList[i].no})"> ${boardList[i].title} </td> 
 					<td> ${boardList[i].writer} </td>
 					<td> ${boardList[i].date} </td> 
 					<td> ${boardList[i].view} </td> 
@@ -36,4 +36,29 @@ function boardPrint(){
 	total.innerHTML = `<tr>
 					      <td colspan="6">total : ${boardList.length}</td>
 					   </tr>`
+}
+/*
+	spa : single page application : react, 뷰
+ */
+//2. 상세페이지로 이동 [ 실행조건 : 클릭한 게시물 제목]
+function onviewLoad(no){
+	console.log('현재 클릭된 제목의 번호는??  :  '+ no)
+	sessionStorage.setItem('no',no);
+	//조회수 증가시켜주기
+	increseView(no);
+	
+	location.href='view.jsp';
+}
+
+// 3. 조회수 증가함수 [실행조건] 제목클릭후 페이지 전환 전에
+function increseView(no) {
+	for(let i = 0 ; i < boardList.length ; i ++){
+		if (boardList[i].no == no ){
+			
+			boardList[i].view++ ;
+			localStorage.setItem('boardList',JSON.stringify(boardList))
+			break;
+		}
+	}
+	
 }
