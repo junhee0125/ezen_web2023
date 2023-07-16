@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>고해상도 이미지를 준비할 수 없다면...블러이미지로..</title>
+<!-- Css초기화 -->
+<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+<!-- 구글폰트 Noto Serif Krean -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+<style type="text/css">
+    .wrap{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        height:100vh;
+        background-image: url('bg-blur.jpg');
+        background-size: cover;
+         background-position: center center;
+
+        font-family: 'Noto Serif KR', serif;
+        color: #fff;
+        font-size: 4rem;
+    /*
+        rem vs em ( 상대적 단위 - 브라우저가 어떤 기준에 따라 계산해서 px로 변환해줌.
+
+                                                               예)사용 요소 div font-size: 10px     / html font-size:15px;
+        em - 해당요소 font- size 속성값이 기준                2em  = 10 * 2 = 20px
+        rem -최상위요소. <ht"public/개인과제/hanbit/chapter2/column1-demo3/example.html"ml>의 font-size속성값이 기준   2rem  =                            15*2 30px;
+  */
+
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+        어느 날 본 하늘
+    </div>
+</body>
+</html>

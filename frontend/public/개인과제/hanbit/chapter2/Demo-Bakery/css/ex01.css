@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* @import url('mobile.css') (max-width:700px); */
 *{padding:0; margin:0;}
 
 /* 전체영역 */
@@ -13,4 +14,22 @@ section{
 	background-image:url('../images/bread1.jpg');
 	text-align: center;
 	padding-top:10vh;
+}
+.title{
+	font-family: 'Dancing Script', cursive;
+	font-size:7rem;
+	margin-bottom: 2rem;
+}
+/*
+Mobile size
+*/
+/*  가로폭이  0~700사이인경우 보여지도록 설정
+    max-width:700px;  최대 너비가 700일때 ( 가로 폭이 700미만인 경우)
+    min-width:700px;  최소 너비가 700일때 ( 가로 폭이 700이상인 경우 )
+*/
+
+@media (max-width:700px){
+
+	.title{
+	font-size:4rem;}
 }

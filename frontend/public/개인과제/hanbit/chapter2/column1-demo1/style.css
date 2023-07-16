@@ -1,6 +1,14 @@
 .wrapper {
   /* 글꼴 설정 */
   font-family: 'Noto Serif KR', serif;
+  /*
+    rem vs em ( 상대적 단위 - 브라우저가 어떤 기준에 따라 계산해서 px로 변환해줌.
+
+                                                            예)사용 요소 div font-size: 10px     / html font-size:15px;
+    em - 해당요소 font- size 속성값이 기준                2em : 10 * 2 = 20px
+    rem -최상위요소. <html>의 font-size속성값이 기준   2rem                              15*2 30px;
+
+  */
   font-size: 4rem;
   text-align: center;
   color: #fff;
