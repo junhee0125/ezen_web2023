@@ -18,7 +18,7 @@ public class Level1_8 {
 		/* 문제풀이 위치 */
 		//첫번째 방문록
 		int no = 1;
-		String writer01 = scanner.nextLine();
+		String writer01 = scanner.next();
 		String contents01 = scanner.nextLine();
 		
 		//System.out.println(writer01);
@@ -30,7 +30,7 @@ public class Level1_8 {
 		
 		//두번째 방문록
 		no++;
-		String writer02 = scanner.nextLine();
+		String writer02 = scanner.next();
 		String contents02 = scanner.nextLine();
 		String boardlist02 =" "+ no+"\t "+writer02+"\t "+ contents02 +"\n";
 		
@@ -40,7 +40,7 @@ public class Level1_8 {
 		
 		//세번째 방문록
 		no++;
-		String writer03 = scanner.nextLine();
+		String writer03 = scanner.next();
 		String contents03 = scanner.nextLine();
 		String boardlist03 =" "+ no+"\t "+writer03+"\t "+ contents03 +"\n";
 		
@@ -50,7 +50,7 @@ public class Level1_8 {
 		
 		//네번째 방문록
 		no++;
-		String writer04 = scanner.nextLine();
+		String writer04 = scanner.next();
 		String contents04 = scanner.nextLine();
 		String boardlist04 =" "+ no+"\t "+writer04+"\t "+ contents04 +"\n";
 		
@@ -60,7 +60,7 @@ public class Level1_8 {
 		
 		//다섯번째 방문록
 		no++;
-		String writer05 = scanner.nextLine();
+		String writer05 = scanner.next();
 		String contents05 = scanner.nextLine();
 		String boardlist05 =" "+ no+"\t "+writer05+"\t "+ contents05 +"\n";
 		

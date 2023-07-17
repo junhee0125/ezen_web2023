@@ -1,4 +1,5 @@
-package 과제.과제3;
+package 과제.과제2;
+import java.util.Scanner;
 
 public class 연산20문제 {
 	
@@ -6,66 +7,177 @@ public class 연산20문제 {
 		
 		//------ 문제1 여기에 풀이-------//
 		
+		String dog = "\n|\\_/|\n"
+			+ "|q p|   /}\r\n"
+			+ "( 0 )\"\"\"\\\r\n"
+			+ "|\"^\"`    |\r\n"
+			+ "||_/=\\\\__|";		
+				
+		System.out.println(dog);
 		
 		//------ 문제2 여기에 풀이-------//
 		
-		
+		Scanner scanner = new Scanner(System.in);
+			int no = 1;
+			System.out.println("작성자 : "); String writer = scanner.next();
+			System.out.println("내용 : ");String contents = scanner.next();
+			System.out.println("날짜 : ");String date = scanner.next();
+			
+			System.out.printf("--------------방문록--------------------\r\n");
+			System.out.printf("|%4s|%5S|%12S|%4S|\n","순번 ","작성자 "," 내용      ","날짜 "	);			
+			System.out.printf("|%5d|%5S|%10S|%4S|\n",no,writer, contents, date);
+
+			
 		//------ 문제3 여기에 풀이-------//
-		
-		
+			//입력
+			System.out.println(" 기본급 : "); int 기본급 = scanner.nextInt();
+			System.out.println(" 수당 : "); int 수당 = scanner.nextInt();
+			
+			//계산
+			long 수령액 = 기본급 + 수당 -  (long)(기본급*0.1);
+			
+			//출력
+			System.out.println("실수령액 : "+수령액); 
 		//------ 문제4 여기에 풀이-------//
-		
+
+			System.out.println("금액을 입력하세요 "); int cost = scanner.nextInt();
+			int tm = cost/100000;
+			int tt = cost/10000 - tm*10;
+			int t = cost/1000-tm*100-tt*10;
+			int h = cost/100 - tm*1000 - tt*100- t*10;
+			
+			System.out.println(" 십만원권 : "+ tm +"장" );
+			System.out.println(" 만원권 : "+tt+"장");
+			System.out.println(" 천원권: "+t+"장");
+			System.out.println(" 백원: "+h+"장");
+			
 		
 		//------ 문제5 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 5)-------------");
+		System.out.println(" 정수5를 입력하세요 "); int input = scanner.nextInt();
+		System.out.println("문제 5 : 7의배수 여부");
+		System.out.println(input%7 ==0? "O": "X");
 		
 		//------ 문제6 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 6)-------------");
+		System.out.println("문제 6 : 홀짝 여부");
+		System.out.println(" 정수6를 입력하세요 "); int input6 = scanner.nextInt();
+		System.out.println(input6%2 ==0? "O": "X");
 		
 		//------ 문제7 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 7)-------------");
+		System.out.println(" 정수7를 입력하세요 "); int input7 = scanner.nextInt();
+		System.out.println("문제 7 : 7의 배수이면서 + 짝수 ?");
+		System.out.println(input7%7 ==0 ? input7%2 == 0 ? "O": "X":"x");
 		
 		//------ 문제8 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 8)-------------");
+		System.out.println(" 정수8를 입력하세요 "); int input8 = scanner.nextInt();
+		String result =(input8%7 == 0 && input8 %2 ==1)? "0" : "x";
+		System.out.println("문제 8의 결과 : "+ result);
 		
 		//------ 문제9 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 9)-------------");
+		System.out.println(" 첫번째 수를 입력하세요 "); int input91 = scanner.nextInt();
+		System.out.println(" 두번째 수를 입력하세요 "); int input92 = scanner.nextInt();
+		int result9 =( input91 > input92)? input91 : input92;
+		System.out.println("문제 9의 결과 : "+ result9);
+
 		
 		//------ 문제10 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 10)-------------");
+		System.out.println(" 반지름을 입력하세요 "); double input10 = scanner.nextDouble();
+		double result10 = input10 * input10* 3.14;
+		System.out.println("문제 10의 결과 : "+ result10);
 		
 		//------ 문제11 여기에 풀이-------//
 		
+		System.out.println("-------------(문제 11)-------------");
+		System.out.println(" 첫번째 실수를 입력하세요 "); double input111 = scanner.nextDouble();
+		System.out.println(" 두번째 실수를 입력하세요 "); double input112 = scanner.nextDouble();
+		//double result11 = (input111 / input112)*100;
+		System.out.printf("문제 11의 결과 : %.6f %% \n", (input111 / input112)*100.0);
 		
 		//------ 문제12 여기에 풀이-------//
 		
-		
+		System.out.println("-------------(문제 12)-------------");
+		System.out.println(" 윗변의 길이를 입력하세요 "); double input12_1 = scanner.nextDouble();
+		System.out.println(" 아랫변의 길이를 입력하세요 "); double input12_2 = scanner.nextDouble();
+		System.out.println(" 높이 입력하세요 "); double input12_3 = scanner.nextDouble();
+		double result12 = (input12_1 +  input12_2) * input12_3 / 2;
+		System.out.println("문제 12의 결과(사다리꼴 넓이 : "+ result12);
+
 		//------ 문제13 여기에 풀이-------//
+		System.out.println("-------------(문제 13)-------------");
+		System.out.println(" 키를 입력하세요 "); double input13 = scanner.nextDouble();
+		System.out.println("문제 13의 결과(표준체중 : "+ (input13-100) *0.9);
 		
-		
+	
 		//------ 문제14 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 14)-------------");
+		System.out.println(" 키를 입력하세요 "); double input14_1= scanner.nextDouble();
+		System.out.println(" 몸무게를 입력하세요 "); double input14_2 = scanner.nextDouble();
+		System.out.println("문제 13의 결과(BMI : "+ input14_2/((input14_1/100) *(input14_1/100)));
+
 		
 		//------ 문제15 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 15)-------------");
+		System.out.println(" cm로 변환할 길이를 입력하세요 "); double input15 = scanner.nextDouble();
+		System.out.println("문제 15의 결과(cm <-Inch : "+ input15 *2.54 +"cm");
+
 		
 		//------ 문제16 여기에 풀이-------//
+		System.out.println("-------------(문제 16)-------------");
+		System.out.println(" 중간고사 점수를 입력하세요 "); double input16_1 = scanner.nextDouble();
+		System.out.println(" 기말고사 점수를 입력하세요 "); double input16_2 = scanner.nextDouble();
+		System.out.println(" 수행평가 점수를 입력하세요 "); double input16_3 = scanner.nextDouble();
+		System.out.println("문제 16의 결과(비율반영후 점수) : "+ (input16_1*0.3 + input16_2*0.3 + input16_3*0.4) );
 		
 		
 		//------ 문제17 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 17)-------------");
+		int x = 10;
+		int y = x-- + 5 + --x; //10+ 5 - 8
+		System.out.printf(" x의 값 : %d , y의값 :  %d \n ", x, y);
 		
 		//------ 문제18 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 18)-------------");
+		System.out.println(" 나이를 입력하세요 "); int input18 = scanner.nextInt();
+		String result18 = input18 >= 10 && input18 < 20  ? "학생" : input18 >=20  && input18 < 40 ? "성인" : input18 >=40 ? "중년" : "other";
+		System.out.println("문제 18의 결과 : "+ result18);
+				
 		
 		//------ 문제19 여기에 풀이-------//
+		System.out.println("-------------(문제 19)-------------");
+		System.out.println(" 국어점수를 입력하세요 "); double input19_1 = scanner.nextDouble();
+		System.out.println(" 영어점수를 입력하세요 "); double input19_2 = scanner.nextDouble();
+		System.out.println(" 수학점수를 입력하세요 "); double input19_3 = scanner.nextDouble();
+		double total = input19_1 + input19_2 + input19_3;
+		System.out.printf("문제 18의 결과  총점 : %.1f \n", total );
+		System.out.printf("문제 18의 결과  평균 : %.2f \n", total/3 );
+
+		
+		
 		
 		
 		//------ 문제20 여기에 풀이-------//
+		System.out.println("-------------(문제 20)-------------");
+		System.out.println(" 아이디를 입력하세요 "); String id = scanner.next();
+		System.out.println(" 비밀번호를 입력하세요 "); String pwd = scanner.next();
+		System.out.println( id.equals("admin") && pwd.equals("1234") ? "로그인 성공" : "로그인 실패");
+
+		
 		
 		
 		//------ 문제21 여기에 풀이-------//
-		
+		System.out.println("-------------(문제 21)-------------");
+		System.out.println(" 첫번째 수를 입력하세요 "); int a = scanner.nextInt();
+		System.out.println(" 두번째 수를 입력하세요 "); int b = scanner.nextInt();
+		System.out.println(" 세번째 수를 입력하세요 "); int c = scanner.nextInt();
+		int max = a;
+		max = (max < b) ? b  : max;
+		max = (max < c) ? c : max;
+		System.out.println("문제 21번 풀이 결과 : 세 수중 가장 큰수는 :  "+ max);
 		
 		
 	}

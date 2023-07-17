@@ -16,7 +16,7 @@ public class EX04_입출력 {
 		
 			// 3. System.out.printf("형식/포맷문자",값/변수); ==> 형식 문자열에 맞춫어 값 출력[p.69]
 		// %d : 정수, %f실수 %s 문자열 %자릿수d (남은것 왼쪽 공백, 
-		int value = 123;
+		int value = 1233;
 		System.out.printf("상품의 가격:%d원\n",value); //%d위치에 value변수 출력
 		System.out.printf("상품의 가격:%6d원\n",value); // 6 정수 자리 칸에 변수 출력오른쪽 정렬
 		System.out.printf("상품의 가격:%-6d원\n",value); // 6 정수 자리 칸에 변수 출력 왼쪽정렬( 공란은 오른쪽에)
