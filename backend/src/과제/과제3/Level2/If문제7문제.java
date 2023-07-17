@@ -8,13 +8,13 @@ public class If문제7문제 {
 		Scanner in = new Scanner(System.in);
 		
 		/* -------문제1----- */
-		 System.out.println( "------------ 문제 1 ------------"); 
-		int a1 = in.nextInt();
-		int a2 = in.nextInt();
-		
-		if (a1 > a2 ) System.out.println( "더 큰수는 "+ a1); 
-		else if(a1 < a2)  System.out.println( "더 큰수는 "+ a2); 
-		else System.out.println("두수의 크기는 같다.");
+//		 System.out.println( "------------ 문제 1 ------------"); 
+//		int a1 = in.nextInt();
+//		int a2 = in.nextInt();
+//		
+//		if (a1 > a2 ) System.out.println( "더 큰수는 "+ a1); 
+//		else if(a1 < a2)  System.out.println( "더 큰수는 "+ a2); 
+//		else System.out.println("두수의 크기는 같다.");
 		
 		
 		/* -------문제2----- */
@@ -24,12 +24,9 @@ public class If문제7문제 {
 		int b3 = in.nextInt(); 
 		int max = b1;
 		
-		if(max < b2 ) {
-			max = b2;
-			if(max < b3) {
-				max = b3;
-			}
-		} else if(max < b3) { max = b3;	}
+		
+		if(max < b2 ) { max = b2;}
+		if(max < b3) { 	max = b3;}
 		System.out.println("세 수중 가장 큰 수는 " + max);
 		
 		
