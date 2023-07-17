@@ -16,8 +16,8 @@ public class 연산20문제 {
 		System.out.println(dog);
 		
 		//------ 문제2 여기에 풀이-------//
-		
-		Scanner scanner = new Scanner(System.in);
+		//입력
+		Scanner scanner = new Scanner(System.in); 
 			int no = 1;
 			System.out.println("작성자 : "); String writer = scanner.next();
 			System.out.println("내용 : ");String contents = scanner.next();
