@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>고해상도 이미지를 준비할 수 없다면...</title>
+<!-- Css초기화 -->
+<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+<!-- 구글폰트 Noto Serif Krean -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+<style type="text/css">
+    .wrap{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        height:100vh;
+
+        background-image: url('dots.svg'), url('bg.jpg'); /*먼저 표시되는 이미지 경로가 앞에오게. 순서주의!!!*/
+        background-size: 10px 10px, cover;  /*도트 이미지의 크기*/
+
+        background-position: center center;
+
+        font-family: 'Noto Serif KR', serif;
+        color: #fff;
+        font-size: 4rem;
+
+
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+        어느 날 본 하늘
+    </div>
+</body>
+</html>
