@@ -1,25 +1,106 @@
 @charset "UTF-8";
 /* @import url('mobile.css') (max-width:700px); */
-*{padding:0; margin:0;}
+/*기본설정*/
+html{font-size: 100%;} /* Most browsers default to a 16px */
+body{color:#555; font-family: sans-serif;}
+
+
 
 /* 전체영역 */
+p{
+	line-height: 1.7;/*폰트의 배수,*/
+	font-size: 1.125rem;
+}
+.contain{
+	overflow: auto;
+	scroll-snap-type:y mandatory; /*스크롤 축은  y 스크롤스냅 항상 동작 mandatory */
+	height: 100vh;
+}
 section{
 	height:100vh; /*veiwport height표시되는 영역 전체 배경 이미지 적용*/
+	scroll-snap-align:start; /*멈출지점의 기준 : 시작라인*/
+
 	background-size:cover; /*화면의 비율을 유지한 채 이미지로 화면을 가득 채우기*/
-	background-repeat: :no-repeat;
+	background-repeat:no-repeat;
 	background-position:center center; /* 이미지 가로세로 중앙으로 기준으로 배경이미지 위치 설정*/
 }
 
-.hero{
-	background-image:url('../images/bread1.jpg');
-	text-align: center;
-	padding-top:10vh;
-}
+
 .title{
 	font-family: 'Dancing Script', cursive;
 	font-size:7rem;
 	margin-bottom: 2rem;
 }
+
+
+
+/*  hero */
+.hero{
+    background-image:url('../images/bread1.jpg');
+    text-align: center;
+    padding-top:10vh;
+}
+
+/* Menu */
+.menu{
+	background-image: url('../images/bread2.jpg');
+	display: flex;
+	align-items:center;
+}
+.wrapper{ /*메뉴아이템의  박스*/
+/* 	border:solid 1px red; */
+	max-width: 900px; /*900미만*/
+	width:100%;
+	margin: 0 auto;
+	padding:0 1rem;
+}
+.menu_list tr{
+	font-size: 1.125rem;/*18px*/
+	margin-bottom: .5rem; /*8px*/
+	line-height:1.7;
+}
+.menu_list th {
+    font-weight: normal;
+}
+.menu_list td {
+    padding-left: 1rem;
+}
+
+/* Contact */
+.contact{
+	background-image: url('../images/cafe.jpg');
+	text-align: center;
+	padding-top:8vh;
+}
+.btn{
+	background-color: #555;
+	font-size: 1.5rem;
+	color: #fff;
+	padding:1rem 3.5rem;
+	border-radius: 6px;
+	display: inline-block;
+	margin: 2rem 0 2.25rem;
+}
+.btn:hover{ background-color: #777;}
+.contact_sns{
+	display: flex;
+	justify-content: center;
+}
+.contact_sns a{
+	background-color: #fff;
+	width:3.75rem;
+	height:3.75rem;
+	display: inline-block;
+	margin: 0 5rem;
+	border-radius: 50%;
+	font-size: 2rem;/*아이콘폰트 2배 */
+	padding: .75rem 0 0 .125rem;
+    color:#555;
+}
+.contact_sns a:hover{
+	background:rgba(255,255,255,.5);/*호버시 투명도*0.5/
+
+
 /*
 Mobile size
 */
@@ -32,4 +113,7 @@ Mobile size
 
 	.title{
 	font-size:4rem;}
+	p{ padding:0 1rem;}
+	p,menu_list li{font-size:1rem;}
+	.hero{padding-top: 12vh;}
 }
