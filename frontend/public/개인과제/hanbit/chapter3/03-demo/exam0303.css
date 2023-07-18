@@ -1,0 +1,40 @@
+@charset "UTF-8";
+body {
+    line-height: 1.6; /*글자크기의 1.6배*/
+}
+header {
+    background: #0bd;
+    display: flex;
+    padding: 2.5rem 1rem; /*미디어 쿼리로 줄어들부분 */
+}
+article {
+    padding: 1rem;
+}
+
+h1 {
+    margin-right: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    border: solid 1px red;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+button {
+    background: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    color: #0bd;
+}
+p {
+    margin-bottom: 1rem; /*문단 나누기용*/
+}
+
+/*스마트폰 가로*/
+@media (max-height:420px) {
+	header{ padding:1rem;}
+	h1{font-size: 1.5rem;} /*반으로 줄임*/
+	button{padding:.5rem 1rem;}
+}
