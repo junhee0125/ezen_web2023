@@ -8,20 +8,20 @@ public class If문제7문제 {
 		Scanner in = new Scanner(System.in);
 		
 		/* -------문제1----- */
-//		 System.out.println( "------------ 문제 1 ------------"); 
-//		int a1 = in.nextInt();
-//		int a2 = in.nextInt();
-//		
-//		if (a1 > a2 ) System.out.println( "더 큰수는 "+ a1); 
-//		else if(a1 < a2)  System.out.println( "더 큰수는 "+ a2); 
-//		else System.out.println("두수의 크기는 같다.");
+		System.out.println( "------------ 문제 1 ------------"); 
+		System.out.println("정수1을 입력하세요"); int a1 = in.nextInt();
+		System.out.println("정수2을 입력하세요"); int a2 = in.nextInt();
+		
+		if (a1 > a2 ) System.out.println( "더 큰수는 "+ a1); 
+		else if(a1 < a2)  System.out.println( "더 큰수는 "+ a2); 
+		else System.out.println("두수의 크기는 같다.");
 		
 		
 		/* -------문제2----- */
 		System.out.println( "------------ 문제 2 ------------");
-		int b1 = in.nextInt();
-		int b2 = in.nextInt();
-		int b3 = in.nextInt(); 
+		System.out.println("정수1을 입력하세요"); int b1 = in.nextInt();
+		System.out.println("정수2을 입력하세요"); int b2 = in.nextInt();
+		System.out.println("정수3을 입력하세요"); int b3 = in.nextInt(); 
 		int max = b1;
 		
 		
@@ -32,52 +32,71 @@ public class If문제7문제 {
 		
 		/* -------문제3----- */
 		 System.out.println( "------------ 문제 3 ------------");
-		 int c1 = in.nextInt();
-		 int c2 = in.nextInt();
-		 int c3 = in.nextInt(); 
-		 System.out.println("오름차순 정렬은 < / 내림차순 정렬은 > 입력해주세요 "); char orderby  =  in.next().charAt(0);
-		 int max3 = c1;
-		 int min = c1;
-		 int mid;
+		 System.out.println("정수1을 입력하세요"); int c1 = in.nextInt();
+		 System.out.println("정수2을 입력하세요"); int c2 = in.nextInt();
+		 System.out.println("정수3을 입력하세요"); int c3 = in.nextInt(); 
+		 System.out.println("오름차순 정렬은 > / 내림차순 정렬은 < 입력해주세요 "); char orderby  =  in.next().charAt(0);
+//		 int max3 = c1;
+//		 int min = c1;
+//		 int mid;
+		 int tmp ;
+		 // > 오름차순
 		 
-		 //max 
-		 if(max3 < c2 ) {
-				max3 = c2;
-				if(max3 < c3) { 	max3 = c3; 	}
-			} else if(max3 < c3) { max3 = c3;	}
-		 
-		 
-		 //min
-		 if(min > c2 ) {
-			 min = c2;
-				if(min > c3) { 	min = c3; 	}
-		} else if(min > c3) { min = c3;	}
-		 
-		 //mid
-		if(max3 == c1) {
-			if( min == c2) { mid = c3;} 
-			else { mid = c2; }
-		} else if (max3 == c2) {
-			if (min ==c1) {mid = c3;}
-			else { mid = c1;}
-		} else {
-			if(min == c1 ){ mid = c2; }
-			else {mid = c1;}
-		}
-		  
-		 if(orderby == '<') { //				
-			System.out.println("오름차순 정렬  :" + min +" "+ mid+" "+max3 );
-			
-			
-		 } else if (orderby == '>' ) {
-			 System.out.println("내림차순 정렬  :" + max3 +" "+ mid+" "+min );
+		 if (orderby == '>') {
+			 if(c1 > c2) { tmp = c1; c1 = c2; c2 = tmp;}
+			 if(c1 > c3) { tmp = c1; c1 = c3; c3 = tmp;}
+			 if(c2 > c3) { tmp = c2; c2 = c3; c3 = tmp;}
 			 
+			 System.out.printf("문제3 : %3d %3d %3d \n", c1,  c2, c3 );
+		 } else if(orderby == '<') {
+			 if(c1 < c2) { tmp = c1; c1 = c2; c2 = tmp;}
+			 if(c1 < c3) { tmp = c1; c1 = c3; c3 = tmp;}
+			 if(c2 < c3) { tmp = c2; c2 = c3; c3 = tmp;}
+			 
+			 System.out.printf("문제3 : %3d %3d %3d \n", c1,  c2, c3 );
 		 } else {
-			 System.out.println( "잘못입력하셨습니다.");
+			 System.out.println( "잘못된 값을 입력하셨습니다.");
 		 }
+			 
+			 //max 
 		 
-		 
-		 
+//		 if(max3 < c2 ) {
+//				max3 = c2;
+//				if(max3 < c3) { 	max3 = c3; 	}
+//			} else if(max3 < c3) { max3 = c3;	}
+//		 
+//		 
+//		 //min
+//		 if(min > c2 ) {
+//			 min = c2;
+//				if(min > c3) { 	min = c3; 	}
+//		} else if(min > c3) { min = c3;	}
+//		 
+//		 //mid
+//		if(max3 == c1) {
+//			if( min == c2) { mid = c3;} 
+//			else { mid = c2; }
+//		} else if (max3 == c2) {
+//			if (min ==c1) {mid = c3;}
+//			else { mid = c1;}
+//		} else {
+//			if(min == c1 ){ mid = c2; }
+//			else {mid = c1;}
+//		}
+//		  
+//		 if(orderby == '<') { //				
+//			System.out.println("오름차순 정렬  :" + min +" "+ mid+" "+max3 );
+//			
+//			
+//		 } else if (orderby == '>' ) {
+//			 System.out.println("내림차순 정렬  :" + max3 +" "+ mid+" "+min );
+//			 
+//		 } else {
+//			 System.out.println( "잘못입력하셨습니다.");
+//		 }
+//		 
+//		 
+	
 		 
 		/* -------문제4----- */
 		 System.out.println( "------------ 문제 4 ------------");
@@ -111,9 +130,9 @@ public class If문제7문제 {
 		 double avg = (kor + eng + mat )/3.0;
 		 
 		 if(avg >=90 ) {
-			 if (kor >=90) System.out.println("국어 우수");
-			 if (eng >=90) System.out.println("영어 우수");
-			 if (mat >=90) System.out.println("수학 우수");
+			 if (kor ==100) System.out.println("국어 우수");
+			 if (eng == 100) System.out.println("영어 우수");
+			 if (mat == 100) System.out.println("수학 우수");
 			 
 		 }else if (avg >=80){
 			 if (kor >=90) System.out.println("국어 장려");
@@ -129,8 +148,20 @@ public class If문제7문제 {
 		 System.out.println("아이디를 입력하세요 : ");String id = in.next();
 		 System.out.println("비밀번호를 입력하세요 : ");String pwd = in.next();
 		 
-		 if(id.equals("admin")&& pwd.equals("1234")){ System.out.println("로그인성공");}
-		 else{ System.out.println("로그인실패"); }
+//		 if(id.equals("admin")&& pwd.equals("1234")){ System.out.println("로그인성공");}
+//		 else{ System.out.println("로그인실패"); }
+		 
+		 if( id.equals("admin")) {
+			 if(pwd.equals("1234")) {
+				 System.out.println("로그인성공");
+			 }else {
+				 System.out.println("[로그인실패] 패스워드가 일치하지 않습니다.");
+			 }
+			 
+		 } else { 
+			 System.out.println("[로그인 실패] 존재하지 않는 아이디입니다.");
+		 }
+		 
 	}
 	
 }
