@@ -1,0 +1,67 @@
+@charset "UTF-8"; body{ padding:2rem;}
+   h1{
+    font-size:2rem; /* 글씨크기 두배*/
+    font-family: sans-serif; /*폰트 변경*/
+    font-weight: bold; /*두껍게*/
+    display: inline-block; /*?? 갑자기?? */
+    background-image: linear-gradient(transparent 50%, #ff6 50%);
+    padding-bottom: .25rem;
+   }
+
+   .post_title{
+
+   padding-bottom: 50px; /*패딩 두께만큼 이미지*/
+   padding-top: 50px;
+   background-image: linear-gradient(45deg, #fff 30%, #ccc 30%, #ccc 50%, #fff 50%, #fff 80%, #ccc 80%, #ccc 100%);
+   background-size:5px 5px; /*이미지 패턴*/
+   margin-bottom:1.5rem;
+
+   }
+   .post_title h2{
+    background-color: #fff; /*글자 배경색*/
+    padding: .5rem .2rem 1rem; /*글자의 패딩 : 흰 배경의 */
+    font-size: 1.8rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.post_img1{
+
+	border-radius: 10px 20px 30px 40px/ 5px 10px 50px 100px;
+
+}
+.post_img0{
+
+    border-radius: 10% 20% 30% 40%/ 5% 10% 50% 100%;
+    object-fit:cover;
+    /*원본비율에 상관없이 이미지가 깨지지 않도록
+
+    지정한 범위를 넘어가는 부분은 트리밍되어 종횡비 aspect ratio가 유지된 상태로 표시할 수*/
+}
+
+
+.post_img2{
+	width:100%;
+    height:260px;
+    border-radius: 40% 70% 50% 30% / 50%;
+    object-fit:cover;
+}
+
+@media(min-width:600px){
+    .post_img2{ width:220px; height:180px;}
+}
+
+.clover{
+	display: flex;
+	flex-wrap:wrap;
+	width:420px;
+	margin:20px auto;
+}
+.clover img{
+	margin: 5px;
+	width:200px;
+}
+.spring{ border-radius:50% 50% 0 50%;}
+.summer{ border-radius:50% 50% 50% 0;}
+.autumn{ border-radius:50% 0 50% 50%;}
+.winter{ border-radius:0 50% 50% 50%;}
