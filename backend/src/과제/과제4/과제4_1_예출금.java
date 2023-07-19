@@ -39,7 +39,7 @@ public class 과제4_1_예출금 {
 				
 					System.out.print("비밀번호를 입력하세요 : "); 
 				
-					if(scanner.nextInt() == password) { //비밀번호가 일치하면 
+					if(scanner.nextShort() == password) { //비밀번호가 일치하면 
 					
 						System.out.print("출금을 입력하세요 : ");
 					
