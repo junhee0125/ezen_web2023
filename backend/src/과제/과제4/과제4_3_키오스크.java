@@ -17,6 +17,7 @@ public class 과제4_3_키오스크 {
 		while(true) {
 			System.out.println("\n\n-------------------- 메뉴 ------------------- ");
 			System.out.println("1.콜라[300] 2.환타[200] 3.사이다[100] 4.결제");
+			System.out.println( 콜라재고 + "\t|\t"+환타재고+"\t|\t"+사이다재고);
 			System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();
 			
 			/* 문제풀이 위치 */
@@ -45,7 +46,7 @@ public class 과제4_3_키오스크 {
 					System.out.println("제품명\t수량\t가격 ");
 					int total = 0;
 					if(콜라바구니 > 0) {	System.out.println("콜라\t"+콜라바구니 +"\t"+콜라가격*콜라바구니); 	total += 콜라가격*콜라바구니 ;}
-					if(환타바구니 > 0) {	System.out.println("(환타\t"+환타바구니 +"\t"+환타가격*환타바구니); 	total += 환타가격*환타바구니 ;}
+					if(환타바구니 > 0) {	System.out.println("환타\t"+환타바구니 +"\t"+환타가격*환타바구니); 	total += 환타가격*환타바구니 ;}
 					if(사이다바구니 > 0) {System.out.println("사이다\t"+사이다바구니 +"\t"+사이다가격*사이다바구니); 	total += 사이다가격*사이다바구니 ;}
 					System.out.println("총가격 :  "+ total);
 					System.out.println("결제는 1 취소는 2번을 입력해주세요."); int payYN = scanner.nextInt();
@@ -75,10 +76,13 @@ public class 과제4_3_키오스크 {
 						}
 						
 						
-					}else if (payYN == 2) { //취소하기
-							
-						System.out.println(" 결제취소합니다.  " );
+					}else if (payYN == 2 || payYN > 2 || payYN < 1) { //취소하기
 						
+						if(payYN ==2) {
+							System.err.println(" 결제취소합니다.  " );// 빠알강 메시지...
+						} else {
+							System.err.println(" 잘못입력하셨습니다. 장바구니가 비워집니다."); // 빠알강 메시지..
+						}
 						콜라재고 += 콜라바구니;
 						사이다재고 += 사이다바구니;
 						환타재고 += 환타바구니;
@@ -88,17 +92,6 @@ public class 과제4_3_키오스크 {
 						환타바구니 = 0;
 						
 						
-					}else { // 잘못입력한경우
-					
-						System.out.println(" 잘못입력하셨습니다. 장바구니가 비워집니다.");
-						
-						콜라재고 += 콜라바구니;
-						사이다재고 += 사이다바구니;
-						환타재고 += 환타바구니;
-					
-						콜라바구니 = 0;
-						사이다바구니 = 0;
-						환타바구니 = 0;
 					}
 					
 			
