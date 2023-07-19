@@ -65,3 +65,46 @@
 .summer{ border-radius:50% 50% 50% 0;}
 .autumn{ border-radius:50% 0 50% 50%;}
 .winter{ border-radius:0 50% 50% 50%;}
+.mgtb30{margin: 30px 0;}
+.btn a{
+	color: #fff;
+    padding:10px 20px;
+    background :#eda1a1;
+    box-shadow:0 0 0 5px #eda1a1; /*같은색이라 그냥 커보임..*/
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+.btnh a{
+    color: #fff;
+    padding:10px 20px;
+    background: #e38787;
+    box-shadow: 0 0 0 5px #e38787;
+    border:2px dashed  #eda1a1;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn a:hover{
+	color:#fff;
+	background: #e38787;
+	box-shadow: 0 0 0 5px #e38787;
+	border:2px dashed  #eda1a1;
+}
+
+.btn1 a{
+	color: #fff;
+	font-size: 1.5rem;
+	border-radius: 5px;
+	text-decoration: none;
+	background: #5fb2c1;
+	box-shadow: 0 3px #3b8a98;
+	position: relative;
+	top:-2px;
+	padding:10px 20px;
+}
+.btn1 a:hover{
+	box-shadow: 0 1px #3b8a98;
+	top:1px;
+}
+
