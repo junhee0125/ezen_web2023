@@ -1,1 +1,121 @@
 @charset "UTF-8";
+h2{
+	margin:20px;
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+h4{
+    margin:20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color:#777;
+}
+
+article ul li::before {
+	content='';
+	width:8px;
+	height:8px;
+	border-radius: 50%;
+	background: #93d8d0;
+	display: inline-block;
+	margin: 0 8px 2px 0;
+}
+
+.heartList li::before {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\f5d1";
+  margin:10px;
+
+  color: #f66;
+}
+
+ol li{
+	counter-increment:list; /*list라고 이름 지정*/
+}
+ol li::before {
+	content:counter(list); /*리스트를 가상요소로 표시*/
+	color:#8000ff;
+	display: inline-block;
+	margin-right: 8px;
+}
+.olclass2 li{
+	counter-increment:list2;
+	margin-bottom: 0.25rem;
+	line-height: 1.25;
+}
+
+.olclass2 li::before {
+	content: counter(list2);
+	color:#fff;
+	background: #0bd;
+	border-radius: 50%;
+	font-size: .75rem;
+	width:1.25rem;
+	height:1.25rem;
+	line-height:1.75;
+	text-align:center;
+	display:inline-block;
+	margin-right: 0.25rem;
+	vertical-align: top;
+
+}
+
+
+/*인용문*/
+
+.blockquote01 {
+	position:relative;
+	padding: 1rem 3rem 1rem 3rem;
+	margin-bottom:1rem;
+}
+.blockquote01 blockquote::before,
+.blockquote01 blockquote::after {
+	font-size: 6rem;
+	font-family: 'Noto Sans KR', sans-serif;
+    color: #ccc;
+    position: absolute;
+    line-height: 0;
+}
+.blockquote01 blockquote::before {
+    content: '\201C';
+    top: 2.5rem;
+    left: 0;
+}
+.blockquote01 blockquote::after {
+    content: '\201D';
+    bottom: .5rem;
+    right: 0;
+}
+
+/*홑낫표 인용문*/
+.wrapper {
+	font-family: 'Noto Serif KR', serif;
+    line-height: 2;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.wrapper blockquote {
+    position: relative;
+    padding: 2rem;
+}
+.wrapper blockquote::before,
+.wrapper blockquote::after {
+    content: ''; /*빈공백*/
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+.wrapper blockquote::before { /*보더로 홑낫표 그리기*/
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    top: 0;
+    left: 0;
+}
+.wrapper blockquote::after {
+    border-bottom: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    bottom: 0;
+    right: 0;
+}
