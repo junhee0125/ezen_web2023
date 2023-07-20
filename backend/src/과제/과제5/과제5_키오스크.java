@@ -10,12 +10,22 @@ public class 과제5_키오스크 {
 		
 		String 재고관리 = "";
 		/* 재고관리 변수 샘플  */
-		재고관리 = "10:0:300/10:0:200/10:0:100";
+		/*
+		 * CSV : 필드 상태 속성 간의 구분은 ,  묶음 단위 \n 출력했을때 묶음 단위로 출력이 되서 읽기 편함 good!!
+		 * 재고관리 = "10,0,300\n10,0,200\n10,0,100\n";
+		 * 		재고관리.split("\n"); 으로 문자열 나누면 4개의 조각으로 나뉘어진다. (dataSet +1) 
+		 * 		마지막\n의 다음 dataSet을 위한것이지만 데이가 없는 상태로 한 조각을 차지함. [0][1][2][3] <== 이렇게 존재함
+		 * 문자열을 -> 숫자로 바꿀때.
+		 * 		Integer.parseInt(str);
+		 * 		Integer.valueOf(str);	
+		 * 
+ 		 * */
+		
+		재고관리 = "10,0,300\n10,0,200\n10,0,100\n";
 		/*
 		 (재고관리.split("/")[0]).split(":")[0]  = 콜라 재고
 		 (재고관리.split("/")[0]).split(":")[1]  = 콜라 바구니
-		 (재고관리.split("/")[0]).split(":")[2]  = 콜라 가격
-		 
+		 (재고관리.split("/")[0]).split(":")[2]  = 콜라 가격		 
 		 
 		 (재고관리.split("/")[1]).split(":")[0]  = 환타 재고
 		 (재고관리.split("/")[1]).split(":")[1]  = 환타 바구니
@@ -37,7 +47,7 @@ public class 과제5_키오스크 {
 
 		*/
 
-
+		/*
 		
 		 int 콜라재고 	= Integer.parseInt((재고관리.split("/")[0]).split(":")[0]);
 		 int 콜라바구니 	= Integer.parseInt((재고관리.split("/")[0]).split(":")[1]);  
@@ -49,19 +59,38 @@ public class 과제5_키오스크 {
 		 int 사이다바구니= Integer.parseInt((재고관리.split("/")[2]).split(":")[1]);  
 		 int 사이다가격 	= Integer.parseInt((재고관리.split("/")[2]).split(":")[2]);  
 		
+		*/
 		/* ----------- */
 		 while(true) {
-				System.out.println("\n\n-------------------- 메뉴 ------------------- ");
-				System.out.println("1.콜라[300] 2.환타[200] 3.사이다[100] 4.결제");
-				System.out.println( 콜라재고 + "\t|\t"+환타재고+"\t|\t"+사이다재고);
-				System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();
-				
+			 
+			
+			 int 콜라재고 	= Integer.parseInt((재고관리.split("\n")[0]).split(",")[0]);
+			 int 콜라바구니 	= Integer.parseInt((재고관리.split("\n")[0]).split(",")[1]);  
+			 int 콜라가격 	= Integer.parseInt((재고관리.split("\n")[0]).split(",")[2]);  		 
+			 int 환타재고 	= Integer.parseInt((재고관리.split("\n")[1]).split(",")[0]); 
+			 int 환타바구니	= Integer.parseInt((재고관리.split("\n")[1]).split(",")[1]);  
+			 int 환타가격 	= Integer.parseInt((재고관리.split("\n")[1]).split(",")[2]);  		 
+			 int 사이다재고 	= Integer.parseInt((재고관리.split("\n")[2]).split(",")[0]);  
+			 int 사이다바구니= Integer.parseInt((재고관리.split("\n")[2]).split(",")[1]);  
+			 int 사이다가격 	= Integer.parseInt((재고관리.split("\n")[2]).split(",")[2]);  
+			 
+			 System.out.println("\n\n-------------------- 메뉴 ------------------- ");
+			 System.out.println("1.콜라[300] 2.환타[200] 3.사이다[100] 4.결제");
+			 System.out.println( 콜라재고 + "\t|\t"+환타재고+"\t|\t"+사이다재고);
+			 System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();
+			
+			 
+			 
 				/* 문제풀이 위치 */
 				if(ch == 1) { //콜라선택
 					
 					if(콜라재고 == 0) {  System.out.println("콜라 재고부족"); }
 					
-					else {  콜라재고 --;  	콜라바구니 ++;}
+					else {  
+						콜라재고 --;  	
+						콜라바구니 ++;
+						//System.out.println("콜라재고 : "+ 콜라재고 +" | 콜라바구니 : "+콜라바구니);
+					}
 									
 				} else if(ch == 2) { //환타선택
 					
@@ -130,12 +159,13 @@ public class 과제5_키오스크 {
 							
 						}
 						
-				
 				}
 				
 				/* ----------- */
 				
-				
+				//while문안에서 재고관리 split했다면
+				재고관리 = 콜라재고+","+콜라바구니+","+콜라가격+"\n"+환타재고+","+환타바구니+","+환타가격+"\n"+사이다재고+","+사이다바구니+","+사이다가격+"\n";
+				//System.out.println(재고관리);
 			} // while end 
 		} // main end 
 		
