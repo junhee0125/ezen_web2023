@@ -14,8 +14,10 @@ public class 주차요금정산기 {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("YYYYMMddHHmm");
 		 
 		System.out.println("현재시간 : "+dateFormat.format(curDate) );
+		
 		Date reqDate;
 		try {
+			
 			reqDate = dateFormat.parse(reqDateStr);
 			long reqDateTime = reqDate.getTime();
 			
@@ -24,6 +26,7 @@ public class 주차요금정산기 {
 			curDate = dateFormat.parse(dateFormat.format(curDate));
 			long curDateTime = curDate.getTime();
 			//분으로 표현
+			
 			long minute = (curDateTime - reqDateTime) / 60000;
 			
 			System.out.println("요청시간 : " + reqDate);
