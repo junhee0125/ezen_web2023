@@ -35,7 +35,7 @@ public class 과제6_1_주차요금정산프로그램 { // class s
 			Date curDate = new Date();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("YYYYMMddHHmm");
 			Date = dateFormat.format(curDate);
-			System.out.println("현재시간 : "+dateFormat.format(curDate) );
+			 System.out.println("현재시간 : "+dateFormat.format(curDate) );
 			 System.out.println("-------------- <주차요금 관리 프로그램> ------------- ");
 			 System.out.println("------------------------------------------------");
 			 System.out.println(" 1. 입차 | 2. 출차(요금지불) | 3. 입출차현황 | 4. 매출 ");
@@ -69,9 +69,7 @@ public class 과제6_1_주차요금정산프로그램 { // class s
 				 for ( int i = 0; i < carNum.length ; i++ ) {
 					 System.out.println(carNum[0]);
 					 if ( carNum[i].equals(car)) { 
-						 
-						 System.out.println(" 출차할 차량의 번호가 일치해");
-						//outTime[i] = outDate;
+						
 						// 입차 출차 시간 계산기
 						    reqDateStr= inTime[i];
 							Date reqDate;
@@ -118,7 +116,7 @@ public class 과제6_1_주차요금정산프로그램 { // class s
 					 if( payInput == usedTime*price ) {
 						 System.out.print(" 결제가 완료되었습니다. \n 안녕히 가십시오.\n");
 						 outTime[ingCar] = Date;
-						 endCar =carNum[ingCar]+","+inTime[ingCar]+","+ outTime[ingCar];
+						 endCar =carNum[ingCar]+","+inTime[ingCar]+","+ outTime[ingCar]+"\n";
 
 						 for ( int i = 0; i<endParking.length; i++ ) {
 							 if ( endParking[i] == null ) { 
@@ -167,6 +165,12 @@ public class 과제6_1_주차요금정산프로그램 { // class s
 				 for ( int i = 0; i<carNum.length; i++ ) {
 					 if( carNum[i] !=  null ){
 						 System.out.println( "  " + carNum[i] + "  |" + inTime[i] +"|" + "     ------     " + "|  주차중" );
+					 }
+				 }
+				 
+				 if(endParking != null) {
+					 for( int i = 0; i < endParking.length; i++) {
+						 
 					 }
 				 }
 				 //System.out.println( " " + carNum[i] + " |" + inTime[i] +"|" + "-------" + "|  정산완료 " );
