@@ -101,7 +101,7 @@ public class Ex1_배열 { //class s
 		
 				if( arr3[i] == null  ) { // 만약에 i번째 인덱스의 값이 비어 있으면 
 					arr3[i] = "5월"; break; // 해당 위치에 값 추가
-0				}
+				}
 			}
 			System.out.println( Arrays.toString( arr3 ) );
 	} //main e
