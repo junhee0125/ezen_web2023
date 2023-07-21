@@ -85,7 +85,8 @@ public class 과제5_키오스크_파일처리 {
 			}
 			
 			/*--------------------------선택한 제품을 바구니에 담기-------------------------*/
-			else if(ch > 0 && ch < product.length ) {
+			else if(ch > 0 && ch < product.length+1 ) {
+				System.out.println("제품");
 				String name = product[ch-1].split(",")[0];
 				int stock = Integer.parseInt(product[ch-1].split(",")[1]);
 				int price = Integer.parseInt(product[ch-1].split(",")[2]);
