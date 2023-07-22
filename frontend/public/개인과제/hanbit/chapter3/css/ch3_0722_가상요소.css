@@ -1,0 +1,64 @@
+@charset "UTF-8";
+.product_list{
+	width:400px;
+	margin:2rem;
+	line-height: 1.7;
+}
+
+.new::after{
+	content:'NEW!';
+	font-size: .7rem;
+	background: #ff310d;
+	color:#fff;
+	padding: 3px 5px 5px;
+	border-radius: 5px;
+	margin-left: 5px;
+}
+
+li::before{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f0f3";
+    margin-right: .5rem;
+    color:#fab705;
+    font-size: .75rem;
+}
+
+p{
+	width:600px;
+	margin: 2rem;
+}
+/*속성 값에 따라 지정*/
+a[href^="http://"]::before{
+	content:url('../column2-demo2/images/link.svg');
+}
+
+a[href^="mailto:"]::before{
+    content:url('../column2-demo2/images/email.svg');
+}
+
+a[href$=".pdf"]::before{
+    content:url('../column2-demo2/images/doc.svg');
+}
+
+/*공백요소로  이미지 그리기*/
+h1{
+	display: flex; /*가로선을 넣기 위해서 flex정렬*/
+	font-size: 2rem;
+}
+
+h1::before,
+h1::after{
+	flex:1;
+	/*부모의 너비에 맞추게 된다.
+     따라서 부모의 너비가 남을 경우 그 공간을 채우고,
+     부모가 해당 아이템의 너비보다 작아졌을 때 줄어들게 된다.*/
+	height:2px;
+	content:'';
+	background-color:#ddd;
+	position: relative;
+	top:1rem;
+}
+
+h1::before{ margin-right: 1rem;}
+h1::after{ margin-left: 1rem;}

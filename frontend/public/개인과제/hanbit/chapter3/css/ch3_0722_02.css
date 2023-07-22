@@ -1,0 +1,111 @@
+@charset "UTF-8";
+h2{
+    margin:20px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+h4{
+    margin:20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color:#777;
+}
+
+/*헤더*/
+body{
+    color:#949087;
+    font-family:sans-serif;
+    background: #faf6ed url('../Demo-Blog/images/bg.png') ;
+    height:100
+}
+
+header{
+	max-width:1000px;
+	margin: 2.5rem auto 0;
+	background: url('../Demo-Blog/images/header.svg') no-repeat center top/cover;
+	height:170px;
+	position:relative;
+
+}
+h1{
+	font-family: 'Amatic SC', cursive;
+    font-size: 4rem;
+    position: absolute;
+    left:43%;
+    top:20%;
+}
+
+.page-desc{
+	position: absolute;
+    left:30%;
+    bottom:10%;
+}
+
+/*호버 메뉴*/
+.main_manu{
+	width:50rem;
+	margin:0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.main_manu a {
+	background: #0bd;
+	padding:1rem;
+	color: #fff;
+	display: inline-block;
+	margin:1rem;
+}
+.main_manu a:hover{
+	background: #0090aa;
+}
+/*서브 메뉴가 있는메뉴*/
+.has_menu{
+	position: relative;
+}
+.has_menu > a::after{
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: "\f150";
+	margin-left: .5rem;
+
+}
+
+/* HAS MENU에 호버하면 서브 메뉴 JJAJA~N */
+.has_menu:hover .sub_menu{   display: block; }
+
+
+/*서브메뉴*/
+.sub_menu{
+	display: none; /*평소 서브 메뉴는 숨김*/
+	position: absolute;
+	top:4.5rem;
+	left:1rem;
+}
+.sub_menu a{
+	margin: 1px;
+	width:180px;
+	background: #666;
+}
+
+/*푸터*/
+footer{
+	background: #949087;
+	text-align: center;
+	padding:3rem;
+}
+footer ul{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+footer li{ margin: 0 12px; }
+footer a {color: #fff;}
+footer a:hover {	color:#c7c3ba; }
+footer small {color:#c7c3ba;  font-size: .875rem;}
+
+
+article{ border: solid 1px red;}
+
+/**/

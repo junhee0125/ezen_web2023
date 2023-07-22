@@ -24,6 +24,7 @@ p {
 }
 
 .container {
+
     max-width: 1000px;
     padding: 1rem;
     margin: 0 auto;
@@ -31,7 +32,7 @@ p {
 
 /* 메인 콘텐츠 */
 main {
-    margin-bottom: 3rem;
+   margin-bottom: 3rem;
 }
 main p {
     font-size: 1.25rem;
@@ -48,8 +49,39 @@ li {
     margin: .5rem 0;
 }
 /* 목차 꾸미기 */
+.sticky li::before{
+	content:'';
+	width:6px;
+	height:6px;
+	display:inline-block;
+	margin-right:5px;
+	background: #0bd;
+}
 
- 
 /*
 데스크톱 사이즈
 ================================================ */
+@media (min-width:700px){
+.container{
+	display:flex; /*2단 구성*/
+    justify-content:space-between;
+}
+main {
+    width:70%;
+    margin-bottom: 3rem;
+}
+aside {
+    width:26%
+}
+.sticky {
+	position: sticky;
+	top:10px;
+}
+
+
+
+
+
+
+
+

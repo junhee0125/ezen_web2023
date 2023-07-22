@@ -1,0 +1,18 @@
+@charset "UTF-8";
+h1{margin: 2rem 2rem;}
+.post {margin: 0 2rem; width: 600px;}
+.post h2{
+	padding:1rem;
+	background: #ccc;
+	margin-bottom: 1rem;
+    font-size:1.7rem;
+    color:#fff;
+    /* 상단에 고정*/
+	position:sticky;
+	top:0;
+
+}
+.post p{
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
