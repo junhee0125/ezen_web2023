@@ -1,5 +1,8 @@
 @charset "UTF-8";
+/*구글폰트*/
+/*font-family: 'Noto Sans KR', sans-serif; */
 /*모바일 퍼스트*/
+
 .home {
 	background-image: url('./Demo-Corporate/images/bg-hero.jpg');
 	background-repeat:no-repeat;
