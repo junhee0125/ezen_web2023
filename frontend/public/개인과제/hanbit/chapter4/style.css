@@ -63,7 +63,8 @@ td {
 .ct-bar{
 	stroke-width:16%;
 }
-/*데스크탑*/
+/*데스크탑 
+*/
 @media (min-width:600px){ //600픽셀이상이면
 .home {
     padding: 16vw 1rem;
