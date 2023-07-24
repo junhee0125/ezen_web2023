@@ -1,8 +1,30 @@
 @charset "UTF-8";
 /*구글폰트*/
 /*font-family: 'Noto Sans KR', sans-serif; */
-/*모바일 퍼스트*/
 
+/*
+GENERAL STYLING
+================================================ */
+html {
+    font-size: 100%;
+}
+body {
+    color: #555;
+    font-family: sans-serif;
+}
+
+/*
+COMMON
+================================================ */
+p,
+td {
+    line-height: 1.7;
+}
+
+
+
+
+/*모바일 퍼스트*/
 .home {
 	background-image: url('./Demo-Corporate/images/bg-hero.jpg');
 	background-repeat:no-repeat;
@@ -25,21 +47,34 @@
 .btn{}
 .btn_primary{}
 
+
+/*그래프*/
+.ct-label{font-size:1rem; fill:#fff; color:#fff;} /*그래프 안의 글씨*/
+/*원그래프*/
+.ct-series-a .ct-slice-pie{fill:#2d3374;}
+.ct-series-b .ct-slice-pie{fill:#2d3374;}
+.ct-series-c .ct-slice-pie{fill:#2d3374;}
+.ct-series-d .ct-slice-pie {fill:#bbb;}
+
+/*막대그래프*/
+.ct-seires-a .ct-bar{
+	stroke:#3a7edf;
+}
+.ct-bar{
+	stroke-width:16%;
+}
+/*데스크탑*/
 @media (min-width:600px){ //600픽셀이상이면
 .home {
     padding: 16vw 1rem;
 }
 .home h2 {
-	    font-size: 2.5rem;
-	    margin: 0 0 2rem;
-	    background: none;
-	    padding: 0;
-	    display: inline-block;
-	}
-    .home p {
-    width: 38vw;
+        font-size: 2.5rem;
+        margin: 0 0 2rem;
+        background: none;
+        padding: 0;
+        display: inline-block;
+}
+.home p {  width: 38vw; }
 }
 
-
-
-}
