@@ -32,8 +32,7 @@ public class 과제5_키오스크_배열 {
 		while(true) {
 			System.out.println("\n\n-------------------- 메뉴 ------------------- ");
 			System.out.println("1.콜라[300] 2.환타[200] 3.사이다[100] 4.결제");
-			System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();
-			
+			System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();			
 			 
 			String 환타정보 = 재고관리[1];
 			String 사이다정보 = 재고관리[2];
@@ -59,12 +58,30 @@ public class 과제5_키오스크_배열 {
 				
 				
 			} else if( ch == 4 ) {
+				int total =0 ; //합계
 				System.out.printf("%10s %10%s %10s \n", "제품명", "수량" , "가격");
 				for(int i = 0 ; i <재고관리.length ; i++ ) {
 					int basket = Integer.parseInt( 재고관리[i].split(",")[1]);
 					int price = Integer.parseInt( 재고관리[i].split(",")[2]);
 					int name = Integer.parseInt( 재고관리[i].split(",")[3]);
+					
+					if(basket > 0) {
+						System.out.printf("%10s %10%s %10s \n", name, basket , price);
+						total += basket*price;
+					}
+			
+				} 
+				
+				if(total > 0) {
+					System.out.println(" 총 합계 금액 : "+ total +"원입니다.");
+					
+					System.out.println("1. 결제 2. ");
+					
+					
 				}
+				
+				
+				
 			}
 			/* ----------- */
 			
