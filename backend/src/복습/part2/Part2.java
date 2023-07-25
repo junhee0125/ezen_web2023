@@ -7,7 +7,7 @@ public class Part2 {
 		
 		Scanner in = new Scanner(System.in);
 		
-	    String 재고관리 = "10,0,300\n3,0,200\n2,0,100\n";
+	    String 재고관리 = "10,0,300\n3,0,200\n2,0,100\n"; 
 	    
 	    while(true) {
 	    	
