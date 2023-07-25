@@ -64,15 +64,15 @@ public class 과제5_키오스크 {
 		 while(true) {
 			 
 			
-			 int 콜라재고	= Integer.parseInt((재고관리.split("\n")[0]).split(",")[0]);
-			 int 콜라바구니	= Integer.parseInt((재고관리.split("\n")[0]).split(",")[1]);  
-			 int 콜라가격 	= Integer.parseInt((재고관리.split("\n")[0]).split(",")[2]);  		 
-			 int 환타재고 	= Integer.parseInt((재고관리.split("\n")[1]).split(",")[0]); 
-			 int 환타바구니	= Integer.parseInt((재고관리.split("\n")[1]).split(",")[1]);  
-			 int 환타가격 	= Integer.parseInt((재고관리.split("\n")[1]).split(",")[2]);  		 
-			 int 사이다재고	= Integer.parseInt((재고관리.split("\n")[2]).split(",")[0]);  
+			 int 콜라재고	  = Integer.parseInt((재고관리.split("\n")[0]).split(",")[0]);
+			 int 콜라바구니  = Integer.parseInt((재고관리.split("\n")[0]).split(",")[1]);  
+			 int 콜라가격   = Integer.parseInt((재고관리.split("\n")[0]).split(",")[2]);  		 
+			 int 환타재고 	  = Integer.parseInt((재고관리.split("\n")[1]).split(",")[0]); 
+			 int 환타바구니 = Integer.parseInt((재고관리.split("\n")[1]).split(",")[1]);  
+			 int 환타가격 	 = Integer.parseInt((재고관리.split("\n")[1]).split(",")[2]);  		 
+			 int 사이다재고 = Integer.parseInt((재고관리.split("\n")[2]).split(",")[0]);  
 			 int 사이다바구니= Integer.parseInt((재고관리.split("\n")[2]).split(",")[1]);  
-			 int 사이다가격	= Integer.parseInt((재고관리.split("\n")[2]).split(",")[2]);  
+			 int 사이다가격 = Integer.parseInt((재고관리.split("\n")[2]).split(",")[2]);  
 			 
 			 System.out.println("\n\n-------------------- 메뉴 ------------------- ");
 			 System.out.println("1.콜라[300] 2.환타[200] 3.사이다[100] 4.결제");
