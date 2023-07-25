@@ -34,8 +34,7 @@ public class 과제5_키오스크_배열 {
 			System.out.println("1.콜라[300] 2.환타[200] 3.사이다[100] 4.결제");
 			System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();			
 			 
-			String 환타정보 = 재고관리[1];
-			String 사이다정보 = 재고관리[2];
+			
 			
 			/* 문제풀이 위치 */
 			if( ch == 1 ||  ch == 2 ||  ch == 3) {
@@ -43,7 +42,7 @@ public class 과제5_키오스크_배열 {
 				String product = 재고관리[ch-1]; 
 				System.out.println(product.split(",")[3]+ "제품을 선택하셨습니다.");
 				
-				//배열 호출
+				//배열 호출1
 				int stock = Integer.parseInt(product.split(",")[0]);
 				int basket = Integer.parseInt(product.split(",")[1]);				
 				int price = Integer.parseInt(product.split(",")[2]);

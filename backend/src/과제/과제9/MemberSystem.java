@@ -1,4 +1,4 @@
-package 과제.과제8;
+package 과제.과제9;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -29,13 +29,9 @@ public class MemberSystem {
 				System.out.print("나이  :");  	int inputAge =in.nextInt(); //기본타입 : 스택
 				
 				//2. 5가지 데이터를 하나루 묶음.
-				Member member = new Member(); //객체생성 : 힙메모리 할당
+				Member member = new Member( inputId, inputpPwd, inputName  ,inputPhone,inputAge); //객체생성 : 힙메모리 할당
 				
-				member.id = inputId;		// 객체 필드에 입력받은 데이터 대입 (힙) 
-				member.pwd = inputpPwd;		// 객체 필드에 입력받은 데이터 대입	(힙)
-				member.name = inputName;	// 객체 필드에 입력받은 데이터 대입 (힙)
-				member.phone = inputPhone;	// 객체 필드에 입력받은 데이터 대입	(힙)
-				member.age = inputAge;		// 객체 필드에 입력받은 데이터 대입	(힙)
+				
 						
 						
 				// 3. 여러개의 객체를 저장하기 위해 배열저장	
