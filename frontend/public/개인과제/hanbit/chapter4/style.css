@@ -34,7 +34,8 @@ td {
     margin: 8vw 0 12vw;
     background: rgba(255,255,255,.8);
     padding:1rem;
-    display: inline-block;
+    display: in
+    line-block;
 }
 .home p {
     font-size: 1.125rem;
