@@ -2,9 +2,7 @@
 /*구글폰트*/
 /*font-family: 'Noto Sans KR', sans-serif; */
 
-/*
-GENERAL STYLING
-================================================ */
+/*  GENERAL STYLING*/
 html {
     font-size: 100%;
 }
@@ -13,14 +11,62 @@ body {
     font-family: sans-serif;
 }
 
-/*
-COMMON
-================================================ */
+/*COMMON */
 p,
 td {
     line-height: 1.7;
 }
 
+/*layout*/
+.wrapper{
+	max-width:1200px;
+	width:100%;
+	margin:0 auto;
+	padding:0 rem;
+}
+.text-center{text-align: center;}
+
+/* header */
+header .wrapper{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:1rem;
+}
+.main_nav{display: flex;}
+.main_nav li{
+	text-align: center;
+	font-size: .75rem.;
+}
+.logo{width:9.5rem;}
+.main_nav a{
+	display: block;
+	padding:.5rem;
+	width:4rem;
+}
+
+.main_nav a::before{
+	display: block;
+	margin-bottom: :0.25rem;
+	font-family: 'Font Awosome 5 Free';
+	font-weight: 900;
+	color:#555;
+	font-size: 1.25rem;
+}
+
+.menu-home::before {
+    content: '\f015';
+}
+.menu-job::before {
+    content: '\f0ca';
+}
+.menu-form::before {
+    content: '\f56e';
+}
+.main-nav .current {
+    background: #f8f6f2;
+}
+/*home*/
 .home {
 	background-image: url('./Demo-Corporate/images/bg-hero.jpg');
 	background-repeat:no-repeat;
@@ -96,9 +142,42 @@ td {
     stroke-width: 16%;
 }
 
+/****************************
+* job/html
+*****************************/
+
+table{ margin:3.5rem 0; width:100% }
+th{
+	font-weight: nomal;
+	background: #f8f6f2;
+	vertical-align: middle;
+	padding: 1rem;
+	   border:solid 1px red;
+
+}
+td{
+	border:solid 1px red;
+	padding: 0.75rem 1rem 1.75rem;
+}
+th,td{
+	display: block; /*가로가 꽉차서 세로로 배열되게*/
+}
+
+.timeline{
+	list-style:decimal inside;
+    font-family: 'Noto Serif KR', serif;
+}
+.timeline-item{ margin-bottom: 2rem;}
+.timeline-title{
+	font-size: 1.4rem;
+	display: inline-block;
+	margin-bottom: 1rem;
+}
+.timeline-content{font-family: sans-serif;}
+
 /*데스크탑
 */
-@media (min-width: 1000px) {
+@media (min-width: 600px) {
 	.home {
 	    padding: 16vw 1rem;
 	}
@@ -118,5 +197,14 @@ td {
        align-items: center;
        padding:4rem 1rem;
    }
+
+	/*job.html*/
+	th,td{
+		padding:1.25rem;
+		display: table-cell; /*기본값*/
+	}
+	/*행마다 색바꾸기*/
+	tr:nth-child(odd){ 	background: #f8f6f2; }
+	tr:nth-child(even) th{  background: #fff; }
 
 }
