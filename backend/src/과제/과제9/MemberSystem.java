@@ -11,22 +11,22 @@ public class MemberSystem {
 		
 		//0. 여러개의 Member객체릐 길이가 100개의 배열선언
 		Member[] memberList = new Member[100]; 	// 스택 + 힙
-		Scanner in = new Scanner (System.in); // 스택 + 힙
+		Scanner sc = new Scanner (System.in); // 스택 + 힙
 		
 		while(true) {
 			System.out.println("\n\n-----------------(회원시스템)-----------------");
 			System.out.println("1.회원가입 2. 로그인  >>>선택 ");
-			int ch = in.nextInt(); //기본타입 : 스택
+			int ch = sc.nextInt(); //기본타입 : 스택
 			
 			if(ch == 1 ){
 				
 				System.out.println("-----------------(회원시스템)-----------------"); 
 				
-				System.out.print("아이디  :"); 	String inputId =in.next(); //기본타입 : 스택 힙
-				System.out.print("비밀번호  :");  	String inputpPwd =in.next(); //기본타입 : 스택 힙
-				System.out.print("이름  :");  	String inputName =in.next(); //기본타입 : 스택 힙
-				System.out.print("전화번호  :");  String inputPhone =in.next(); //기본타입 : 스택 힙
-				System.out.print("나이  :");  	int inputAge =in.nextInt(); //기본타입 : 스택
+				System.out.print("아이디  :"); 	String inputId =sc.next(); //기본타입 : 스택 힙
+				System.out.print("비밀번호  :");  	String inputpPwd =sc.next(); //기본타입 : 스택 힙
+				System.out.print("이름  :");  	String inputName =sc.next(); //기본타입 : 스택 힙
+				System.out.print("전화번호  :");  String inputPhone =sc.next(); //기본타입 : 스택 힙
+				System.out.print("나이  :");  	int inputAge =sc.nextInt(); //기본타입 : 스택
 				
 				//2. 5가지 데이터를 하나루 묶음.
 				Member member = new Member( inputId, inputpPwd, inputName  ,inputPhone,inputAge); //객체생성 : 힙메모리 할당
@@ -48,8 +48,8 @@ public class MemberSystem {
 			} else if(ch==2) {
 								
 				System.out.println("-----------------(로그인)-----------------");
-				System.out.print("아이디  :"); 	String inputId =in.next();
-				System.out.print("비밀번호  :");  	String inputpPwd =in.next();
+				System.out.print("아이디  :"); 	String inputId =sc.next();
+				System.out.print("비밀번호  :");  	String inputpPwd =sc.next();
 				
 				//** 
 				int login = -1; //로그인 여부를 저장하는 변수 /-1 : 못찾았다. 0 이상이면 찾고자 하는 인덱스번호 저장 = 로그인 성공 

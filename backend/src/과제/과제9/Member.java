@@ -32,10 +32,18 @@ public class Member {
 	} 	
 	
 	//1. 매개변수 5개 정의한 생성자
-	public Member(String id, String pwd, String name, String phone) { } 			//2. 매개변수 4개 정의한 생성자
-	public Member(String id, String pwd, String name) { }							//3. 매개변수 3개 정의한 생성자
-	public Member(String id, String pwd) { } 										//4. 매개변수 2개 정의한 생성자
-	public Member(String id) {}														//5. 매개변수 1개 정의한 생성자
+	public Member(String id, String pwd, String name, String phone) {
+	} // 2. 매개변수 4개 정의한 생성자
+
+	public Member(String id, String pwd, String name) {
+	} // 3. 매개변수 3개 정의한 생성자
+
+	public Member(String id, String pwd) {
+	} // 4. 매개변수 2개 정의한 생성자
+
+	public Member(String id) {
+	} // 5. 매개변수 1개 정의한 생성자
+
 	public Member(int age) {}														//6. 매개변수 1개 정의한 생성자
 	//메소드
 	
@@ -60,4 +68,4 @@ public class Member {
   
   
  */
- */
+ 
