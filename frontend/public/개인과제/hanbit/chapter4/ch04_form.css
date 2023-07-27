@@ -1,0 +1,60 @@
+@charset "UTF-8";
+html {
+    font-size: 100%;
+}
+body {
+    color: #555;
+    font-family: sans-serif;
+
+}
+.box{margin:1rem;}
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='url']::placeholder,
+textarea::placeholder{
+	color:#bbb;
+	background: #fee;
+
+}
+input[type='checkbox']{
+	opacity:0; /*체크박스 상자 사라짐*/
+	-webkit-appearance:none; /*상자 공간도 사라짐*/
+	appearance:none;
+	position: absolute;
+}
+input[type='checkbox'] + span::before{
+    display:inline-block;
+    content:'';
+    width:1.5rem;
+    height: 1.5rem;
+    border: 1px solid #bbb;
+    margin: -.125rem .5rem 0 0 ; /*마이너스를 주니깐 올라감*/
+    vertical-align: middle;
+
+    /*Font AwoSome*/
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding:0 2px;
+    line-height: 1.5;
+}
+
+input[type='checkbox']:checked + span::before{
+    content:'\f00c'
+}
+
+.select-box{
+	position:relative;
+
+}
+.select-box::after{
+
+    display:inline-block;
+    position: absolute;
+    top:.625rem;
+    right:1rem;
+    /*Font AwoSome*/
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content:'\f078';
+    color:#bbb;
+}
