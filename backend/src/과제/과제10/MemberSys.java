@@ -1,5 +1,6 @@
 package 과제.과제10;
 
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -7,12 +8,14 @@ import java.util.Scanner;
 public class MemberSys {
 	
 	static Member[] memberList = new Member[100];
+	//입력객체의 시용 구역 범위를 생각해야
 	static Scanner sc = new Scanner(System.in);
+	static int login= -1; // 로그인 여부를 체크하기 위해서
 	
 	public static void main(String[] args) {
 		
 		while(true) {
-			//System.out.println(Arrays.toString(memberList));
+			System.out.println(Arrays.toString(memberList));
 			System.out.println("\n\n--------- 회원 시스템 ---------"); 
 			System.out.print("1.회원가입 2.로그인 3.아이디찾기 4.비밀번호찾기    선택> ");
 			int ch = sc.nextInt(); 
@@ -59,12 +62,13 @@ public class MemberSys {
 		System.out.print("아이디를 입력하세요"); String inputId = sc.next();
 		System.out.print("비밀번호를 입력하세요"); String inputPw = sc.next();
 		
-		int login= -1;
+		
 		
 		for(int i = 0; i < memberList.length; i++) {
 			
 			if( memberList[i] != null && memberList[i].id.equals(inputId)&& memberList[i].pw.equals(inputPw)) {
 				
+				//정적 멤버 변수에 로그인 성공한 인덱스를 넣어두기 >> 추후에 사용할 목적
 				login = i;	 // 조건을 일치하는 데이터를 찾으면  인덱스를  login 변수에 대입 
 			}			
 		}		
@@ -89,15 +93,14 @@ public class MemberSys {
 				
 				System.out.println(inputName +"님의 아이디는 :: " +memberList[i].id+"입니다");
 				
-				break;
+				return;
 				
-			} else {
-				
-				System.out.println(inputName +"님의 정보와 일치하는 데이터가 없습니다.");
-			}
+			} 			
+			
 		}		
 		
 		
+		System.out.println(inputName +"님의 정보와 일치하는 데이터가 없습니다.");		
 	} 
 	
 	
@@ -130,7 +133,7 @@ public class MemberSys {
 				
 				memberList[i].pw = newPw; 
 				
-				break;
+				return;
 				
 			} else {
 				
