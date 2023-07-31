@@ -46,9 +46,9 @@ public class Part4_03  {
 				
 			} //for e
 			
-			System.out.println(">>>>"); int ch = sc.nextInt();
+			System.out.println(">>>>선택"); int ch = sc.nextInt();
 			
-			if(ch == -1) {
+			if(ch == -1) { //제품등록
 				System.out.print("제품명  : "); String name = sc.next();
 				System.out.print("재고량  : "); int stock = sc.nextInt();
 				System.out.print("가  격  : "); int price = sc.nextInt();
@@ -60,7 +60,7 @@ public class Part4_03  {
 				System.out.println("제품이 등록되었습니다.");
 				
 				
-			} else if (ch >0 && ch <=product.length) {
+			} else if (ch >0 && ch <=product.length) { //제품선택
 				
 				String name = product[ch-1].split(",")[0];
 				int stock = Integer.parseInt(product[ch-1].split(",")[1]);
@@ -83,10 +83,10 @@ public class Part4_03  {
 				
 				for( int i = 0; i <product.length; i++) {
 				
-					outStr +=	product[i].split(",")[0] +
-								product[i].split(",")[1] +
-								product[i].split(",")[2] +
-								product[i].split(",")[3] ;
+					outStr +=	product[i].split(",")[0] +","+
+								product[i].split(",")[1] +","+
+								product[i].split(",")[2] +","+
+								product[i].split(",")[3] +"\n";
 					
 				} 
 				FileOutputStream fileOutputStream2 = new FileOutputStream(filePath);
@@ -94,7 +94,7 @@ public class Part4_03  {
 				
 
 				
-			} else if (ch==0) {
+			} else if (ch==0) { //결재
 				for( int i = 0; i <product.length; i++) {
 
 				
@@ -105,4 +105,4 @@ public class Part4_03  {
 		}
 		
 	}
-}
+	}}
