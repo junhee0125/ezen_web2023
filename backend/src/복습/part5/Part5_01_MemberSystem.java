@@ -50,9 +50,10 @@ public class Part5_01_MemberSystem {
 					
 					if( memberList[i] != null){
 						
-						if(memberList[i].equals(inputId) && memberList[i].equals(inputPw)) {
+						if(memberList[i].id.equals(inputId) && memberList[i].pw.equals(inputPw)) {
 							System.out.println("아이디 검토");
-							index = i; 	
+							index = i; 
+							break;
 						}
 						
 					} else {
