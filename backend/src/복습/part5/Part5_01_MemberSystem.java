@@ -9,7 +9,7 @@ public class Part5_01_MemberSystem {
 		
 		Part5_01_Member[] memberList = new Part5_01_Member[100]; 
 		Scanner in = new Scanner(System.in);
-		
+		 
 		while(true) {
 			
 			System.out.println("----------회원시스템-----------");
