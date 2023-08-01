@@ -78,7 +78,7 @@ header video {
 	width: 100%;
 	height: 100%;
 	object-fit:cover;
-	object-postion:center;
+	object-position:center;
 	filter:grayscale(100%);
 
 }
@@ -111,8 +111,15 @@ header video {
     }
      .grid-item {
         transition: .3s;
+        /*transform-origin: left top; 기준점*/
     }
     .grid-item:hover {
         filter: grayscale(0);
+        transform:scale(1.1); /* 1.1배로 사진 확대 */
+		box-shadow: 8px 8px 24px rgba(2,90,102,.6) inset;  /*<<<  inset : 안쪽그림자*/
+		/*이미지 바로 아래 2rem크기의 반투명 검은색 그림자*/
+        z-index:3;
+        position: relative;
 
     }
+}
