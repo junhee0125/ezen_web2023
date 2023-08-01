@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/*공통 */
+
+:root {
+    --text: #333;
+    --bg: #fff;
+    --video-opacity: .5;
+}
+
+html { font-size: 100%; }
+body {
+    color: var(--text);
+    background: var(--bg);
+    font-family: 'Bree Serif', sans-serif;
+    transition: .5s;
+}
+
+p {   line-height: 1.7; }
+img { max-width: 100%; }
+a:hover { color: #0bd; }
+
+
+/*header*/
+header {
+    position: relative;
+    margin-bottom: .5rem;
+}
+.header-text {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+}
+.header-title {
+    font-size: 2rem;
+}
+.header-name {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.header-link {
+    font-size: 1.25rem;
+}
+.header-pattern {
+    position: absolute;
+    z-index: 1;
+    background-size: auto auto;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--bg) 2px, var(--bg) 4px );
+}
+header video {
+    object-fit: cover;
+    object-position: center top;
+    opacity: var(--video-opacity);
+}
+.header-text,
+.header-pattern,
+header video {
+    width: 100vw;
+    height: 90vh;
+}
+
+/* 메인 */
+/* 그리드 */
+.grid{
+	display: grid;
+	width:94vw; /*부모사이즈*/
+	margin: 0 auto 3vw;
+    gap:2vw;
+    grid-template-columns:repeat(2 ,46vw); /*가로 2개 */
+    grid-template-rows:repeat(8,46vw); /*세로 8개(단)*/
+}
+
+.grid-item{
+	width: 100%;
+	height: 100%;
+	object-fit:cover;
+	object-postion:center;
+	filter:grayscale(100%);
+
+}
+
+.grid-big-top{
+    grid-column:1/3;
+    grid-row:2/3;
+}
+
+.grid-big-bottom{
+    grid-column:1/3;
+    grid-row:6/7;
+}
+
+
+/*
+*  DESK TOP
+*********/
+@media(min-width:600px){
+	.grid{
+	   width:80vw;
+	   gap:1vw;
+	   grid-template-columns:repeat(3,26vw);
+	   grid-template-rows:repeat(5,26vw);
+    }
+
+    .grid-big-bottom{
+	    grid-column:2/4;
+	    grid-row:4/5;
+    }
+     .grid-item {
+        transition: .3s;
+    }
+    .grid-item:hover {
+        filter: grayscale(0);
+
+    }
