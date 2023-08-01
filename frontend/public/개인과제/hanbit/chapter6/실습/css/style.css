@@ -19,6 +19,14 @@ p {   line-height: 1.7; }
 img { max-width: 100%; }
 a:hover { color: #0bd; }
 
+/*다크모드*/
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: #000;
+        --video-opacity: .7;
+    }
+}
 
 /*header*/
 header {
@@ -93,6 +101,14 @@ header video {
     grid-row:6/7;
 }
 
+/*라이트박스*/
+.lum-lightbox.lum-open {
+    z-index: 4; /* 맨앞에 보이게*/
+}
+.lum-lightbox-inner img { /*이미지의 최대크기 지정*/
+    max-width: 120vw;
+    max-height: 80vh;
+}
 
 /*
 *  DESK TOP

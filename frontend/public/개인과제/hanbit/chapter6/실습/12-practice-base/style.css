@@ -18,13 +18,15 @@ h1 {
     transition: .3s;
 
     /* 평상시에는 이미지에 세피아 필터 적용*/
-   
+     filter:sepia(100%);
+     transform-origin:left top;
 }
 
 /* 이미지에 커서를 갖다 대면 컬러로 바뀜 */
 .gallery-img:hover {
 
-       
+     filter:sepia(0);
     /* 이미지를 오른쪽으로 10도 기울임 */
+    transform:rotate(10deg);
 
 }
