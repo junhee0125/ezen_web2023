@@ -11,7 +11,7 @@ public class Part5_01_Member {
 	
 	
 	//생성자
-	
+	 
 	public Part5_01_Member() {	}
 	
 	public Part5_01_Member(String id, String pw, String name, String phone, int age) {

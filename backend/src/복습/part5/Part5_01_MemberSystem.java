@@ -16,7 +16,7 @@ public class Part5_01_MemberSystem {
 			System.out.print("1. 회원가입 2. 로그인   선택>>");
 			int ch= in.nextInt();
 			if(ch ==1) {
-				System.out.print("아이디  :");
+				System.out.print("아이디  :"); 
 				String inputId = in.next();
 				System.out.print("비밀번호  :");
 				String inputPw = in.next();
