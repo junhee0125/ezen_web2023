@@ -11,6 +11,7 @@ public class MemberSystem {
 		
 		//0. 여러개의 Member객체릐 길이가 100개의 배열선언
 		Member[] memberList = new Member[100]; 	// 스택 + 힙
+		
 		Scanner sc = new Scanner (System.in); // 스택 + 힙
 		
 		while(true) {
