@@ -26,7 +26,7 @@ public class Dao {
 			
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sqldb4web", "root", "1234");
 			
-			System.out.println("디비 연동성공");
+		//	System.out.println("디비 연동성공");
 		
 		} catch (Exception e) {
 			

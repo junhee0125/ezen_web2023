@@ -1,7 +1,10 @@
 package 과제.과제11.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import 과제.과제11.model.dto.BoardDto;
+import 과제.과제11.controller.BoardController;
 import 과제.과제11.controller.MemberController;
 import 과제.과제11.model.dto.MemberDto;
 
@@ -18,14 +21,18 @@ public class LoginPage {
 	// 1. loginMenu : 로그인햇을 때 메뉴
 	public void loginMenu() {
 		while(MemberController.getInstance().getLoginSession() !=0) {
+		
+		boardprint(); //로그인하고 들어오면 글목록이 보이게끔!!	
+			
 		System.out.println("\n\n===== ===== ===== =====");
-		System.out.println("1.로그아웃 |2.회원정보 | 3.글쓰기");
+		System.out.println("1.로그아웃 |2.회원정보 | 3.글쓰기 | 4.글조회");
 		
 		try {
 			int ch = sc.nextInt();
 			if(ch == 1 ) {MemberController.getInstance().logOut();}
 			if(ch == 2 ) {info();}
 			if(ch == 3 ) {boardWrite();}
+			if(ch == 4 ) {boardView();} 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("잘못된 입력입니다.");
@@ -84,14 +91,56 @@ public class LoginPage {
 	}	
 	// 5. boardWrite
 	public void boardWrite() {
+		sc.nextLine();
+		System.out.print("제목: "); 		String title = sc.nextLine();
+		System.out.print("내용 : "); 	String content = sc.nextLine();
+		
+		boolean result =  BoardController.getInstance().boardWrite(title, content);
+		if(result) {System.out.println("글쓰기 등록 성공");}
+		else { System.out.println("글쓰기 등록 실패 :  제목 1-50자까지 가능합니다.");}
 		
 	}
 	// 6. boardprint
+	/*
+	  	게시물1개 = 1개의  Dto = 1개의 레코드
+	  	모든 게시물을 가져올땐
+	  	여러개의 개시물, = 여러개의  dto = 여러개의  레코드를 가져와야..
+	  	어떻게?? 배열로.. 그중에서도 ArrayList[]로
+	 */
 	public void boardprint() {
 		
+		System.out.println("--------글 목록-------");
+		System.out.printf("%-3s %-4s %-19s %-10S  %-30s %-5s\n","no","view","date","mno","title","mid"); // -빼기넣으면 왼쪽 정렬
+		ArrayList<과제.과제11.model.dto.BoardDto> result = BoardController.getInstance().boardprint();
+		
+		for(int i=0 ;i <result.size();i++) {
+			BoardDto dto = result.get(i);
+			System.out.printf("%-3s %-4s %-19s %-10S %-30s %"
+					+ "-5s\n", 
+								dto.getBno(), dto.getBview(),dto.getBdate(), dto.getMno(),dto.getBtitle(), dto.getMid());
+		}
 	}
 	// 7. boardView
 	public void boardView() {
+		System.out.println("--------글 보 기-------");
+		System.out.print("조회할 글의 번호를 입력하세요.>>");
+		
+		int bno = sc.nextInt();
+		BoardDto result = BoardController.getInstance().boardView(bno);
+		
+		System.out.printf("bno: %3s | view: %3s  | mid : %10s  | date : %19s\n",
+				result.getBno(),
+				result.getBview(), 
+				result.getMid(), 
+				result.getBdate());
+		System.out.printf("title : %s \n" ,result.getBtitle());
+		System.out.printf("content :%s\n ", result.getBcontent());
+		
+		//추가메뉴
+		System.out.print( "1. 뒤로 가기 | 2. 수정 | 3 삭제 선택>>"); int ch = sc.nextInt();
+		if( ch == 1 ) {}
+		if( ch == 2 ) {boardUpdate();}
+		if( ch == 3 ) {boardDelete() ;}
 	
 	}
 	// 8. boardUpdate
@@ -99,5 +148,8 @@ public class LoginPage {
 		
 	}
 	// 9. boardDelete
+	public void boardDelete() {
+		
+	}
 }
 

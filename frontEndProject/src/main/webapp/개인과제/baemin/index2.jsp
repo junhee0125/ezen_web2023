@@ -1,0 +1,180 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배달의민족</title>
+<meta name="description" content="배달의민족 https://www.baemin.com/">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS -->
+<!-- destyle -->
+    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+<!-- 구굴폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+<!-- 미디어 -->
+    <link rel="style" href="style_max1024.css" media="(max-width:1024px)">
+    <link rel="style" href="style_max770.css" media="(max-width:770px)">
+
+    <link href="css/style.css2" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div>
+	        <img class="logo" src="images/logo@2x.50e61b82.png"/>
+	        <ul class="sns_link">
+	            <li><a href="https://www.facebook.com/smartbaedal"><img src="images/iconFacebook@2x.39a53731.png"></a></li>
+	            <li><a href="https://www.facebook.com/smartbaedal"><img src="images/iconInstagram@2x.e3298fae.png"></a></li>
+	            <li><a href="https://blog.naver.com/smartbaedal"><img src="images/iconBlog@2x.1715f6d8.png"></a></li>
+	            <li><a href="https://www.youtube.com/user/smartbaedal2"><img src="images/iconYoutube@2x.b2dfd774.png"></a></li>
+	       </ul>
+        </div>
+    </div>
+
+    <section class="bm_intro">
+        <img src="images/rider-button-pc@2x.829d5476.png" class="in_rider"></div>
+        <div class="main">
+	        <div class="intro comment"></div>
+	        <div class="bottom">
+	            <div class="app_down">
+	                <div class="text">앱스토어 다운로드</div>
+	                <div class="wrap_down">
+	                   <div class="app"></div>
+	                   <div class="google"></div>
+	                </div>
+	            </div>
+	            <div class="qr_down">
+	                <div class="text">QR코드 다운로드</div>
+	                <div><img src="images/qrcode@3x.a0eff19c.png"></div>
+	            </div>
+	        </div>
+        </div>
+        <div class="scroll"><img src="images/scroll@2x.abce750c.png"></div>
+    </section>
+    <!-- 배민자랑 -->
+    <section class="comm bm_info">
+         <div class="content">
+            <div class="info_comment"></div>
+           <p id = "test">hello</p>
+            <div>
+                <p class="desc">3천만 이상이 선택한 배달의 민족,<br/>
+                        업계 최다 배달가능 업소 보유 중! </p>
+                <p class="desc sdesc">(2017년 11월 기준)</p>
+            </div>
+            <div class="img_info"><img src="images/img-bike@2x.6b1bd9ea.png"></div>
+         </div>
+    </section>
+
+    <!-- 배달 -->
+    <section name="delivery" onload="showImg()" class="comm bm_delivery">
+        <div class="content">
+            <div class="delivery_comment"></div>
+            <div>
+                <p class="desc">배달이 안되던 동네 맛집까지~<br/>
+                배민1'이 직접 배달해드립니다.</p>
+                <p class="desc sdesc">서울 전지역, 경기 및 광역시 일부 지역에서<br/>
+                서비스 이용 가능!</p>
+            </div>
+            <div class="img_info"><img  class="showup" src="images/img-people@2x.d17b2c3e.png"></div>
+         </div>
+    </section>
+
+    <!-- 배민선물 -->
+    <section class="comm bm_gift">
+        <div class="content">
+            <div class="gift_comment"></div>
+            <div>
+                <p class="desc">지금 밥 한끼 보내주고 싶은 분께<br/>
+                배민 상품권을 선물하세요 </p>
+<!--                 <p><img src="images/btn_b2b@2x.2f0233b5.png"></p> -->
+            </div>
+
+            <div class="img_info"><img src="images/img-present@2x.bdda48f6.png"></div>
+         </div>
+    </section>
+    <!-- 배민 쇼핑라이브 -->
+    <section class="comm bm_live">
+        <div class="content">
+            <div class="live_comment"></div>
+            <div>
+                <p class="desc">궁금한 맛은 직접 물어보고, 구경하는 재미<br/>
+                이제 배민에서 생생하게 경험하세요</p>
+            </div>
+            <div class="img_info"><img src="images/img-shoppinglive_re.1b21d479.png"></div>
+         </div>
+    </section>
+    <!-- 배민마트 -->
+    <section class="comm bm_mart">
+        <div class="content">
+            <div class="mart_comment"></div>
+            <div>
+                <p class="desc">마트까지 가지 않아도, 기다리지 않아도<br/>
+                주문하신 상품을 바로 배달해드립니다.</p>
+                <p class="desc sdesc">서울 전지역, 경기일부 지역에서<br/>
+                서비스 이용 가능!</p>
+            </div>
+            <div class="img_info"><img src="images/bmart_rider@2x.7cc154af.png"></div>
+         </div>
+    </section>
+    <!-- 배민결제 -->
+    <section class="comm bm_pay">
+        <div class="content">
+            <div class="pay_comment"></div>
+            <div>
+                <p class="desc">배민페이, 네이버페이 등은 물론<br/>
+                각종 신용카드까지 결제 가능</p>
+            </div>
+            <div class="img_info"><img src="images/img-flag@2x.128e9e2d.png"></div>
+         </div>
+    </section>
+    <section class="footer">
+        <div class="footer_wrap">
+            <div class="footer_l">
+                <div class="family">
+                    <span class="family_l"><img src="images/link_woowahan@2x.69a0a94b.png"/></span>
+	                <span class="family_r"><img src="images/link_ceosite@2x.f254168d.png"/></span>
+	                <span class="family_l"><img src="images/link-store@2x.1f093372.png"/></span>
+	                <span class="family_r"><img src="images/link-rider@2x.38af1398.png"/></span>
+	            </div>
+	            <ul>
+	                <li><a href=""><img src="images/icon-facebook@2x.c4e26c61.png"/></a>
+	                <li><a href=""><img src="images/icon-instagram@2x.f51d5d1a.png"/></a>
+	                <li><a href=""><img src="images/icon-blog@2x.9ddad38d.png"/></a>
+	                <li><a href=""><img src="images/icon-youtube@2x.fc2b4f4c.png"/></a>
+	            </ul>
+	            <div>
+	                <p>(주)우아한형제들 <br/>
+	                            서울시 송파구 위례성대로 2 장은빌딩 2층</p>
+	                <p> 사업자번호 : 120-87-65763 <a href="">사업자 정보 확인 </a><br/>
+	                        통신판매업 : 서울 송파-0515
+
+	                </p>
+	                <p>전자금융분쟁처리 <br/>
+	                   TEL : 1600-0987 &nbsp;&nbsp;&nbsp;&nbsp; FAX : 050-6050-0400 <br/>
+	                    MAIL : &nbsp;<a href="mailto:help@woowahan.com">help@woowahan.com</a>
+	                </p>
+
+	            </div>
+            </div>
+            <ul class="footer_r">
+	           <li class="fcomment"><img src="images/footer-title@2x.9dff9b13.png"/></li>
+	           <li class="fdownload"><img src="images/btn-download-black-pc@3x.657ce9d7.png"/></li>
+	        </ul>
+
+    </div>
+
+
+
+    </section>
+
+
+
+</div>
+
+<script src="js/script.js"type="text/javascript"></script>
+</body>
+</html>
