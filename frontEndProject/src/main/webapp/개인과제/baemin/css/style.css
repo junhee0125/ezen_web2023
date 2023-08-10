@@ -12,20 +12,19 @@
 
 html {
     font-size: 100%;
-    scroll-behavior: smooth;
+/*     scroll-behavior: smooth; */
 }
 body{
- -ms-overflow-style: none;
+/*  -ms-overflow-style: none; */
  }
 
 ::-webkit-scrollbar {
-  display: none;
+/*   display: none; */
 }
 
 .container{
 	width:100vw;
-	overflow: auto;
-    scroll-snap-type: y mandatory;
+	overflow: hidden;
     height: 100vh;
     position: relative;
 
@@ -33,7 +32,6 @@ body{
 section {
 	width:100vw;
 	height: 100vh;
-	scroll-snap-align:start;
 /*     transition:.5s; */
 
 }
