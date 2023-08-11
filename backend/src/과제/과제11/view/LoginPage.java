@@ -48,17 +48,18 @@ public class LoginPage {
 		MemberDto result=  MemberController.getInstance().info();
 		
 		//2. 반환받은 회원정보객체[memberDto]의 각 필드 출력
-		System.out.println("\n\n========if ========");
+		System.out.println("\n\n========== 회 원 정 보 ==========");
 		System.out.println("아이디 : " + result.getMid());
 		System.out.println("이름 : " + result.getMname());
 		System.out.println("전화번호 : "+ result.getMphone());
 		
 		//서브메뉴
-		System.out.print("1. 비밀번호수정 2.회원탈퇴 3.뒤로가기 선택>>");
+		System.out.print("1. 비밀번호수정 2.회원탈퇴 3.뒤로가기 4. 쪽지확인  선택>>");
 		int ch = sc.nextInt();
 		if( ch == 1 ) {infoUpdate();}
 		if( ch == 2 ) {infoDelete();}
 		if( ch == 3 ) {return;}
+		if( ch ==4) {checkPostMessage(result.getMno(),result.getMid());}
 		
 	}
 	// 3. infoUpdate: 비밀번호 수정
@@ -137,19 +138,87 @@ public class LoginPage {
 		System.out.printf("content :%s\n ", result.getBcontent());
 		
 		//추가메뉴
-		System.out.print( "1. 뒤로 가기 | 2. 수정 | 3 삭제 선택>>"); int ch = sc.nextInt();
+		System.out.print( "1. 뒤로 가기 | 2. 수정 | 3 삭제  | 4. 쪽지보내기 선택>>"); int ch = sc.nextInt();
 		if( ch == 1 ) {}
-		if( ch == 2 ) {boardUpdate();}
-		if( ch == 3 ) {boardDelete() ;}
+		if( ch == 2 ) {boardUpdate(result.getBno(), result.getMno());}
+		if( ch == 3 ) {boardDelete(result.getBno(), result.getMno()) ;}
+		if( ch == 4 ) {sendPostMessage(result.getBno(),result.getMno());}
 	
 	}
 	// 8. boardUpdate
-	public void boardUpdate() {
+	public void boardUpdate(int bno,int mno) {
+		System.out.println("------- 글 수정 ---------");
+		sc.nextLine();
+		System.out.print("제목 : ");
+		String btitle = sc.nextLine();
+		System.out.println("내용 : ");
+		String bcontent = sc.nextLine();
 		
+		int result = BoardController.getInstance().boardUpdate(bno,mno ,btitle, bcontent);
+		if(result ==1 ) {System.out.println("수정이 완료되었습니다.");}
+		else if(result== 2) { System.out.println("글 수정하기 정상처리 되지 않았습니다. : 관리자에게 문의");}
+		else if( result == 3) { System.out.println("[삐~익] 작성자만 글 수정할 수 있어요.");}
+		else if( result == 4) { System.out.println("[삐~익] 제목은 1-50자 사이로 입력해주세요.");}
+
 	}
 	// 9. boardDelete
-	public void boardDelete() {
+	public void boardDelete(int bno,int mno) {
+		System.out.println("------- 글 수정 ---------");
 		
+		int result = BoardController.getInstance().boardDelete(bno,mno);
+		if(result ==1 ) {System.out.println("수정이 완료되었습니다.");}
+		else if(result== 2) { System.out.println("글 수정하기 정상처리 되지 않았습니다. : 관리자에게 문의");}
+		else if( result == 3) { System.out.println("[삐~익] 작성자만 글만 삭제할 수 있어요.");}
+		
+	}
+	
+	//쪽지확인
+	public void checkPostMessage(int mno, String myid) {
+		System.out.println("\n\n--------------------- 쪽지확인 --------------------------");
+		
+		ArrayList<BoardDto> result = BoardController.getInstance().checkPostMessage(mno);
+		if(!result.isEmpty()) {
+
+			System.out.printf(" %-4s | %-19s | %10s | %10s\n","쪽지번호","보낸날짜","보낸사람","받는사람");
+			System.out.println("-----------------------------------------------------------------------");
+			for(int i =0 ; i<result.size();i++) {
+				BoardDto dto = result.get(i);
+				String recieverId ="";
+				String senderId="";
+				
+				if(mno == dto.getPreciver()) {
+					senderId = BoardController.getInstance().FindOther(dto.getPsender());
+					recieverId = myid;
+				} else if( mno== dto.getPsender()) {
+					recieverId = BoardController.getInstance().FindOther(dto.getPreciver());
+					senderId = myid;
+				}
+				
+				System.out.printf(" %4s| %-19s | %10s| %10s\n",dto.getPno(), dto.getPdate(), senderId, recieverId);
+				System.out.println("내용 :" + dto.getPcontent());
+				System.out.println("-----------------------------------------------------------------------");
+				
+			}	
+				
+		}
+		else  {System.out.println("쪽지함이 비어있습니다.");}
+	}
+	//쪽지 출력하기
+	public void PostMessagePrint(int mno) {
+		
+	}
+	//쪽지보내기
+	public void sendPostMessage(int bno, int mno) {
+		System.out.println("------- 쪽지 보내기--------");
+		sc.nextLine();
+		System.out.println("내용 : ");
+		String pcontent = sc.nextLine();
+		
+		int result = BoardController.getInstance().sendPostMessage(bno, mno ,pcontent);
+		if( result == 1) {System.out.println(" 쪽지전송 완료!!");}
+		if( result == 2) {System.err.println(" 쪽지전송 실패 !! : 관리자에게 문의");}
+		if( result == 3) {System.err.println(" 내용을 입력하지 않았습니다.");}
+		if( result == 4) {System.err.println(" 로그인되지 않은 상태입니다!!");}
 	}
 }
 

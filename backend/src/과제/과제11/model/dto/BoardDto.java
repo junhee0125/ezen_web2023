@@ -11,6 +11,14 @@ public class BoardDto {
 	//화면에 작성자를 회원번호가 아닌 회원의 다른 정보 출력 : 예) 작성자에 회원번호대신, 아이디나 이름...
 	//테이블을 나누는 이유는 중복을 제거하기 위해서
 	private String mid; //회원번호를 이용한 회원테이블에서 조회가능 [테이블 합치기 join
+	
+	//쪽지용
+	private int pno;
+	private String pcontent;
+	private int psender;	//보낸사람
+	private int preciver;	//받는사람
+	private String pdate;   //보낸날짜시간
+	
 	                                          
 	// 2. 생성자
 	//빈생서자
@@ -18,7 +26,9 @@ public class BoardDto {
 		// TODO Auto-generated constructor stub
 	}
 	
-	//풀생서
+	// 풀생성자
+	
+	//보드필드 풀생성자
 	public BoardDto(int bno, String btitle, String bcontent, String bdate, int bview, int mno, String mid) {
 		super();
 		this.bno = bno;
@@ -38,14 +48,38 @@ public class BoardDto {
 		this.bcontent = bcontent;
 		this.mno = mno;
 	}
-
 	
+	//글수정용	
+	public BoardDto(int bno, String btitle, String bcontent) {
+		super();
+		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+	}
+	
+	// 쪽지보내기
+	public BoardDto(int bno, int mno, String pcontent) {
+	super();
+	this.bno = bno;
+	this.mno = mno;
+	this.pcontent = pcontent;
+}
+	//쪽지가져오기
+	public BoardDto(int bno, int pno, String pcontent, int psender, int preciver, String pdate) {
+		super();
+		this.bno = bno;
+		this.pno = pno;
+		this.pcontent = pcontent;
+		this.psender = psender;
+		this.preciver = preciver;
+		this.pdate = pdate;
+	}	
 	
 	// 3.  메소드
 	public int getBno() {
 		return bno;
-	}
-	
+	}	
+
 	public void setBno(int bno) {
 		this.bno = bno;
 	}
@@ -84,6 +118,46 @@ public class BoardDto {
 	}
 	public void setMid(String mid) {
 		this.mid = mid;
+	}
+
+	public int getPno() {
+		return pno;
+	}
+
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
+
+	public String getPcontent() {
+		return pcontent;
+	}
+
+	public void setPcontent(String pcontent) {
+		this.pcontent = pcontent;
+	}
+
+	public int getPsender() {
+		return psender;
+	}
+
+	public void setPsender(int psender) {
+		this.psender = psender;
+	}
+
+	public int getPreciver() {
+		return preciver;
+	}
+
+	public void setPreciver(int preciver) {
+		this.preciver = preciver;
+	}
+
+	public String getPdate() {
+		return pdate;
+	}
+
+	public void setPdate(String pdate) {
+		this.pdate = pdate;
 	}
 
 	@Override

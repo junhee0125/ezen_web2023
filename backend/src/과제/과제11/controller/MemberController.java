@@ -38,7 +38,7 @@ public class MemberController {
 	
 	
 	public int getLoginSession() {
-		System.out.println("loginSession : "+loginSession);
+		//System.out.println("loginSession : "+loginSession);
 		return loginSession;
 	}
 //	public void setLoginSession(int loginSession) {

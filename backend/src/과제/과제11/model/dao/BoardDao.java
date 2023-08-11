@@ -108,11 +108,108 @@ public class BoardDao extends Dao {
 	}
 	
 	// 4. boardUpdate
-	public void boardUpdate() {
+	public int boardUpdate(BoardDto boardDto) {
+			System.out.println("I am DAO  # bno: "+boardDto.getBno()+" | #title : "+boardDto.getBtitle()+" | # content :"+boardDto.getBcontent());
+		try {
+			
+			String sql = "update board set btitle = ?, bcontent = ? where bno = ? ";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, boardDto.getBtitle());
+			ps.setString(2, boardDto.getBcontent());
+			ps.setInt(3,boardDto.getMno());
+			int row  = ps.executeUpdate();
+			if(row == 1 ) {return 1;}
+			/*
+			 	update or delete를 실행할경우
+				실패인 경우에도 성공 메시지를 반환함
+				하지만 int row  = ps.executeUpdate(); ㅇ이렇게 받으면
+				실패한 경우 row는  0 값을 갖는다.
+				반대로 1개의 데이터를 삭제, 수정한경우 1의 값을 반환한다.
+			*/
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 2;		
 		
 	}
 	// 5. boardDelete
-	public void boardDelete() {
+	public int boardDelete(int bno) {
+		
+		try {
+			String sql = "delete  * from board  where bno = ?";
+			ps= conn.prepareStatement(sql);
+			ps.setInt(0, bno);
+			int row = ps.executeUpdate();
+			if(row == 1) {return 1;}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		return 2;
 		
 	}
+
+	
+	//쪽지보내기
+	public boolean sendPostMessage(BoardDto dto, int senderNo) {
+		try {
+			
+			String sql = "insert into postmessage(psender, preciver,pcontent,bno) values (?,?,?,?) ";
+			
+			ps= conn.prepareStatement(sql);
+			ps.setInt(1, senderNo);
+			ps.setInt(2, dto.getMno());
+			ps.setString(3, dto.getPcontent());
+			ps.setInt(4, dto.getBno());
+			
+			int row = ps.executeUpdate();
+			if(row ==1) { return true; }		
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} return false;
+	}
+	
+	public ArrayList<BoardDto> checkPostMessage(int mno) {
+		ArrayList<BoardDto> list = new ArrayList<>(); //여러개 BoardDto를 저장할 리스크 객체 선언
+
+		try {
+			
+			String sql = "select bno, pno, pcontent, psender, preciver, pdate from postmessage where preciver = ? or psender = ?";
+			ps= conn.prepareStatement(sql);
+			ps.setInt(1,mno);
+			ps.setInt(2, mno);
+			rs = ps.executeQuery();
+			//	public BoardDto(int bno, int pno, String pcontent, int psender, int preciver, String pdate) {
+			while(rs.next()) {
+				BoardDto dto = new BoardDto(rs.getInt(1), rs.getInt(2),rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getString(6));
+				list.add(dto);
+			}
+			//System.out.println("row : "+ rs.next());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public String FindOther(int mno) {
+		try {
+			String sql = "select mid from member where mno =?";
+			ps=conn.prepareStatement(sql);
+//			System.out.println("ps : "+ ps);
+			ps.setInt(1, mno);
+			rs = ps.executeQuery();
+			//System.out.println("rs.getString(1); : "+ rs.getString(1));
+			if(rs.next()) {return rs.getString(1);}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 }

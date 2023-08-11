@@ -33,11 +33,43 @@ public class BoardController {
 	}
 	
 	// 4. boardUpdate
-	public void boardUpdate() {
+	public int boardUpdate(int bno, int mno, String title, String content ) {
+		//System.out.println("I am CONTROL  # bno: "+bno+ " | #title : "+title+" | # content :"+content);
+		
+		if(title.length() ==0 || title.length() > 50) {return 4;}
+		
+		if(MemberController.getInstance().getLoginSession() != mno) {return 3;}
+		else {
+			return BoardDao.getInstance().boardUpdate(new BoardDto(bno,title, content));
+		}
 		
 	}
 	// 5. boardDelete
-	public void boardDelete() {
+	public int boardDelete(int bno, int mno) {
 		
+		if(mno != MemberController.getInstance().getLoginSession()) return 3;
+		return BoardDao.getInstance().boardDelete(bno);
+		
+	}
+	
+	// 쪽지 보내기
+	public int sendPostMessage(int bno, int mno, String pcontent) {
+		
+		int psender = MemberController.getInstance().getLoginSession();
+		if(psender <= 0) {return 4;}
+		if(pcontent == ""|| pcontent == null) {return 3;}
+		BoardDto dto = new BoardDto(bno, mno, pcontent);
+		boolean result = BoardDao.getInstance().sendPostMessage(dto,psender);
+		if(result) {return 1;} 
+		else { return 2;}		
+	}
+	//
+	public ArrayList<BoardDto> checkPostMessage(int mno) {
+		return BoardDao.getInstance().checkPostMessage(mno);
+	}
+	
+	public String FindOther(int mno) {
+	//	System.out.println("나는 컨트롤 FindOther(int mno) " + mno);
+		return BoardDao.getInstance().FindOther(mno);
 	}
 }
