@@ -2,6 +2,13 @@
 *{margin:0;  padding:0;}
 li{list-style: none;}
 a{text-decoration: none;}
+
+body {	/* 드래그 방지*/
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
 /*  color   */
 :root {
     --mtext: #333;
