@@ -44,6 +44,16 @@ body {	/* 드래그 방지*/
     width:100%;
     height:100%;
     animation:1s linear 0s 1 normal forwards running zoomin;
+    /*
+    	1s : 지속시간
+    	linear: 일정한 속도로 진행하는
+    	0s: 시작지연시간 0초
+    	1 : 애니메이션 1번 반복
+    	normal : 애니메이션 재생방향은 정방향
+    	forwards :애니메이션 종료후 마지막 상태로 유지
+    	running : 애니메이션 실행
+    	zoomin : 애니메이션 이름
+    */
     position: absolute;
 }
 @keyframes zoomin{
@@ -94,4 +104,32 @@ body {	/* 드래그 방지*/
 .qr_down img{
     height:20vh;
     object-fit :cover;
+}
+
+/*[하당중앙 "스크롤" 이미지]*/
+.scrollimg {
+	position: fixed;
+	width:68px;
+	height:68px;
+	bottom:3%;
+	left:45%;
+	animation:0.5s ease 0s 3 normal none running jump;
+	/*
+		0.5s 애니메이션 지속시간 0.5초
+		ease : 시작과 끝이 천천히 변화
+		0s : 시작시 지연시간 0초
+		3 : 3번반복
+		normal : 재생방향은 정방향
+		none : 애니메이션이 실행되지 않을때 기본상태로 돌아감
+		running : 애니메이션 실행
+		jump : 에니메이션 이름
+	*/
+}
+
+@keyframes jump{
+	0%{ transform:translateY(0px);}
+	40%{ transform:translateY(-30px);}
+	50%{ transform:translateY(0px);}
+	60%{ transform:translateY(-15px);}
+	100%{ transform:translateY(0px);}
 }
