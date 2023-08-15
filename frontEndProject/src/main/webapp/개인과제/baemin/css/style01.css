@@ -58,7 +58,7 @@ body {
 	*/
 }
 .intro{
-	background: url(../images/main.jpg);
+	background: url(../images/main01.jpg);
     background-position: center center;
     background-size: cover;
     z-index:-1;
@@ -171,10 +171,10 @@ body {
 	position: absolute;
 	right:25.5%;
     bottom: 0px;
-    animation:0.8s ease 0s 1 normal forwards running comeup;
+    animation:0.8s ease 0s 1 normal forwards running move_up;
 }
 .ani03{}
-@keyframes comeup{
+@keyframes move_up{
 	0%{
 	   transform:translateY(100%);
 	   opacity:0;
@@ -198,7 +198,7 @@ body {
     position: absolute;
     right:23.5%;
     bottom: 0px;
-    animation:0.8s ease 0s 1 normal forwards running comeup;
+    animation:0.8s ease 0s 1 normal forwards running move_up;
 
 }
 /*---------- # 5 ------------*/
@@ -209,10 +209,10 @@ body {
     position: absolute;
     right:23.5%;
     bottom: 0px;
-    animation:0.8s ease 0s 1 normal forwards running comeup;
+    animation:0.8s ease 0s 1 normal forwards running move_left;
 }
 
-@keyframes comeup{
+@keyframes move_left{
     0%{
        transform:translateX(100%);
        opacity:0;

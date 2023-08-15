@@ -13,7 +13,28 @@ console.log("JS연결");
  */
 let i = 1; // 현재 페이지 초기값 설정
 let isWheeling = false;
+let bgimgList=['main_01.jpg','main_02.jpg','main_03.jpg','main_04.jpg','main_05.jpg'];
+let bgtxtList=['main_text_01.png','main_text_02.png','main_text_03.png','main_text_04.png','main_text_05.png'];
 
+// # 1 백그라운드 이미지 랜덤하게 가져오기
+//let currentImg = 1 ; // 현재 보여지는 bgImg
+
+
+	let currentImg = document.querySelector('.intro');
+	let currentTxt = document.querySelector('.mtxt');
+
+	let rNum = Math.floor(Math.random() * 5); //0~4
+	//console.log("rNum : "+rNum);
+	currentImg.style.backgroundImage = `url(./images/${bgimgList[rNum]})`;
+	currentTxt.src = `./images/${bgtxtList[rNum]}`;
+	//console.log("currentImg  :" + currentImg);
+	//console.log("currentTxt  :" +currentTxt.src);
+
+
+
+// # 휠이벤트 : 마우스 휠이 아래 혹은 위쪽 방향으로 스크롤되면 디바이스 innerHeight만큼 이동
+// : 휠이(드르륵) 여러번 움직여질 경우 처음의 움직임을 한번으로 카운트함.
+// 스크롤이 될때 페이지에 따라 감추거나 나타나게 할 요소들 처리
 function handleWheel(event) {
 	if (isWheeling) return; //isWheeling= true이면 함수종료
 	//console.log("isWheeling1" +isWheeling);
@@ -45,9 +66,6 @@ function handleWheel(event) {
 			document.querySelector('.pnav').style.opacity = 0;
 		}
  	}
-
-
-
 
 
 	  // 페이지의 높이만큼 스크롤 이동
@@ -82,19 +100,4 @@ function handleWheel(event) {
 	// wheel 이벤트 리스너 등록
 window.addEventListener('wheel', handleWheel);
 
-// # 1 백그라운드 이미지 랜덤하게 가져오기
 
-function setAtt(i){
-
-	let rider = document.querySelector('.rider');
-	if (i > 0){
-
-		rider.classList.add('animate');
-		rider.style.opacity = 0;
-	} else {
-		rider.classList.remove('animate');
-		rider.style.opacity = 1;
-	}
-
-
-}
