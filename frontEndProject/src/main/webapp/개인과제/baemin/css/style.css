@@ -15,7 +15,7 @@ html {
 /*     scroll-behavior: smooth; */
 }
 body{
-/*  -ms-overflow-style: none; */
+ -ms-overflow-style: none;
  }
 
 ::-webkit-scrollbar {

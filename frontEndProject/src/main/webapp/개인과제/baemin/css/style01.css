@@ -3,12 +3,20 @@
 li{list-style: none;}
 a{text-decoration: none;}
 
-body {	/* 드래그 방지*/
+body {
+/* 드래그 방지*/
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
-  user-select:none
+  user-select:none;
+ /*스크롤바 삭제*/
+  -ms-overflow-style: none;
+
 }
+::-webkit-scrollbar {
+  display: none;
+}
+
 /*  color   */
 :root {
     --mtext: #333;
@@ -30,19 +38,32 @@ body {	/* 드래그 방지*/
     color:#fff;
 
 }
-/* [ # 1 ]----------------------*/
+/*---------- # 1 ------------*/
 .wrap {
 	width:1024px;
 	padding: 165px 50px 0;
 	margin: 0 auto;
+	box-sizing:border-box;
+	/*
+	 # box-sizing
+    - content-box
+         기본값, 요소의 너비와 높이는 내부 콘텐츠의 크기만
+         패딩과 보더 불포.
+    - padding-box:
+        요소의 너비와 높이에는 내부 콘텐츠와 패딩이 포함
+        보더는 불포.
+    - border-box:
+        요소의 너비와 높이에는 내부 콘텐츠, 패딩, 보더까지 포함.
+        크기계산 용이
+	*/
 }
 .intro{
 	background: url(../images/main.jpg);
     background-position: center center;
     background-size: cover;
     z-index:-1;
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
     animation:1s linear 0s 1 normal forwards running zoomin;
     /*
     	1s : 지속시간
@@ -60,7 +81,7 @@ body {	/* 드래그 방지*/
 	0%{transform:scale(1.5);}
 	100%{transform:scale(1);}
 }
-.mention{ width:45%; z-index:1;}
+.mention{ width:50%; z-index:1;}
 .mention img {
 	object-fit:contain;    /*필수*/
 	width:100%;            /*필수*/
@@ -106,13 +127,297 @@ body {	/* 드래그 방지*/
     object-fit :cover;
 }
 
+/*---------- # 2 ------------*/
+.desc {
+	margin-top: 1%;
+	line-height: 1.38;
+}
+.smalldesc{
+	margin-top:10px;
+	font-size: 14px;
+	opacity:0.7;
+}
+.animation{
+	position:absolute;
+	bottom:18%;
+	right:20%;
+	width:34%;
+	z-index:2;
+	animation:0.8s ease 0s 1 normal forwards running bike;
+}
+@keyframes bike{
+	0%{
+	   transform:translateX(0px) translateY(0px);
+	}
+	100%{
+	   transform:translateX(12%) translateY(13%);
+	}
+}
+.animationbg{
+	width:700px;
+	position: absolute;
+	bottom: 7%;
+	right: 13%;
+}
+.pic {
+	object-fit:contain;
+	display:flex;
+	width:100%;
+	height:auto;
+}
+/*---------- # 3 ------------*/
+.people{
+	width:33%;
+	position: absolute;
+	right:25.5%;
+    bottom: 0px;
+    animation:0.8s ease 0s 1 normal forwards running comeup;
+}
+.ani03{}
+@keyframes comeup{
+	0%{
+	   transform:translateY(100%);
+	   opacity:0;
+	}
+	100%{
+	   transform:translateY(0px);
+	   opacity:1;
+	}
+}
+/*---------- # 4 ------------*/
+.gift{
+	margin-top: 25px;
+	width:233px;
+	background-color: rgb(42,193,188);
+	display: inline-block;
+	cursor: pointer;
+	transform:translateX(-7px);
+}
+.bgift{
+	width:33%;
+    position: absolute;
+    right:23.5%;
+    bottom: 0px;
+    animation:0.8s ease 0s 1 normal forwards running comeup;
+
+}
+/*---------- # 5 ------------*/
+
+/*---------- # 6 ------------*/
+.bmart{
+	width:33%;
+    position: absolute;
+    right:23.5%;
+    bottom: 0px;
+    animation:0.8s ease 0s 1 normal forwards running comeup;
+}
+
+@keyframes comeup{
+    0%{
+       transform:translateX(100%);
+       opacity:0;
+    }
+    100%{
+       transform:translateX(25%);
+       opacity:1;
+    }
+}
+/*---------- # 7 ------------*/
+
+/*-------- # FOOTER ----------*/
+.footer_wrap{
+    padding:7rem 3rem 0 3rem;
+    display: flex;
+    justify-content:space-between;
+    width:48vw;
+    margin: 0 auto;
+/*  border: solid 1px; */
+}
+.footer_l{
+    width:20vw;
+}
+.footer_l span{
+    display:inline-block;
+    height:2.5rem;
+}
+.footer_l img {
+    object-fit:cover;
+    height:1.5rem;
+}
+.family{
+    width:20vw;
+    display: flex;
+    justify-content:left;
+    flex-wrap: wrap;
+}
+.family_l{ width:40%}
+.family_r{ width:40%}
+.footer_l ul{
+    margin:3rem 0 25rem ;
+    display: flex;
+    justify-content:space-between;
+    width:15vw;
+}
+.footer_l ul img{
+   object-fit:cover;
+   height:2rem;
+}
+.footer_l p{
+    font-size: .9rem;
+    font-color:var(--ftext);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+.footer_r{
+    width:20vw;
+}
+.fcomment { margin-bottom: 2rem;}
+.fcomment img{
+    object-fit:cover;
+    height:15rem;
+}
+.fdownload img{
+    object-fit:cover;
+    height:3rem;
+}
+
+/* 상단 Navigator - 로고 + SNS */
+.hnav{
+	position:fixed;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	top:0;
+    left:50%;                   /* 가운데 정렬 */
+    transform:translateX(-50%); /* 가운데 정렬 */
+	width:1024px;
+	box-sizing: border-box;/*콘테츠+패딩+테두리포함*/
+	padding: 60px 173px 0px 50px;
+	opacity: 0;
+	animation:1s ease 0.3s 1 normal forwards running navshow;
+}
+@keyframes navshow{
+	0%{
+	   opacity:0;
+	   visibility:hidden; /*요소를 보이거나 숨기기*/
+	}
+	100%{
+       opacity:1;
+       visibility:visible;
+    }
+}
+
+.logo{
+	width:28%;
+	height:auto;
+	object-fit:contain;
+	max-width: 142px;
+}
+.hnav div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.stickbtn{
+	width:140px;
+	height:48px;
+	margin-right: 26px;
+	background-image: url('../images/btn-download-white@3x.5de1ad9a.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:transparent;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    opacity: 0;
+}
+.sns_link{
+	display:flex;
+	min-height:48px;
+}
+.sns_link li{
+	width:50px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.sns_link li:first-child{
+	width: 45px;
+	margin: 0px;
+}
+.sns_link li:not(:last-child){
+	/* not()
+	  가상 클래스 선택자
+	  괄호 안에 지정된 조건을 만족하지 않는 요소를 선택.*/
+	margin-right: 5px;
+}
+
+/* - 우측상단 이미지 - */
+.offer_rider{
+	position: fixed;
+	top:0%;
+	right:9%;
+	display:block;
+	opacity:0;
+    animation:0.5s ease-in-out 0.3s 1 normal forwards running rshow;
+}
+@keyframes rshow{
+    0%{
+       opacity:0;
+       visibility:hidden; /*요소를 보이거나 숨기기*/
+    }
+    100%{
+       opacity:1;
+       visibility:visible;
+    }
+}
+
+.rider{
+    position: fixed;
+    display:flex;
+	width:173px;
+	height:226px;
+	opacity:1;
+	transition: opacity 0.5s ease;
+}
+
+
+.offer_rider img{
+	object-fit:contain;
+	width: 100%;
+	height: auto;
+
+}
+/* #2 ~#7 우측 페이지네이션*/
+.pnav{
+	position: fixed;
+	top:47%;
+	right:11%;
+	opacity:0;
+	trasition:opacity 0.5s ease-in-out-0.3s;
+}
+.pnav li ~ li{ margin-top: 10px;}
+.pagination{
+	display: block;
+	width:24px;
+	height:24px;
+	background: url('../images/dotScroll.png');
+/* 	background: url('../images/dotSelect.png'); */
+	background-position: 0% 0%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    outline:none;
+    border:none;
+}
+
 /*[하당중앙 "스크롤" 이미지]*/
 .scrollimg {
 	position: fixed;
 	width:68px;
 	height:68px;
 	bottom:3%;
-	left:45%;
+	left:48%;
 	animation:0.5s ease 0s 3 normal none running jump;
 	/*
 		0.5s 애니메이션 지속시간 0.5초
@@ -133,3 +438,4 @@ body {	/* 드래그 방지*/
 	60%{ transform:translateY(-15px);}
 	100%{ transform:translateY(0px);}
 }
+
