@@ -387,7 +387,6 @@ body {
 	object-fit:contain;
 	width: 100%;
 	height: auto;
-
 }
 /* #2 ~#7 우측 페이지네이션*/
 .pnav{
@@ -409,6 +408,7 @@ body {
     background-repeat: no-repeat;
     outline:none;
     border:none;
+    cursor: pointer;
 }
 
 /*[하당중앙 "스크롤" 이미지]*/

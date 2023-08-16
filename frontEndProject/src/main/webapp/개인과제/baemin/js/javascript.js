@@ -103,11 +103,38 @@ window.addEventListener('wheel', handleWheel);
 // # 페이지 네이션
 function pageMove(page) {
   // innerHeight 값을 가져옵니다.
-  const innerHeight = window.innerHeight;
-  console.log("page : "+ page);
+	const innerHeight = window.innerHeight;
+	const selectedImg = 'images/dotSelect.png';
+	const scrolledImg = 'images/dotScroll.png'
+		console.log("page : "+ page);
 
-  // innerHeight 만큼 페이지를 이동합니다.
-  window.scrollBy(0, innerHeight);
+	// 페이지의 높이만큼 스크롤 이동
+	window.scrollTo({
+	  top: window.innerHeight * (page-1), // innerHeight의 높이만큼
+	  behavior: 'smooth', // 스무스한 스크롤 이동을 위해
+	});
+	i = page;
+	console.log(" i " + i);
+	//페이지네이션 이미지 변경
+	let pnav = document.querySelector('.pnav');
+	let ul = pnav.getElementsByTagName('ul')[0];
+	let lis = ul.getElementsByTagName('li');
+
+
+	console.log("i번째 li " + lis[i]);
+
+	for( let j =0 ; lis.length; j++){
+		console.log(" J : "+ j);//0
+		console.log("lis.length : "+lis.length); //6
+
+		if( page == j){
+			console.log('page==j');
+			document.querySelector('.pagination')[0].style.backgroundImage =  `url(${selectedImg})`;
+		} else {
+			console.log('page  != j');
+			lis.getElementsByTagName('button')[0].style.backgroundImage =  `url(${scrolledImg})`;
+		}
+	}
 }
 
 //let pbtn = document.querySelector('.pagination');
@@ -121,9 +148,9 @@ function pageMove(page) {
  	.
  	.
  	.
- 	
-	
-	
+
+
+
  */
 
 
