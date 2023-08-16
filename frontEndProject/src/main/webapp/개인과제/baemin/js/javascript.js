@@ -84,7 +84,6 @@ function handleWheel(event) {
 	let ul = pnav.getElementsByTagName('ul')[0];
 	let lis = ul.getElementsByTagName('li');
 
-
 	console.log("i번째 li " + lis[i]);
 
 	for( let j =0 ; lis.length; j++){
