@@ -58,7 +58,7 @@ body {
 	*/
 }
 .intro{
-	background: url(../images/main01.jpg);
+	background: url(../images/main_01.jpg);
     background-position: center center;
     background-size: cover;
     z-index:-1;

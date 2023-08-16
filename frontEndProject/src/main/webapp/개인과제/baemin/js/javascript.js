@@ -100,4 +100,31 @@ function handleWheel(event) {
 	// wheel 이벤트 리스너 등록
 window.addEventListener('wheel', handleWheel);
 
+// # 페이지 네이션
+function pageMove(page) {
+  // innerHeight 값을 가져옵니다.
+  const innerHeight = window.innerHeight;
+  console.log("page : "+ page);
+
+  // innerHeight 만큼 페이지를 이동합니다.
+  window.scrollBy(0, innerHeight);
+}
+
+//let pbtn = document.querySelector('.pagination');
+// pbtn.addEventListener('click', scrollPage(i));
+/*
+	1번째 0
+	2번째 900 -- 현재 페에지
+	3번째 1800
+	4번째 2700 -- 클릭이벤트 발생페이지
+ 	5번째 3600
+ 	.
+ 	.
+ 	.
+ 	
+	
+	
+ */
+
+
 
