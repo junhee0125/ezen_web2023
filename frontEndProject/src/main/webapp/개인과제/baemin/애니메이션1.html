@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.page{
+    width: 100vw;
+    height:100vh;
+}
+.box {
+
+  width: 100px;
+  height: 100px;
+  margin:100px;
+
+
+  background-color: red;
+
+  transform: translate(-50%, -50%);
+animation: move 2s forwards ; /* 애니메이션을 한 번만 실행하도록 변경
+}
+
+
+@keyframes move {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+</style>
+
+</head>
+<body>
+<div class="page">0</div>
+<div class="page">1
+    <div class="box"></div>
+</div>
+<div classp=page>2</div>
+
+
+<script type="text/javascript">
+const box = document.querySelector('.box');
+
+window.addEventListener('scroll', () => {
+	console.log("animate")
+  // 스크롤 이벤트 발생 시 애니메이션 트리거
+  box.classList.add('animate');
+  //box.style.animationPlayState = 'running';
+});
+
+box.addEventListener('animationend', () => {
+	console.log("animated 초기화")
+  // 애니메이션 종료 후 다시 초기화
+  box.classList.remove('animate');
+});
+
+</script>
+</body>
+</html>

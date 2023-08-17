@@ -96,83 +96,31 @@ function handleWheel(event) {
 	}
 }
 
-	// wheel 이벤트 리스너 등록
 window.addEventListener('wheel', handleWheel);
 
 // # 페이지 네이션
-function pageMove(page) {
-  // innerHeight 값을 가져옵니다.
-	const innerHeight = window.innerHeight;
-	const selectedImg = 'images/dotSelect.png';
-	const scrolledImg = 'images/dotScroll.png'
-		console.log("page : "+ page);
-
-	// 페이지의 높이만큼 스크롤 이동
-	window.scrollTo({
-	  top: window.innerHeight * (page-1), // innerHeight의 높이만큼
-	  behavior: 'smooth', // 스무스한 스크롤 이동을 위해
-	});
-	i = page;
-	console.log(" i " + i);
-	//페이지네이션 이미지 변경
-	let pnav = document.querySelector('.pnav');
-	let ul = pnav.getElementsByTagName('ul')[0];
-	let lis = ul.getElementsByTagName('li');
-
-
-	console.log("i번째 li " + lis[i]);
-
-	for( let j =0 ; lis.length; j++){
-		console.log(" J : "+ j);//0
-		console.log("lis.length : "+lis.length); //6
-
-		if( page == j){
-			console.log('page==j');
-			document.querySelector('.pagination')[0].style.backgroundImage =  `url(${selectedImg})`;
-		} else {
-			console.log('page  != j');
-			lis.getElementsByTagName('button')[0].style.backgroundImage =  `url(${scrolledImg})`;
-		}
-	}
-}
-
-//let pbtn = document.querySelector('.pagination');
-// pbtn.addEventListener('click', scrollPage(i));
-/*
-	아래는 선택된 버튼의 백그라운드 이미지만 변경되도록 수정한 예시 코드입니다:
-
-```javascript
-// 페이지네이션 버튼 요소들을 가져옵니다.
 var pBtn = document.querySelectorAll('.pagination');
 
-// 각 페이지네이션 버튼에 클릭 이벤트 리스너를 추가합니다.
 pBtn.forEach(function(button, index) {
   button.addEventListener('click', function() {
-    // 모든 페이지네이션 버튼의 백그라운드 이미지를 초기화합니다.
-    pBtn.forEach(function(btn) {
-      btn.style.backgroundImage = 'none';
+
+	pBtn.forEach(function(btn) {
+      btn.style.backgroundImage = 'url(images/dotScroll.png)';
     });
+    button.style.backgroundImage = 'url(images/dotSelect.png)';
 
-    // 선택된 버튼의 백그라운드 이미지를 변경합니다.
-    button.style.backgroundImage = 'url(selected-background.jpg)';
+    console.log(index)
 
-    // 해당 페이지의 인덱스에 따라 이동할 위치를 계산합니다.
-    var scrollPosition = index * window.innerHeight;
+    i = index+1
 
-    // 스크롤 이동 애니메이션을 적용합니다.
     window.scrollTo({
-      top: scrollPosition,
-      behavior: 'smooth' // 부드러운 스크롤 애니메이션을 적용합니다.
+      top: window.innerHeight * (index-1),
+      behavior: 'smooth'
     });
   });
 });
-```
 
-위의 코드에서는 페이지네이션 버튼 클릭 시 모든 버튼의 백그라운드 이미지를 초기화한 후, 선택된 버튼의 백그라운드 이미지를 변경하도록 수정하였습니다. 선택된 버튼의 백그라운드 이미지 경로는 `'url(selected-background.jpg)'`로 설정하였는데, 여기서 `'selected-background.jpg'`는 원하는 이미지 파일의 경로로 바꿔주시면 됩니다.
 
-이렇게 수정한 코드를 사용하면 선택된 버튼의 백그라운드 이미지만 변경되고, 나머지 버튼들은 변경되지 않습니다. 원하는 이미지 파일 경로로 수정하여 사용해보세요.
-
- */
 
 
 

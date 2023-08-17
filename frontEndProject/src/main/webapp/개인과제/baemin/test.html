@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pagination Test</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.page-button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.page-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.page {
+  height: 100vh;
+  padding: 2rem;
+}
+
+
+    </style>
+    <script type="text/javascript">
+    const pageButtons = document.querySelectorAll('.page-button');
+
+ // 각 페이지 버튼에 대해 클릭 이벤트를 추가합니다.
+ pageButtons.forEach(button => {
+   button.addEventListener('click', () => {
+     const pageId = button.getAttribute('data-page');
+     const page = document.querySelector(`#page-${pageId}`);
+
+     // 페이지로 스크롤합니다.
+     page.scrollIntoView({behavior: 'smooth'});
+   });
+ });
+ ```
+
+    </script>
+  </head>
+  <body>
+   <div class="pagination">
+  <button class="page-button" data-page="1">1</button>
+  <button class="page-button" data-page="2">2</button>
+  <button class="page-button" data-page="3">3</button>
+  <button class="page-button" data-page="4">4</button>
+  <button class="page-button" data-page="5">5</button>
+  <button class="page-button" data-page="6">6</button>
+</div>
+
+<div class="page-wrapper">
+  <div class="page" id="page-1">
+    <h1>Page 1</h1>
+  </div>
+  <div class="page" id="page-2">
+    <h1>Page 2</h1>
+  </div>
+  <div class="page" id="page-3">
+    <h1>Page 3</h1>
+  </div>
+  <div class="page" id="page-4">
+    <h1>Page 4</h1>
+  </div>
+  <div class="page" id="page-5">
+    <h1>Page 5</h1>
+  </div>
+  <div class="page" id="page-6">
+    <h1>Page 6</h1>
+  </div>
+</div>
+
+
+  </body>
+</html>

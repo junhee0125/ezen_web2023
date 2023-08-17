@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style type="text/css">
+  body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.pagination {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pagination button {
+  background-color: #eaeaea;
+  border: none;
+  color: #333;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+pagination button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+
+  </style>
+  <script type="text/javascript">
+  const buttons = document.querySelectorAll('.pagination button');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      // 이동할 위치 계산
+      const pageHeight = window.innerHeight;
+      const scrollAmount = index * pageHeight;
+
+      // 페이지 이동
+      window.scrollTo({
+        top: scrollAmount,
+        behavior: 'smooth'
+      });
+
+      // 활성화된 버튼 표시
+      buttons.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      button.classList.add('active');
+    });
+  });
+
+  </script>
+</head>
+<body>
+  <div class="pagination">
+    <button class="active">1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
