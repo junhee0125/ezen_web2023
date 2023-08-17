@@ -139,16 +139,38 @@ function pageMove(page) {
 //let pbtn = document.querySelector('.pagination');
 // pbtn.addEventListener('click', scrollPage(i));
 /*
-	1번째 0
-	2번째 900 -- 현재 페에지
-	3번째 1800
-	4번째 2700 -- 클릭이벤트 발생페이지
- 	5번째 3600
- 	.
- 	.
- 	.
+	아래는 선택된 버튼의 백그라운드 이미지만 변경되도록 수정한 예시 코드입니다:
 
+```javascript
+// 페이지네이션 버튼 요소들을 가져옵니다.
+var pBtn = document.querySelectorAll('.pagination');
 
+// 각 페이지네이션 버튼에 클릭 이벤트 리스너를 추가합니다.
+pBtn.forEach(function(button, index) {
+  button.addEventListener('click', function() {
+    // 모든 페이지네이션 버튼의 백그라운드 이미지를 초기화합니다.
+    pBtn.forEach(function(btn) {
+      btn.style.backgroundImage = 'none';
+    });
+
+    // 선택된 버튼의 백그라운드 이미지를 변경합니다.
+    button.style.backgroundImage = 'url(selected-background.jpg)';
+
+    // 해당 페이지의 인덱스에 따라 이동할 위치를 계산합니다.
+    var scrollPosition = index * window.innerHeight;
+
+    // 스크롤 이동 애니메이션을 적용합니다.
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth' // 부드러운 스크롤 애니메이션을 적용합니다.
+    });
+  });
+});
+```
+
+위의 코드에서는 페이지네이션 버튼 클릭 시 모든 버튼의 백그라운드 이미지를 초기화한 후, 선택된 버튼의 백그라운드 이미지를 변경하도록 수정하였습니다. 선택된 버튼의 백그라운드 이미지 경로는 `'url(selected-background.jpg)'`로 설정하였는데, 여기서 `'selected-background.jpg'`는 원하는 이미지 파일의 경로로 바꿔주시면 됩니다.
+
+이렇게 수정한 코드를 사용하면 선택된 버튼의 백그라운드 이미지만 변경되고, 나머지 버튼들은 변경되지 않습니다. 원하는 이미지 파일 경로로 수정하여 사용해보세요.
 
  */
 
