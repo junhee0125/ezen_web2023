@@ -138,10 +138,10 @@ body {
 	opacity:0.7;
 }
 .animation{
+	width:600px;
 	position:absolute;
-	bottom:27%;
-	right:15%;
-	width:43%;
+	bottom:20%;
+	right:22%;
 	z-index:2;
 }
 
@@ -149,7 +149,7 @@ body {
 	width:700px;
 	position: absolute;
 	bottom: 7%;
-	right: 0%;
+	right: 13%;
 }
 .pic {
 	object-fit:contain;
