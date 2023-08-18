@@ -81,20 +81,7 @@ function handleWheel(event) {
 		isWheeling = false;
 	},100); //100ms후에 isWheeling을  false로 변경
 	
-	//현재 페이지에 도달하면 move_00 클래스 추가
-	/*
-	 getClientRects()
-	 요소의 크기와 위치 정보를 반환하는 메서드 
-	 이 메서드를 호출하면 해당 요소의 위치와 크기에 관한 정보를 담은 DOMRect 객체를 반환.
-
-		DOMRect 객체는 다음과 같은 속성을 포함합니다:
-		- top	: 요소의 위쪽 경계선의 위치
-		- bottom: 요소의 아래쪽 경계선의 위치
-		- left	: 요소의 왼쪽 경계선의 위치
-		- right	: 요소의 오른쪽 경계선의 위치
-		- width	: 요소의 너비
-		- height: 요소의 높이
-	 */
+// ani
 //	const aniBoxPostion =  aniBox.getClientRects(); //ani <div>의 위치정보
 //	console.log("aniBoxPostion[현재페이지의].top : " + aniBoxPostion[currentPage-2].top);
 //	const windowHeight = window.innerHeight * (currentPage-1); //현재 윈도우innerHeight
