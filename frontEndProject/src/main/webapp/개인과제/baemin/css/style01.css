@@ -163,6 +163,7 @@ body {
 	position: absolute;
 	right:25.5%;
     bottom: 0px;
+    opacity:0;
 }
 
 /*---------- # 4 ------------*/
@@ -173,13 +174,15 @@ body {
 	display: inline-block;
 	cursor: pointer;
 	transform:translateX(-7px);
+
 }
 .bgift{
 	width:33%;
     position: absolute;
     right:23.5%;
     bottom: 0px;
-    
+    opacity:0;
+
 
 }
 /*---------- # 5 ------------*/
@@ -190,7 +193,8 @@ body {
     position: absolute;
     right:23.5%;
     bottom: 144px;
-    
+    opacity:0;
+
 }
 
 
@@ -198,7 +202,7 @@ body {
 
 /*#2~ #7까지 애니메에션 모음*/
 /* # 2 */
-.move_down{	animation:0.8s ease 0.5s 1 normal forwards running bike; }	
+.move_down{	animation:0.8s ease 0.5s 1 normal forwards running bike; }
 @keyframes bike{
 	0%{
 	   transform:translateX(0px) translateY(0px);
