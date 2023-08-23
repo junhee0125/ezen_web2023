@@ -1,1 +1,75 @@
 @charset "UTF-8";
+*{margin:0;  padding:0;}
+li{list-style: none;}
+a{text-decoration: none;}
+
+/*  color   */
+:root {
+    --mtext: #333;
+    --ftext: #464646;
+    --mbg: #2AC1BC;
+    --fbg:#fff;
+/*
+https://colorhunt.co/palette/ffc7c7ffe2e2f6f6f68785a2
+*/
+    --mp : #FFC7C7;
+    --sp : #FFE2E2;
+    --sg : #F6F6F6;
+    --dp : #8785A2;
+
+}
+body {
+/* 드래그 방지*/
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+ /*스크롤바 삭제*/
+  -ms-overflow-style: none;
+
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1{color: var(--fbg);}
+.wrap{
+	background-image: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(255,255,255,.4) 4px, rgba(255,255,255,.4) 6px ), url('../img/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: auto, cover; /*콤마로 */
+    background-position: center center;
+
+	width:100%;
+	height:100%;
+/* 	opacity: 0.5; */
+
+}
+.section {
+    height: 100vh;
+    max-height: -webkit-fill-available;
+    width: 100%;
+    transform: translateY(-0px);
+    transition: transform 0.9s ease 0s;
+    position: relative;
+}
+.ctype{
+	width:1200px;
+	margin: 0 auto;
+}
+.intro{
+	background-color: #FFC7C7;
+	border-radius:100px 100px 0 0 ;
+    top:20vh;
+
+}
+.about{
+	background-color: #FFE2E2;
+}
+.works{
+	background-color: #F6F6F6;
+}
+.contact{
+	background-color: var(--dp);
+	border-radius:0 0 100px 100px ;
+    height:80vh;
+}

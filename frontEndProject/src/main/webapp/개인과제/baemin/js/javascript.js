@@ -69,12 +69,10 @@ function handleWheel(event) {
 		 document.querySelector('.rider').style.opacity = 0;
 		 document.querySelector('.stickbtn').style.opacity = 1;
 		 document.querySelector('.pnav').style.opacity = 1;
-		 //setAtt(delta);
 		if(currentPage < 8){ currentPage++; }
 		if(currentPage == 8){
 			 document.querySelector('.stickbtn').style.opacity = 0;
 		}
-
 
 	}else{ //위로 스크롤되면
 		if( currentPage > 1){ currentPage--; }
@@ -84,7 +82,6 @@ function handleWheel(event) {
 			document.querySelector('.stickbtn').style.opacity = 0;
 			document.querySelector('.pnav').style.opacity = 0;
 		}
-
  	}
 
 	console.log("[s] currentPage  : "+currentPage)
