@@ -30,6 +30,7 @@
 		
 		
 		<div class="viewList"><!-- 출력구역 -->
+		<!-- 	
 			<div class="items">
 				<div class="header">
 					<div> 유재석 </div>
@@ -42,6 +43,7 @@
 				</div>
 			
 			</div>
+			-->
 		</div>
 	</div>
 <!-- 최신 JQuery 불러오려고 왜? ajax쓸라고  왜?  외부로부터 통신하려고-->

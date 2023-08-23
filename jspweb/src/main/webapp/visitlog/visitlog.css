@@ -4,11 +4,11 @@ li{list-style-type: none}
 
 .wrap{
 	width:600px;
-	margin: auto 0;
+	margin: 30px 0;
 }
 .vwrite{
-	width: 100%;
-	margin: 30px 0;
+	width: 600px;	
+		margin: auto 0;
 }
 .vwrite span{
 	font-size: 14px;
@@ -17,7 +17,7 @@ li{list-style-type: none}
 	padding: 5px 5px ;
 }
 .vwrite ul{
-	width:100%;
+	width:auto;
 	margin: auto 0;
 	display: flex;
 	justify-content: center;
@@ -30,7 +30,8 @@ li{list-style-type: none}
 	border-radius: 5px;
 	
 }
-input, textarea:focus{outline: none;}
+input, textarea:focus{outline: none; background-color: #f6e8fc;}
+input+ textarea:focusout{outline: none; background-color: #eee;}
 .vwrite button{
 	width:90px;
 	height:90px;
@@ -40,8 +41,7 @@ input, textarea:focus{outline: none;}
 .vwrite textarea{
 	resize:none; /*리사이즈 방지*/
 	padding:5px;
-	border-radius: 5px;
-	
+	border-radius: 5px;	
 }
 
 
@@ -57,12 +57,15 @@ input, textarea:focus{outline: none;}
 	border-top: solid 1px #eee
 }
 .header{
-	width:20%px;
+	width:25%px;
 	height:50px;
+	
 }
 .writer{
+	padding-right:10px;
 	padding-bottom: 10px;
 	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .conts{
 	width:50%;

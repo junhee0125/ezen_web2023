@@ -72,8 +72,8 @@ function vread(){
 								</div>
 								<div class="conts"> ${ result[i].vcontent } </div>
 								<div class="btn">
-									<button type="button">수정</button>
-									<button type="button">삭제</button>
+									<button onclick="vupdate(${result[i].vno})" type="button">수정</button>
+									<button onclick="vdelete(${result[i].vno})" type="button">삭제</button>
 								</div>
 							</div>`
 				}
@@ -85,5 +85,67 @@ function vread(){
 	});
 }
 // 1. update(수정)
+function vupdate(vno){
+	
+	console.log('vupdate' + vno);
+	//1. 수정할 내용	
+	let vcontent = prompt('수정할 내용을 입력하세요 :');
+	//2. 비밀번호가 일치할 경우만 수정하므로 비밀번호 입력받기
+	let vpwd = prompt('망문록비밀번호 : ')
+	//수정준비물 :vno(누구를) , vpwd(조건용:비밀번호일치여부)	
+	
+	$.ajax({
+		url: "/jspweb/VisitLogController",
+		method:"put",
+		data:{vno:vno, vcontent:vcontent, vpwd:vpwd},
+		success:function f(result){
+			console.log("vupdate 통신성공"+ result)
+			if(result == 0 ){
+				alert('비밀번호가 일치하지 않아 수정되지 않았다요.');
+			} else if(result == 1){
+				alert('수정 !!');
+			}
+			vread(); //렌더링
+		},
+		error : function f(result){
+			console.log(result)
+			
+		}
+		
+		
+	});
+}
+
 
 // 1. delete(삭제)
+function vdelete(vno){
+	console.log('vdelete'+vno);
+	// 1. 비밀번호가 일치할 경우 수정하므로 확인용 비밀번호 입력받기
+	let vpwd = prompt("방문록비밀번호 : ");
+	
+	//삭제준비물 :vno(누구를) , vpwd(조건용:비밀번호일치여부)	
+	
+	$.ajax({
+		url: "/jspweb/VisitLogController",
+		method:"delete",
+		data:{vno:vno, vpwd:vpwd},
+		success:function f(result){
+			console.log("vdelete 통신성공"+ result);
+			
+			if(result == 0 ){
+				alert('비밀번호가 일치하지 않아 삭제 되지 않았습니다.');
+			} else if(result == 1){
+				alert('삭제 !!');
+			}
+			vread(); //렌더링
+		},
+		error : function f(result){
+			console.log(result)
+			
+			
+			
+		}
+		
+		
+	});
+}

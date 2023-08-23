@@ -44,7 +44,7 @@ public class VisitLogController extends HttpServlet {
 		System.out.println( "VisitLogDto: "+ VisitLogDto.toString());
 		
 		
-		boolean result = VisitLogDao.getInstance().vRead(VisitLogDto);
+		boolean result = VisitLogDao.getInstance().vWrite(VisitLogDto);
 		//response.getWriter().print(응답할데이터);
 		//response.setContentType("text/html;charset=UTF=8");
 		response.setContentType("application/json;charset=UTF-8");
@@ -73,19 +73,50 @@ public class VisitLogController extends HttpServlet {
 	
 
 	/**
-	 * 3.
+	 * 3.수정
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	
+		//1. ajax에게 데이더요청한다.
+		int vno = Integer.parseInt(request.getParameter("vno"));System.out.println(" vno :"+vno);
+		String vcontent = request.getParameter("vcontent");System.out.println("vcontent  :"+vcontent);
+		String vpwd = request.getParameter("vpwd");System.out.println("  vpwd:"+vpwd);
+
+		//2. 데이터 많으면 객체화
+		
+		//3. dao에 전달후 sql결과를 받는다
+		int result = VisitLogDao.getInstance().vUpdate(vno, vcontent, vpwd);
+		
+		//4. 결과를 ajax에게 전다ㄹ한다.
+		//response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(result);
 	}
 
 	/**
-	 * 4.
+	 * 4. 삭제
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		//1. ajax에게 데이더요청한다.
+		int vno = Integer.parseInt(request.getParameter("vno"));System.out.println(" vno :"+vno);
+		String vpwd = request.getParameter("vpwd");System.out.println("  vpwd:"+vpwd);
+
+		//2. 데이터 많으면 객체화
+		
+		//3. dao에 전달후 sql결과를 받는다
+		int result = VisitLogDao.getInstance().vDelete(vno, vpwd);
+		
+		//4. 결과를 ajax에게 전다ㄹ한다.
+		//response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(result);
 	
 	}
 
 }
+/*
+  	HTTP 서블릿클래스는 기본적으로 get/ post/ put / delete 함수제공
+  	- 기본 콤캣서버는 get, post만이 매개변수(데이터) 전달 기능)
+  	- put, delete 함수도 매개변수 전달 가능하도록 설정해야.
+  	- Server 더블 클릭하고 63정도 line에가면  
+  	  <Connector connectionTimeout="20000" maxParameterCount="1000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
+  	  
+  	
+  */
