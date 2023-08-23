@@ -1,4 +1,4 @@
-package java2.day23.Ex3;
+package java2.day23_멀티스레드.Ex3;
 
 public class Calculator {
 	//필드

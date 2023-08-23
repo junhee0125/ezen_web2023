@@ -1,4 +1,4 @@
-package java2.day23.Ex2;
+package java2.day23_멀티스레드.Ex2;
 
 import com.mysql.cj.protocol.a.NativePacketHeader;
 

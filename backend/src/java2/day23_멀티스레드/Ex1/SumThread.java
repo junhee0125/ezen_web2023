@@ -1,4 +1,4 @@
-package java2.day23.Ex1;
+package java2.day23_멀티스레드.Ex1;
 
 public class SumThread extends Thread{
 	//필드
