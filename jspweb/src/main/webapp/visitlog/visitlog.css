@@ -1,0 +1,74 @@
+@charset "UTF-8";
+*{margin:0; padding:0;}
+li{list-style-type: none}
+
+.wrap{
+	width:600px;
+	margin: auto 0;
+}
+.vwrite{
+	width: 100%;
+	margin: 30px 0;
+}
+.vwrite span{
+	font-size: 14px;
+}
+.vwrite li{
+	padding: 5px 5px ;
+}
+.vwrite ul{
+	width:100%;
+	margin: auto 0;
+	display: flex;
+	justify-content: center;
+}
+.vwrite input{
+	width:100px;
+	height: 27px;
+	margin-bottom: 12px;
+	padding:5px;
+	border-radius: 5px;
+	
+}
+input, textarea:focus{outline: none;}
+.vwrite button{
+	width:90px;
+	height:90px;
+	border-radius: 5px;
+	
+}
+.vwrite textarea{
+	resize:none; /*리사이즈 방지*/
+	padding:5px;
+	border-radius: 5px;
+	
+}
+
+
+.viewList{
+	width:100%;
+	padding :10px 30px;
+}
+.items{ 
+	height:40px;
+	padding:10px;
+	display: flex;	
+	font-size: 12px;
+	border-top: solid 1px #eee
+}
+.header{
+	width:20%px;
+	height:50px;
+}
+.writer{
+	padding-bottom: 10px;
+	text-overflow: ellipsis;
+}
+.conts{
+	width:50%;
+	padding:5px 10px;
+}
+.btn{
+	width:20%;
+}
+.btn button {width:45%; height:50px}

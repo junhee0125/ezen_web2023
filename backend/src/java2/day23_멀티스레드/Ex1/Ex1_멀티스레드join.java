@@ -1,4 +1,4 @@
-package java2.day23.Ex1;
+package java2.day23_멀티스레드.Ex1;
 
 public class Ex1_멀티스레드join {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package java2.day23.Ex3;
+package java2.day23_멀티스레드.Ex3;
 
 public class EX3_동기화 {
 	public static void main(String[] args) {
