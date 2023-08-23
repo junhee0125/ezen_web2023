@@ -1,11 +1,12 @@
 /**
  *
  */
-console.log("1연결")
+console.log("JS연결")
 let isWheeling = false; //휠 이벤트가 있었는지여부
 let currentPage = 1; // 현재 페이지 초기값 설정
 
 function handleWheel(event) {
+	console.log("handleWheel 호출")
 	const delta = Math.sign(event.deltaY); // 휠 이벤트의 deltaY 값의 부호를 얻음
 
 	if (isWheeling) return; //isWheeling= true이면 함수종료
