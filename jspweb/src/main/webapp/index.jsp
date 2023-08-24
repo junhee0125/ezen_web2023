@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3> JSP 실행테스트</h3>
+<%@include file="header.jsp" %>
+	<h3> 본문</h3>
+
+	
+<%@include file="footer.jsp" %>
 </body>
 </html>
 <!-- 
