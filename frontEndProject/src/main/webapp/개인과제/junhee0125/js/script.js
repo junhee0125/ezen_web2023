@@ -2,6 +2,8 @@
  *
  */
 console.log("JS연결")
+let photoList=['photo00.jpg','photo01.jpg','photo02.jpg','photo03.jpg','photo04.jpg']
+
 let isWheeling = false; //휠 이벤트가 있었는지여부
 let currentPage = 1; // 현재 페이지 초기값 설정
 
@@ -39,3 +41,22 @@ function handleWheel(event) {
 
 }
 window.addEventListener('wheel', handleWheel);
+
+
+//사진 interval 랜덤출력
+let currentPhoto= 0;
+
+setInterval(()=>{
+	let photo = document.querySelector('.photo');
+	currentPhoto = (currentPhoto+1)%photoList.length;
+	if(currentPhoto >= photoList.length){ currentPhoto = 0;}
+	photo.style.backgroundImage = `url(./img/${photoList[currentPhoto]})`;
+},3000)
+
+
+
+
+
+
+
+
