@@ -174,7 +174,7 @@ let timerInter;		//setInterval  함수를 가지고있는 변수 [ setInterval�
 //4.  인증요청 버튼을 눌렀을 때
 function authReq(){
 	console.log('인증요청');
-
+/*
 	// 1. authbox div 호출
 	let authbox = document.querySelector('.authbox');
 
@@ -188,8 +188,38 @@ function authReq(){
 
 	// 4. 타이머 실행
 	authcode = '1234' // 테스트용 인증코드 1234
-	timer = 10;		//테스트용 제한시간 10초
+	timer = 120;		//테스트용 제한시간 10초
 	settimer();  	// 타이머함수 호출
+*/
+	$.ajax({
+		url:"/jspweb/AuthSendEmailController",
+		method:"get",
+		data:{memail : document.querySelector('.memail').value},
+		success: r =>{
+			console.log("통신성공 : " + r);
+			// 1. authbox div 호출
+			let authbox = document.querySelector('.authbox');
+
+			// 2. authbox 안 html구성
+			let html = `<span class="timebox">02:00</span>
+				  		<input class="ecode" type="text">
+				  		<button onclick="auth" type="button" >인증</button>`
+
+			// 3.authbox에 html대입
+			authbox.innerHTML = html;
+
+			// 4. 타이머 실행
+			authcode = '1234' // 테스트용 인증코드 1234
+			timer = 120;		//테스트용 제한시간 10초
+			settimer();  	// 타이머함수 호출
+		} ,
+		error:e=>{
+			console.log('통신실패 '+ e)
+		}
+
+
+
+	});
 }
 
 //5. 인증확인 제한시간 타이머
@@ -228,6 +258,18 @@ function settimer(){
 //6. 인증요청후 인증코드릉 입력하고 일치여부 확인 함수
 function auth(){
 	console.log('인증코드 체크');
+
+	//1. 입력받은 인증코드
+	let ecode = document.querySelector('.ecode').value;
+
+	//2. 비교
+	if(authcode == ecode){
+		clearInterval(timerInter);
+		document.querySelector('.emailcheckbox').innerHTML = `인증성공`;
+		document.querySelector('.authbox').innerHTML=``; //authbox초기화
+	} else {
+		document.querySelector('.emailcheckbox').innerHTML = `인증코드 불일치`;
+	}
 }
 
 function signup(){
@@ -259,9 +301,18 @@ function signup(){
 
 	});
 
-	//응답에 따른 제어ㅗ
-
-
-
+	//응답에 따른 제어
 
 }
+/*
+
+setInterval() : 특정시간마다 함수를 실행 함수
+	1. 정의
+		let 변수명 = setInterval( functuon 함수명(){ } , 밀리초 )
+		let 변수명 = setInterval( functuon (){ } , 밀리초 )
+		let 변수명 = setInterval( 함수명() , 밀리초 )
+		let 변수명 = setInterval( () => { } , 밀리초 )
+	2. 종료
+		clearInterval( setInterval변수명 )
+
+*/
