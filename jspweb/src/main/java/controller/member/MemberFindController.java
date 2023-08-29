@@ -15,7 +15,7 @@ import model.dao.MemberDao;
 @WebServlet("/MemberFindController")
 public class MemberFindController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,9 +28,11 @@ public class MemberFindController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String mid = request.getParameter("mid");
-		System.out.println("mid 서블릿 " + mid);
-		boolean result = MemberDao.getInstance().isExist(mid);
+		String type = request.getParameter("type");
+		String data = request.getParameter("data");
+		System.out.println("type 서블릿 " + type);
+		System.out.println("data 서블릿 " + data);
+		boolean result = MemberDao.getInstance().isExist(type, data);
 		response.setContentType("application/json;charset=UTF-8;");
 		response.getWriter().print(result);
 	}
