@@ -35,20 +35,30 @@ public class LibraryController extends HttpServlet {
 	}
 
 	/**
-	 * 입실
+	 * 입실 or 퇴실
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String strType = request.getParameter("type");
 		int seatno = Integer.parseInt(request.getParameter("seatno"));
 		String name = request.getParameter("name");
 		String phonenumber = request.getParameter("phonenumber");
 
+		System.out.println("doPost");
+		System.out.println(" type :  "+ strType );
 		System.out.println(" seatno :  "+ seatno );
 		System.out.println(" name :  "+ name );
 		System.out.println(" phonenumber :  "+ phonenumber );
 
-		LibraryDto libraryDto = new LibraryDto(name, phonenumber, seatno, true);
-		boolean result = LibraryDao.getInstance().checkIn(libraryDto);
 
+		boolean result = false;
+
+		if(strType.equals("C")) { //입실
+			LibraryDto libraryDto = new LibraryDto(name, phonenumber, seatno, true);
+		    result = LibraryDao.getInstance().checkIn(libraryDto);
+		}else if(strType.equals("U")) { //퇴실
+			LibraryDto libraryDto = new LibraryDto(name, phonenumber, seatno, false);
+			result = LibraryDao.getInstance().checkOut(libraryDto);
+		}
 
 		response.setContentType("application/json;charset=UTF-8");
 		response.getWriter().print(result);
@@ -58,20 +68,21 @@ public class LibraryController extends HttpServlet {
 	 * 퇴실
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int seatno = Integer.parseInt(request.getParameter("seatno"));
+		System.out.println("doPut");
+
+		//String seatno = request.getParameter("seatno");
 		String name = request.getParameter("name");
 		String phonenumber = request.getParameter("phonenumber");
 
-		System.out.println(" seatno :  "+ seatno );
+		//System.out.println(" seatno :  "+ seatno );
 		System.out.println(" name :  "+ name );
 		System.out.println(" phonenumber :  "+ phonenumber );
 
-		LibraryDto libraryDto = new LibraryDto(name, phonenumber, seatno, false);
-		boolean result = LibraryDao.getInstance().checkOut(libraryDto);
+		//LibraryDto libraryDto = new LibraryDto(name, phonenumber, seatno, false);
+		//boolean result = LibraryDao.getInstance().checkOut(libraryDto);
 
-
-		response.setContentType("application/json;charset=UTF-8");
-		response.getWriter().print(result);
+		//response.setContentType("application/json;charset=UTF-8");
+		//response.getWriter().print(result);
 	}
 
 	/**

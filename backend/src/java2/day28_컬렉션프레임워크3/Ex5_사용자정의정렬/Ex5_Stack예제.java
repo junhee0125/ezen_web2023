@@ -30,7 +30,7 @@ public class Ex5_Stack예제 {
 
 		//-------------------------------------------------------------------//
 
-		//1. Queue구현체[LinkedList<>]동저네이스 선언
+		//1. Queue구현체[LinkedList<>]동전케이스 선언
 		Queue<Coin> coincase2 = new LinkedList<>();
 
 		// 무작위로 동전 넣기

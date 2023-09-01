@@ -41,8 +41,13 @@ public class MemberFindController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String mid = request.getParameter("mid");
+		String mpwd = request.getParameter("mpwd");
+		System.out.println("Mfind -post" + mid +"/"+ mpwd);
+		boolean result = MemberDao.getInstance().login(mid, mpwd);
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(result);
+
 	}
 
 	/**

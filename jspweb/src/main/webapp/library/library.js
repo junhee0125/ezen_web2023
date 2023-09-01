@@ -39,6 +39,7 @@ function setSeatno(seatno) {
 
 	document.querySelector('.getIn').value = seatno;
 	document.querySelector('.getOut').value = seatno;
+
 	document.querySelector('.ch_num').innerHTML = seatno;
 	console.log("seatno" + seatno);
 
@@ -61,6 +62,7 @@ function checkIn(){
 	console.log("phonenumberInput  :  " + phonenumberInput.value);
 	//객체화
 	let info = {
+		type:"C",
 		name: nameInput.value,
 		phonenumber:phonenumberInput.value,
 		seatno:seatnoInput.innerText
@@ -68,13 +70,16 @@ function checkIn(){
 	console.log("info >> "+info);
 	$.ajax({
 		url :"/jspweb/LibraryController",
-		method : "post",
+		method : "POST",
 		data : info,
+		dataType: "text",
 		success: r => {
 			console.log('통신성공' + r)
 			alert("입실정보가 정상등록되었습니다.")
+			//초기화
 			nameInput.value='';
-			phonenumberInput ='';
+			phonenumberInput.value ='';
+			seatno:seatnoInput.innerText='';
 			// read()
 		;},
 		error : r => {
@@ -86,36 +91,41 @@ function checkIn(){
 
 //퇴실정보등록 (입실정보수정)
 function checkOut() {
-	let seatnoInput = document.querySelector('.in');
+	let seatnoInput = document.querySelector('.ch_num');
 	let nameInput = document.querySelector('.name');
 	let phonenumberInput = document.querySelector('.phonenumber');
-	console.log("seatno  :  " + seatnoInput.value);
-	console.log("name  :  " + nameInput.value);
-	console.log("seatno  :  " + phonenumberInput.value);
 
-	//객체화
+	console.log("22 seatno  :  " + seatnoInput.innerText);
+	console.log("222 name  :  " + nameInput.value);
+	console.log("2222 phonenumberInput  :  " + phonenumberInput.value);
+
 	let info = {
-		name: nameInput.value,
-		phonenumber:phonenumberInput.value,
-		seatno:seatnoInput.value
-	}
-	$.ajax({
-		url :"/jspweb/LibraryController",
-		method : "put",
-		data : info,
-		success: r => {
-			console.log('통신성공' + r)
-			alert("퇴실되었습니다.")
-			nameInput.value='';
-			phonenumberInput ='';
-			// read()
-		;},
-		error : r => {
-
-			console.log('통신실패 : '+ r );
-
+			type:"U",
+			name: nameInput.value,
+			phonenumber:phonenumberInput.value,
+			seatno:seatnoInput.innerText
 		}
-	});
+		console.log("info >> "+JSON.stringify(info));
+
+		$.ajax({
+			url :"/jspweb/LibraryController",
+			method : "POST",
+			data : info, //보낼 데이터,
+			dataType: "text",
+			success: r => {
+				console.log('통신성공' + r)
+				alert("퇴실실정보가 정상등록되었습니다.")
+				//초기화
+				nameInput.value='';
+				phonenumberInput.value ='';
+				seatno:seatnoInput.innerText='';
+				// read()
+			;},
+			error : r => {
+
+				console.log('통신실패 : '+ r );
+			}
+		});
 }
 
 //좌석정보출력

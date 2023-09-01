@@ -26,7 +26,7 @@ public class Dao {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/jspweb", "root", "fm050426^^");
-
+			// conn = DriverManager.getConnection("jdbc:mysql://18.222.109.190:3306", "root", "zxcv0246!@");
 			System.out.println("디비 연동성공 ^ㅂ^☆");
 
 		} catch (Exception e) {

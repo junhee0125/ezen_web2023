@@ -42,7 +42,15 @@ create table library (
     primary key(lno) ,
     foreign key( lseatno ) references seat( lseatno )
 );
-
+# seat 테이블 좌석 정보 입력
+insert into seat (lseatno) value (1);
+insert into seat (lseatno) value (2);
+insert into seat (lseatno) value (3);
+insert into seat (lseatno) value (4);
+insert into seat (lseatno) value (5);
+insert into seat (lseatno) value (6);
+insert into seat (lseatno) value (7);
+insert into seat (lseatno) value (8);
 select * from visitlog;
 select * from member;
 select * from seat;

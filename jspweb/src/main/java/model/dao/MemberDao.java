@@ -31,8 +31,22 @@ public class MemberDao extends Dao {
 
 
 
-	//2.로그링ㄴ
-
+	//2.로그인
+	public boolean login(String mid, String mpwd) {
+		try {
+			String sql = "select * from member where mid=? and mpwd=?";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, mid);
+			ps.setString(2, mpwd);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return false;
+	}
 
 	// 3. 아이디찾기
 
