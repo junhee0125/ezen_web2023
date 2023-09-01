@@ -55,3 +55,22 @@ select * from visitlog;
 select * from member;
 select * from seat;
 select * from library;
+
+
+#HRM
+drop table if exists hrm;
+create table hrm(
+    hno int auto_increment ,                   -- 식별번호( 직원번호 ) , 자동번호 부여
+    hname varchar(20) not null ,              -- ( 직원이름 ) , 공백불가능 , 중복불가능
+    hphone varchar(13) not null unique ,     -- ( 직원전화번호 ) , 공백불가능 중복불가
+    hrank varchar(1) not null ,               -- ( 직급 )  , 공백불가능
+    hphoto text ,                               -- ( 직원사진 이름 ) , 공백가능
+    hdate datetime default now() not null,    -- ( 직원등록일 ) , 공백불가능
+    primary key( hno )
+);
+# 등록
+insert into hrm(hname, hrank, hphone, hphoto) values (?,?,?,?);
+
+# 리스트 출력
+select * from hrm order by hdate desc;
+insert into hrm(hname, hrank, hphone, hphoto) values ('김준희','C','010-3526-0081','default.webp');
