@@ -1,1 +1,58 @@
 @charset "UTF-8";
+.boardBox{
+	padding:30px; 0;
+}
+.listHead{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.listHead li{
+	font-size: 1.2rem;
+	padding:5px;
+	text-align: center;
+	background-color: #75C1CF;
+	border-right:solid 3px #fff;
+/* 	border-radius:5px; */
+	color:#fff;
+
+}
+
+.listContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listContent li{
+	padding:10px;
+	border-bottom :solid 1px #75C1CF;
+	text-align: center;
+
+}
+
+.bno{ width:10% }
+.btitle{ width:50% }
+.bwriter{ width:15% }
+.bview{ width:10% }
+.bdate{ width:15% }
+
+.btnBox{
+	width:100%;
+	display:flex;
+	justify-content:right;
+	padding:0 30px;
+}
+.btnBox button{
+	width:10%;
+
+	background-color: #75C1CF;
+    border-radius:5px;
+    border:none;
+    font-size:1.2rem;
+    color:#fff;
+    text-align: center;
+    padding:10px;
+
+}
