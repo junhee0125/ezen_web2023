@@ -3,7 +3,7 @@ package model.dto;
 public class BoardDto {
 
 	//필드
-	private int cno;
+	private int bcno;
     private String cname;
     private int bno;
     private String btitle;
@@ -24,7 +24,7 @@ public class BoardDto {
 	public BoardDto(int cno, String cname, int bno, String btitle, String bcontent, int mno, int bveiw, String bfile,
 			String bdate) {
 		super();
-		this.cno = cno;
+		this.bcno = bcno;
 		this.cname = cname;
 		this.bno = bno;
 		this.btitle = btitle;
@@ -36,9 +36,9 @@ public class BoardDto {
 	}
 
 	// 글저장 생성자
-	public BoardDto(int cno, String btitle, String bcontent, int mno, String bfile) {
+	public BoardDto(int bcno, String btitle, String bcontent, int mno, String bfile) {
 		super();
-		this.cno = cno;
+		this.bcno = bcno;
 		this.btitle = btitle;
 		this.bcontent = bcontent;
 		this.mno = mno;
@@ -47,11 +47,11 @@ public class BoardDto {
 
 	//메소드
 	public int getCno() {
-		return cno;
+		return bcno;
 	}
 
-	public void setCno(int cno) {
-		this.cno = cno;
+	public void setCno(int bcno) {
+		this.bcno = bcno;
 	}
 
 	public String getCname() {
@@ -128,7 +128,7 @@ public class BoardDto {
 
 	@Override
 	public String toString() {
-		return "BoardDto [cno=" + cno + ", cname=" + cname + ", bno=" + bno + ", btitle=" + btitle + ", bcontent="
+		return "BoardDto [bcno=" + bcno + ", cname=" + cname + ", bno=" + bno + ", btitle=" + btitle + ", bcontent="
 				+ bcontent + ", mno=" + mno + ", bveiw=" + bveiw + ", bfile=" + bfile + ", bdate=" + bdate + ", mid="
 				+ mid + "]";
 	}
