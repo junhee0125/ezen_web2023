@@ -31,7 +31,7 @@
                 <a href="#">비밀번호찾기</a>
             </div>
 
-            <button class="signupbtn" onclick="login()" type="button">회원가입</button>
+            <button class="signupbtn" onclick="login()" type="button">로그인</button>
 
     </form>
 	</div>

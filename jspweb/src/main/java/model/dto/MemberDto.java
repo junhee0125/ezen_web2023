@@ -4,25 +4,36 @@ public class MemberDto {
 
 	//필드
 	private int mno ;
-	private String mid; 
-	private String mpwd;   
-	private String memail; 
+	private String mid;
+	private String mpwd;
+	private String memail;
 	private String mfile;
-	private String mdate ;
-	
+	//DB없는 필드
+	private String loginDateTime;
+
 	//생성자
+	// 로그인 객체를 만들 생성자 [패스워드 제외]
+	public MemberDto(String loginDateTime, int mno, String mid, String memail, String mfile) {
+		super();
+		this.mno = mno;
+		this.mid = mid;
+		this.memail = memail;
+		this.mfile = mfile;
+		this.loginDateTime = loginDateTime;
+	}
+
+
 	public MemberDto() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDto(int mno, String mid, String mpwd, String memail, String mfile, String mdate) {
+	public MemberDto(int mno, String mid, String mpwd, String memail, String mfile) {
 		super();
 		this.mno = mno;
 		this.mid = mid;
 		this.mpwd = mpwd;
 		this.memail = memail;
 		this.mfile = mfile;
-		this.mdate = mdate;
 	}
 
 	public MemberDto(String mid, String mpwd, String memail, String mfile) {
@@ -74,21 +85,28 @@ public class MemberDto {
 		this.mfile = mfile;
 	}
 
-	public String getMdate() {
-		return mdate;
+
+	//로그인정보
+	public String getLoginDateTime() {
+		return loginDateTime;
 	}
 
-	public void setMdate(String mdate) {
-		this.mdate = mdate;
+	public void setLoginDateTime(String loginDateTime) {
+		this.loginDateTime = loginDateTime;
 	}
+
 
 	@Override
 	public String toString() {
 		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpwd=" + mpwd + ", memail=" + memail + ", mfile=" + mfile
-				+ ", mdate=" + mdate + "]";
+				+ ", loginDateTime=" + loginDateTime + "]";
 	}
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 }

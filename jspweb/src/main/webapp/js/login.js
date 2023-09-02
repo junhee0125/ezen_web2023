@@ -18,7 +18,7 @@ function login(){
 		success:r=>{
 			console.log(r)
 			if(r){
-				location.href='/jspweb/member/index.jsp';
+				location.href='/jspweb/index.jsp';
 
 			}else{
 				document.querySelector('.logincheckbox').innerHTML = '회원정보가 일치하지 않습니다. ';
