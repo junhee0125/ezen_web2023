@@ -1,6 +1,7 @@
 package controller.board;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -34,8 +36,24 @@ public class BoardInfoController extends HttpServlet {
 	 * 글목록 / 상세보기
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//요청
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		int bcno = Integer.parseInt(request.getParameter("bcno"));
+		//유효성 or 객체화
+		//Dao
+		if(bno == 0) {
+			ArrayList<BoardDto> list = BoardDao.getInstance().boardList(bcno);
+			System.out.println(list.toString());
+			ObjectMapper objectMapper = new ObjectMapper();
+			String jsonArray = objectMapper.writeValueAsString(list);
+			//응답
+			response.setContentType("application/json;charset=UTF-8");
+			response.getWriter().print(jsonArray);
+		} else {
+
+		}
+
+
 	}
 
 	/**
@@ -43,7 +61,7 @@ public class BoardInfoController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String saveDirectory = request.getSession().getServletContext().getRealPath("/board/files");
-		//첨부파일 업로드
+				//첨부파일 업로드
 		MultipartRequest multi = new MultipartRequest(
 				request,
 				saveDirectory,
@@ -62,8 +80,11 @@ public class BoardInfoController extends HttpServlet {
 		System.out.println(mno);
 		System.out.println(bcontent);
 		System.out.println(bfile);
-//		BoardDto boardDto = new BoardDto(bcno, btitle, bcontent, mno, bfile);
-//		BoardDao.getInstance().boardSave(boardDto);
+		BoardDto boardDto = new BoardDto(bcno, btitle, bcontent, mno, bfile);
+		boolean result = BoardDao.getInstance().boardSave(boardDto);
+
+		response.setContentType("application/json;charset:UTF-8");
+		response.getWriter().print(result);
 	}
 
 	/**

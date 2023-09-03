@@ -24,6 +24,13 @@ function bWrite() {
 		processData:false,
 		success : r => {
 			console.log("success :: "+ r);
+			if(r){
+				alert('글이 등록되었습니다.')
+				location.href="/jspweb/board/list.jsp"
+			} else {
+				alert('글이 등록되지 않았습니다.[관리자에게 문의]')
+				location.href="/jspweb/board/list.jsp"
+			}
 		},
 		error: e => {
 			console.log("error :: "+ e);
