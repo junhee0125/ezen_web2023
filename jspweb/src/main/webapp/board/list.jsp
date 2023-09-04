@@ -18,95 +18,21 @@
     <div class="boardBox">
         <ul class="listHead">
             <li class="bno">번호</li>
+            <li class="bcname">구분</li>
             <li class="btitle">제목</li>
             <li class="bwriter">작성자</li>
             <li class="bview">조회수</li>
             <li class="bdate">작성일</li>
         </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-        <ul class="listContent">
-            <li class="bno">1</li>
-            <li class="btitle">제목제목제목제목제목제목제목제목제목제목제목</li>
-            <li class="bwriter">yangyangfunch</li>
-            <li class="bview">35</li>
-            <li class="bdate">2023-09-02 18:36</li>
-        </ul>
-
-
+        <div class="listBox">
+        
+	       <!-- 리스트 출력부분 -->
+        
+        </div>
+       
     </div>
 
-    <div>
-           <span>1</span> <span>2</span> <span>3</span>
-    </div>
+   
 
 </div>
 <script src="../js/board/list.js"></script>

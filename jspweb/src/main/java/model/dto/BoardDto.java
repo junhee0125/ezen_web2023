@@ -4,7 +4,7 @@ public class BoardDto {
 
 	//필드
 	private int bcno;
-    private String cname;
+    private String bcname;
     private int bno;
     private String btitle;
     private String bcontent;
@@ -14,6 +14,10 @@ public class BoardDto {
     private String bdate;
 
     private String mid;
+    private String mfile;
+    
+    //조회댓ㅇ자와 게시물 작성 대상자 일치여부
+    private boolean isHost; 
 
     //빈생성자
     public BoardDto() {
@@ -21,11 +25,11 @@ public class BoardDto {
 	}
 
     //풀생성자
-	public BoardDto(int cno, String cname, int bno, String btitle, String bcontent, int mno, int bveiw, String bfile,
-			String bdate) {
+	public BoardDto(int bcno, String bcname, int bno, String btitle, String bcontent, int mno, int bveiw, String bfile,
+			String bdate ,String mid,String mfile) {
 		super();
 		this.bcno = bcno;
-		this.cname = cname;
+		this.bcname = bcname;
 		this.bno = bno;
 		this.btitle = btitle;
 		this.bcontent = bcontent;
@@ -33,6 +37,8 @@ public class BoardDto {
 		this.bveiw = bveiw;
 		this.bfile = bfile;
 		this.bdate = bdate;
+		this.mid = mid;
+		this.mfile = mfile;
 	}
 
 	// 글저장 생성자
@@ -45,21 +51,49 @@ public class BoardDto {
 		this.bfile = bfile;
 	}
 
-	//메소드
-	public int getCno() {
+	
+	
+
+	// 수정용 생성자
+	public BoardDto(int bcno, int bno, String btitle, String bcontent, String bfile) {
+		super();
+		this.bcno = bcno;
+		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+		this.bfile = bfile;
+	}
+
+	public String getMfile() {
+		return mfile;
+	}
+
+	public void setMfile(String mfile) {
+		this.mfile = mfile;
+	}
+
+	public boolean isHost() {
+		return isHost;
+	}
+
+	public void setHost(boolean isHost) {
+		this.isHost = isHost;
+	}
+
+	public int getBcno() {
 		return bcno;
 	}
 
-	public void setCno(int bcno) {
+	public void setBcno(int bcno) {
 		this.bcno = bcno;
 	}
 
-	public String getCname() {
-		return cname;
+	public String getbcname() {
+		return bcname;
 	}
 
-	public void setCname(String cname) {
-		this.cname = cname;
+	public void setbcname(String bcname) {
+		this.bcname = bcname;
 	}
 
 	public int getBno() {
@@ -128,11 +162,12 @@ public class BoardDto {
 
 	@Override
 	public String toString() {
-		return "BoardDto [bcno=" + bcno + ", cname=" + cname + ", bno=" + bno + ", btitle=" + btitle + ", bcontent="
+		return "BoardDto [bcno=" + bcno + ", bcname=" + bcname + ", bno=" + bno + ", btitle=" + btitle + ", bcontent="
 				+ bcontent + ", mno=" + mno + ", bveiw=" + bveiw + ", bfile=" + bfile + ", bdate=" + bdate + ", mid="
 				+ mid + "]";
 	}
 
+	
 
 
 

@@ -23,10 +23,10 @@
                     </select>   <br/>
             제목 : <input type="text" name="btitle" class="btitle" > <br/>
             내용 : <textarea name="bcontent" class="bcontent"></textarea> <br/>
-            첨부파일 : <input type="file" name="bfile" class="bfile"> <br/>
+            첨부파일 : <input type="file" name=oldfile class="bfile"> <br/>
            <div class="btnBox">
-                <button onclick="bWrite()" type="button">글등록</button>
-                <button onclick="bList()" type="button">목록보기</button>
+                <button onclick="onWrite()" type="button">글등록</button>
+                <button onclick="onList()" type="button">목록보기</button>
                 <button type="reset" >다시쓰기</button>
             </div>
         </form>
