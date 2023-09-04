@@ -168,8 +168,10 @@ public class MemberInfoController extends HttpServlet {
 		String mpwd = multi.getParameter("mpwd");
 		String newmpwd = multi.getParameter("newmpwd");
 		if(mpwd == null || newmpwd == null) {
+			System.out.println("비밀번호를 입력하지 않아 기존의 비번으로 업데이트");
 			mpwd = loginDto.getMpwd();
 			newmpwd = loginDto.getMpwd();
+			System.out.println("mpwd / newmpwd ::"+ mpwd +"  //  "+ mpwd);
 		}
 		int mno =loginDto.getMno();
 		System.out.println("MemberInfoController:: mfile ::"+mfile);

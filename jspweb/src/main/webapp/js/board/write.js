@@ -1,10 +1,10 @@
 /**
  *
  */
-function bList(){
+function onList(){
 	location.href="list.jsp";
 }
-function bWrite() {
+function onWrite() {
 
 	console.log(" bWrite() ");
 
@@ -24,12 +24,12 @@ function bWrite() {
 		processData:false,
 		success : r => {
 			console.log("success :: "+ r);
-			if(r){
-				alert('글이 등록되었습니다.')
-				location.href="/jspweb/board/list.jsp"
+			if(r) {
+				alert(' 글등록 완료되었습니다.');
+				location.href = '/jspweb/board/list.jsp'
 			} else {
-				alert('글이 등록되지 않았습니다.[관리자에게 문의]')
-				location.href="/jspweb/board/list.jsp"
+				alert('글 등록에 실패했습니다. [관리자문의바랍니다]');
+				location.href = '/jspweb/board/list.jsp'
 			}
 		},
 		error: e => {

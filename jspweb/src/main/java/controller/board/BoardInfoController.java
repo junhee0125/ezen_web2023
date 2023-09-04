@@ -36,24 +36,49 @@ public class BoardInfoController extends HttpServlet {
 	 * 글목록 / 상세보기
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//요청
-		int bno = Integer.parseInt(request.getParameter("bno"));
-		int bcno = Integer.parseInt(request.getParameter("bcno"));
-		//유효성 or 객체화
-		//Dao
-		if(bno == 0) {
-			ArrayList<BoardDto> list = BoardDao.getInstance().boardList(bcno);
-			System.out.println(list.toString());
-			ObjectMapper objectMapper = new ObjectMapper();
-			String jsonArray = objectMapper.writeValueAsString(list);
-			//응답
-			response.setContentType("application/json;charset=UTF-8");
-			response.getWriter().print(jsonArray);
-		} else {
+
+		String type = request.getParameter("type");
+		System.out.println("Controller__type :: "+ type);
+		String json= null;
+
+		ObjectMapper objectMapper = new ObjectMapper();
+
+		if(type.equals("1")) { //게시판 전체 글보기
+
+			ArrayList<BoardDto> result = BoardDao.getInstance().boardList();
+			System.out.println( result );
+			// * java객체 --> js객체[JSON] 형식 의 문자열 으로 변환
+			json = objectMapper.writeValueAsString( result );
+
+
+		} else if(type.equals("2")) { // 1개의 게시물 상세보기
+			int bno = Integer.parseInt(request.getParameter("bno"));
+			BoardDto result = BoardDao.getInstance().boardView(bno);
+			System.out.println("bno :: "+ bno);
+			System.out.println( result );
+				// 만약에 (로그인 혹은 비로그인) 욫ㅇ한 사람과 게시물 작성한람이 동일하면
+			Object object = request.getSession().getAttribute("loginDto");
+
+			if(object == null) { // 로그인안햇을 경우
+
+
+			} else { //로그인을 한경우
+				MemberDto loginDto = (MemberDto)object;
+				if(loginDto.getMno() == result.getMno()) {
+					result.setHost(true);
+				} else {
+					result.setHost(false);
+				}
+			}
+
+			json = objectMapper.writeValueAsString( result );
 
 		}
 
 
+		// 4. 응답
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(  json );
 	}
 
 	/**
@@ -80,10 +105,11 @@ public class BoardInfoController extends HttpServlet {
 		System.out.println(mno);
 		System.out.println(bcontent);
 		System.out.println(bfile);
+
 		BoardDto boardDto = new BoardDto(bcno, btitle, bcontent, mno, bfile);
 		boolean result = BoardDao.getInstance().boardSave(boardDto);
 
-		response.setContentType("application/json;charset:UTF-8");
+		response.setContentType("applicaton/json;charset=UTF-8");
 		response.getWriter().print(result);
 	}
 
@@ -91,6 +117,33 @@ public class BoardInfoController extends HttpServlet {
 	 * 글수정
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String saveDirectory = request.getSession().getServletContext().getRealPath("/board/files");
+		//첨부파일 업로드
+		MultipartRequest multi = new MultipartRequest(
+				request,
+				saveDirectory,
+				1024*1024*10,
+				"UTF-8",
+				new DefaultFileRenamePolicy());
+
+		//저장용
+		int bcno = Integer.parseInt(multi.getParameter("bcno"));
+		int bno = Integer.parseInt(multi.getParameter("bno"));
+		String btitle = multi.getParameter("btitle");
+		String bcontent = multi.getParameter("bcontent");
+		String bfile = multi.getFilesystemName("bfile");
+
+		System.out.println(" bcno ::: "+ bcno);
+		System.out.println(" bno ::: "+ bno);
+		System.out.println(" btitle ::: "+ btitle);
+		System.out.println(" bcontent ::: "+ bcontent);
+		System.out.println(" btitle ::: "+ btitle);
+
+		BoardDto boardDto = new BoardDto(bcno, bno, btitle, bcontent, bfile);
+		boolean result = BoardDao.getInstance().boardUpdate(boardDto);
+
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(result);
 
 	}
 
@@ -98,7 +151,12 @@ public class BoardInfoController extends HttpServlet {
 	 * 글삭제
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		System.out.println("bno :: " + bno);
 
+		boolean result = BoardDao.getInstance().boardDelete(bno);
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(result);
 	}
 
 }

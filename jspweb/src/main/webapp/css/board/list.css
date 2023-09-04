@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .boardBox{
-	padding:30px; 0;
+	padding:30px; 
 }
 .listHead{
 	display: flex;
@@ -26,21 +26,18 @@
 }
 
 .listContent li{
-
+	padding:10px;
 	border-bottom :solid 1px #75C1CF;
 	text-align: center;
 
 }
-.listContent li:not([class="bwriter"]){
-	padding:15px;
-}
 
-.bno{ width:8%; }
-.bcname{ width:12%;}
-.btitle{ width:40%; }
-.bwriter{ width:15%; padding:6px;}
-.bview{ width:7%; }
-.bdate{ width:18%; }
+.bno{ width:10% }
+.bcname{ width:10% }
+.btitle{ width:40% }
+.bwriter{ width:15% }
+.bview{ width:10% }
+.bdate{ width:15% }
 
 .btnBox{
 	width:100%;
@@ -50,6 +47,7 @@
 }
 .btnBox button{
 	width:10%;
+
 	background-color: #75C1CF;
     border-radius:5px;
     border:none;
@@ -58,9 +56,4 @@
     text-align: center;
     padding:10px;
 
-}
-.bwriter img{
-	width:30px;
-	border-radius: 30px;
-	margin-left: 10px;
 }

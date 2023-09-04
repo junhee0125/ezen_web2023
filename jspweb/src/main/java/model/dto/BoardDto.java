@@ -16,6 +16,9 @@ public class BoardDto {
     private String mid;
     private String mfile;
 
+    //조회댓ㅇ자와 게시물 작성 대상자 일치여부
+    private boolean isHost;
+
 
     //빈생성자
     public BoardDto() {
@@ -49,21 +52,36 @@ public class BoardDto {
 		this.bfile = bfile;
 	}
 
+	// 수정용 생성자
+	public BoardDto(int bcno, int bno, String btitle, String bcontent, String bfile) {
+		super();
+		this.bcno = bcno;
+		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+		this.bfile = bfile;
+	}
+
+
+	public boolean isHost() {
+		return isHost;
+	}
+
+	public void setHost(boolean isHost) {
+		this.isHost = isHost;
+	}
 
 	public int getBcno() {
 		return bcno;
 	}
 
-
 	public void setBcno(int bcno) {
 		this.bcno = bcno;
 	}
 
-
 	public String getBcname() {
 		return bcname;
 	}
-
 
 	public void setBcname(String bcname) {
 		this.bcname = bcname;
@@ -159,13 +177,14 @@ public class BoardDto {
 		this.mfile = mfile;
 	}
 
-
 	@Override
 	public String toString() {
 		return "BoardDto [bcno=" + bcno + ", bcname=" + bcname + ", bno=" + bno + ", btitle=" + btitle + ", bcontent="
 				+ bcontent + ", mno=" + mno + ", bview=" + bview + ", bfile=" + bfile + ", bdate=" + bdate + ", mid="
-				+ mid + ", mfile=" + mfile + "]";
+				+ mid + ", mfile=" + mfile + ", isHost=" + isHost + "]";
 	}
+
+
 
 
 

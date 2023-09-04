@@ -25,16 +25,14 @@
             <li class="bdate">작성일</li>
         </ul>
         <div class="listBox">
-
-
+        
+	       <!-- 리스트 출력부분 -->
+        
         </div>
-
-
+       
     </div>
 
-    <div>
-           <span>1</span> <span>2</span> <span>3</span>
-    </div>
+   
 
 </div>
 <script src="../js/board/list.js"></script>
