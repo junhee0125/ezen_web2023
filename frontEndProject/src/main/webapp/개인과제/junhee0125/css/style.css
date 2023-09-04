@@ -119,6 +119,7 @@ h1{color: var(--fbg);}
     width:80%;
     height:75%;
     display:flex;
+    
 }
 .article{
 	width:70%;
@@ -215,13 +216,13 @@ h1{color: var(--fbg);}
 /* mention */
 .mention{
 	width:95%;
-	height:40%;
-	margin-top:50px;
+	height:48%;
+
 	padding:30px 10px 30px 10px ;
     font-family: 'Nanum Pen Script', cursive;
-    font-size: 1.6rem;
-	color:#888;
-	line-height: 1.6;
+    font-size: 1.4rem;
+	color:#666;
+	line-height: 1.4;
 /* 	background-color: var(--dp); */
 	border-radius: 50px 0 50px 50px ;
 }
