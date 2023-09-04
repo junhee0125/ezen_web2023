@@ -40,8 +40,8 @@ public class BoardDao extends Dao{
 						, rs.getInt("bview")
 						, rs.getString("bfile")
 						, rs.getString("bdate")
-						,rs.getString("mid")
-						,rs.getString("mfile"));
+						, rs.getString("mid")
+						, rs.getString("mfile"));
 				list.add(boardDto);
 			    }
 			} catch (Exception e) {
@@ -71,6 +71,8 @@ public class BoardDao extends Dao{
 
 	//3. 글 상세보기
 	public BoardDto boardView(int bno) {
+		//조회수 증가
+		viewCount(bno);
 
 		try {
 			String sql = " select b.* , m.mid , m.mfile , bc.bcname "
@@ -93,8 +95,8 @@ public class BoardDao extends Dao{
 						, rs.getInt("bview")
 						, rs.getString("bfile")
 						, rs.getString("bdate")
-						,rs.getString("mid")
-						,rs.getString("mfile"));
+						, rs.getString("mid")
+						, rs.getString("mfile"));
 
 				return boardDto;
 			}
@@ -134,7 +136,7 @@ public class BoardDao extends Dao{
 	}
 
 
-	//5. 글 삭제
+	// 5. 글 삭제
 	public boolean boardDelete(int bno) {
 		try {
 			String sql="delete from board where bno = ?";
@@ -149,14 +151,17 @@ public class BoardDao extends Dao{
 
 	}
 
-	// 6.조회수 증가
-	public void viewCount() {
-		try {
 
-		} catch (Exception e) {
-			System.out.println("Exception :: "+ e);
+	// 6. 조회수 증가
+		public boolean viewCount( int bno ) {
+			try {
+				String sql = "update board set bview = bview+1 where bno = ?";
+				ps = conn.prepareStatement(sql);
+				ps.setInt( 1 , bno );
+				int count = ps.executeUpdate();
+				if( count == 1 ) return true;
+			}catch (Exception e) {System.out.println(e);}
+			return false;
 		}
-
-	}
 
 }
