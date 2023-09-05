@@ -11,10 +11,33 @@
 <body>
 <%@include file="../header.jsp" %>
 <div class="webcontainer">
-    <h2  class="boardCategory">공지사항</h2>
-    <div class="btnBox">
-       <button onclick="onWrite()" type="button">글쓰기</button>
+	<!-- 상단 : (페이지 제목과 설명) -->
+	<div class="boardHeader">
+		 <h2  class="boardCategory">게시판</h2>
+		 <p> 다양한 사람들과 정보를 공유해요</p>
+	</div>
+	
+	<!-- 2. 상단 부가 버튼 -->
+   	<div class="lposition btnBox ">
+       	
+       	<div>
+       		<span class="boardcount"> 게시물 수 : 6 </span>
+       		<select onchange="onListSize()" class="listSize" > <!-- 한페이지에 표시할 최대 게시물수 -->
+       			<option>10</option>
+       			<option>15</option>
+       			<option>20</option>
+       		</select>
+       	</div>
+       	<button onclick="onWrite()" type="button">글쓰기</button>
     </div>
+       
+   <!-- 카테고리 구역 -->
+	<div class="  lposition">
+   		<button onclick="onCategory(0)" class="btn" type="button">전체보기</button>
+   		<button onclick="onCategory(1)" class="btn" type="button">공지사항</button>
+   		<button onclick="onCategory(2)" class="btn" type="button">자유게시판</button>
+   		<button onclick="onCategory(3)" class="btn" type="button">노하우</button>
+   	</div>
     <div class="boardBox">
         <ul class="listHead">
             <li class="bno">번호</li>
@@ -29,10 +52,26 @@
 	       <!-- 리스트 출력부분 -->
         
         </div>
-       
+         
     </div>
-
-   
+    <div class="boradBottom">
+    	<div class="searchBox">
+			<select>
+				<option value="">제목</option>
+				<option value="">내용</option>
+				<option value="">작성자</option>
+			</select>
+			<input class="keyword" type="text">
+			<button class="searchBtn" type="button">검색</button>
+		</div>
+		<!-- 페이징 구역 -->
+		<div class="pageBox">
+			<!-- getList() 페이지 네이션 출력 -->
+		</div>
+		<!--  검색구역 -->
+		
+		
+   </div>
 
 </div>
 <script src="../js/board/list.js"></script>

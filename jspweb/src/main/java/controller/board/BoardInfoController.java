@@ -16,6 +16,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import model.dao.BoardDao;
 import model.dto.BoardDto;
 import model.dto.MemberDto;
+import model.dto.PageDto;
 
 /**
  * Servlet implementation class BoardInfoController
@@ -44,11 +45,31 @@ public class BoardInfoController extends HttpServlet {
 		ObjectMapper objectMapper = new ObjectMapper();
 
 		if(type.equals("1")) { //게시판 전체 글보기
-
-			ArrayList<BoardDto> result = BoardDao.getInstance().boardList();
+			
+			// 1. 카테고리별 출력
+			int bcno = Integer.parseInt(request.getParameter("bcno"));
+			// 2. 하나의 페이지에 출력할 최대 게시물 수
+			int listsize = Integer.parseInt(request.getParameter("listSize"));
+			// 3. 페이징처리하기
+			int page = Integer.parseInt(request.getParameter("page"));
+				// 페이지 레코드의 시작번호가 필요함 : (pagenum-1) *출력할 게시물
+			//시작번호
+			int startrow = (page-1) * listsize;
+			
+			//4. 마지막 페이지번호
+				// 전체 게시물수 / 페이별최대 게시물수(listsize) +1
+			int totalsize = BoardDao.getInstance().getTotalCount(bcno);
+			int totalpage = totalsize % listsize == 0 ?  totalsize/listsize : totalsize / listsize +1;
+			
+			
+			ArrayList<BoardDto> result = BoardDao.getInstance().boardList(bcno, listsize, startrow);
+			
+			//pageDto
+			PageDto pageDto = new PageDto(page, listsize, startrow, totalsize, totalpage, result);
+			
 			System.out.println( result );
 			// * java객체 --> js객체[JSON] 형식 의 문자열 으로 변환
-			json = objectMapper.writeValueAsString( result );
+			json = objectMapper.writeValueAsString( pageDto );
 
 
 		} else if(type.equals("2")) { // 1개의 게시물 상세보기

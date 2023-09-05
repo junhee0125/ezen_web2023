@@ -1,6 +1,10 @@
 @charset "UTF-8";
+.boardCategory { text-align: center;}
 .boardBox{
-	padding:30px; 
+	padding:10px 30px;
+}
+.boardHeader p{
+	text-align: center;
 }
 .listHead{
 	display: flex;
@@ -27,23 +31,48 @@
 
 .listContent li{
 	padding:10px;
-	border-bottom :solid 1px #75C1CF;
+	border-bottom: solid 1px #75C1CF;
 	text-align: center;
-
+}
+.listBox ul:nth-child(even){
+	background-color: #eee;
 }
 
-.bno{ width:10% }
-.bcname{ width:10% }
-.btitle{ width:40% }
-.bwriter{ width:15% }
-.bview{ width:10% }
-.bdate{ width:15% }
+.listBox ul:hover li{
+	background-color: #75C1CF;
+	color:#fff;
+}
 
+
+.bno{ width:10% ;}
+.bcname{ width:10%; }
+.btitle{ 
+	width:40%;
+ 	white-space: nowrap;
+ 	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	max-width:40%;
+ }
+.bwriter{ width:15%; }
+.bwriter img{
+	width:15px; 
+	height:15px;
+	vertical-align: middle;
+	border-radius: 50%; 
+	margin-left: 6px;
+}
+.bview{ width:10%; }
+.bdate{ width:15%; }
+.boardHeader{
+	width:100%;
+	margin: 0 auto;
+}
 .btnBox{
+	padding-right:30px;
 	width:100%;
 	display:flex;
 	justify-content:right;
-	padding:0 30px;
+	margin-top:10px;
 }
 .btnBox button{
 	width:10%;
@@ -54,6 +83,87 @@
     font-size:1.2rem;
     color:#fff;
     text-align: center;
-    padding:10px;
+    padding:5px;
 
 }
+.lposition {
+	padding-left:30px;
+	justify-content:space-between;
+}
+.lposition button {
+	margin-right:3px;
+	width:10%;
+
+	background-color: #FFF;
+    border-radius:5px;
+    border:solid 1px #75C1CF ;
+    font-size:1.2rem;
+    color:#75C1CF;
+    text-align: center;
+    padding:5px;
+}
+.lposition select{ 
+	margin-left:10px;
+	padding:5px 10px;
+	border:1px solid #75C1CF;
+	border-radius: 5px;
+	width:80px;
+}	
+.boradBottom {
+	width:100%;
+	padding:0px 30px;
+	margin:0 auto;
+}
+.pageBox{
+	text-align:center;
+	padding-bottom: 20px;
+	margin:10px auto;
+}
+.pageBox button {
+	width:30px;
+	height:30px;
+	background-color: #fff;
+	color:#888;
+	border: none;
+	font-size: 1.2rem;
+	padding:0 10px;
+	text-align: center;
+	
+}
+.selectedPage{
+	background-color: #75C1CF !important;
+	border-radius: 50%;
+	color: #fff !important;
+	
+	
+}
+.searchBox {
+	text-align: right;
+}
+.searchBox select, input{ 
+	padding:5px 10px;
+	border:1px solid #e8e8e8;
+	border-radius: 5px;
+	width:150px;
+}
+.searchBtn {
+	padding:5px 10px;
+	border:1px solid #e8e8e8;
+	border-radius: 5px;
+	width:80px;
+}
+	
+}
+
+
+/*
+	의사 클래스
+	하위요소를 익덱스로 식별하기 
+		- 인덱스 :1 1번부터 시작
+		- 목적 : 동일한 식별자가 여러개일때 사용 [* 중복 식별자를 식별할때]
+		- 상위 요소 하위요소 :nth-child(인덱스);
+		form input-child(1)
+	
+
+
+*/

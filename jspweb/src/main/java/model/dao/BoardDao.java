@@ -1,9 +1,6 @@
 package model.dao;
 
 import java.util.ArrayList;
-
-import javax.print.attribute.SetOfIntegerSyntax;
-
 import model.dto.BoardDto;
 
 public class BoardDao extends Dao{
@@ -17,17 +14,29 @@ public class BoardDao extends Dao{
 
 
 	//1 .리스트 출력
-		public ArrayList<BoardDto> boardList() {
+		public ArrayList<BoardDto> boardList(int bcno, int listsize , int startrow) {
 			// * 게시물 레코드 정보의 DTO를 여러개 저장하는 리스트 선언
 			ArrayList<BoardDto> list = new ArrayList<>();
 			try {
 			String sql = " select b.* , m.mid , m.mfile , bc.bcname "
 					+ " from board b "
 					+ "		natural join bcategory bc "
-					+ "		natural join member m "
-					+ " order by b.bdate desc ";
+					+ "		natural join member m ";
+			if(bcno != 0 ) {
+					sql += "where bcno = " + bcno;
+			}
+			
+			// 공통
+					sql+= " order by b.bdate desc "
+			//게시물수 
+					+ "		limit  ?, ?"; //시작번호부터 최대게시물수만큼 출력
+			
+			
 			ps = conn.prepareStatement(sql);
+			ps.setInt(1, startrow);
+			ps.setInt(2, listsize);
 			rs = ps.executeQuery();
+			
 			System.out.println(" boardList SQL :: " + ps);
 				while( rs.next() ) {
 				BoardDto boardDto = new BoardDto(
@@ -163,5 +172,27 @@ public class BoardDao extends Dao{
 			}catch (Exception e) {System.out.println(e);}
 			return false;
 		}
+		
+	// 7. 전체레코드 수
+		public int getTotalCount (int bcno) {
+			
+			// 7-1 전체레코드수
+			
+			try {
+				String sql = " select count(*)  from board ";
+				if(bcno != 0) {
+					sql += " where bcno = ? " + bcno;
+				}
+				ps= conn.prepareStatement(sql);
+				rs = ps.executeQuery();
+				if(rs.next()) return rs.getInt(1);
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			} return 0;
+			
+			
+		}
+		
 
 }
