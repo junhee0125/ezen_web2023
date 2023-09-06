@@ -64,7 +64,7 @@ function getList(page){
 			html += `<button onclick="getList(${page == 1 ? page: page-1 })" type="button"> < </button>`
 			console.log('page :: '+ page);
 			// 페이징 번호 버튼
-			for(let i =1 ; i <= r.totalpage ; i++ ){
+			for(let i = r.startbtn ; i <= r.endbtn ; i++ ){
 				
 				html +=`<button onclick="getList(${i})" type="button" class="${page == i ? 'selectedPage' :''}"> ${i} </button>`
 			}

@@ -61,11 +61,27 @@ public class BoardInfoController extends HttpServlet {
 			int totalsize = BoardDao.getInstance().getTotalCount(bcno);
 			int totalpage = totalsize % listsize == 0 ?  totalsize/listsize : totalsize / listsize +1;
 			
+			// 5. 페이지번호버튼, 시작번호, 마지막번호
+			/*
+			 * 5개 출력시  1-5 / 6-10/ 11-15
+			 * n = (페이지/번호버튼겟숫)*
+			 * n개 출력시  1-n / n+1 -  2n/ 2n+1 - 3n
+			 * 페이지 /출력
+			 * */
+			// 1. 페이지버튼 출력 개수
+			int btnsize = 5;
+			//2. 페이지버튼 번호의 시작번호
+			int startbtn  = ((page-1)/btnsize)*btnsize+1;
+			// 3. 페이지버튼 번호의 마지막 번호
+			int endbtn = startbtn + btnsize-1;
+				//단 마지막 번호느는 총페
+			if(endbtn >= totalpage) endbtn = totalpage;
+			
 			
 			ArrayList<BoardDto> result = BoardDao.getInstance().boardList(bcno, listsize, startrow);
 			
 			//pageDto
-			PageDto pageDto = new PageDto(page, listsize, startrow, totalsize, totalpage, result);
+			PageDto pageDto = new PageDto(page, listsize, startrow, totalsize, totalpage,startbtn, endbtn, result);
 			
 			System.out.println( result );
 			// * java객체 --> js객체[JSON] 형식 의 문자열 으로 변환
