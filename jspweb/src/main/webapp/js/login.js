@@ -2,7 +2,7 @@
  *
  */
 function login(){
-	console.log('로그인');
+	console.log('로그인()');
 	// 1. 입력받은 아이디와 비밀번호를 가져온다
 
 	let mid = document.querySelector('.mid').value;

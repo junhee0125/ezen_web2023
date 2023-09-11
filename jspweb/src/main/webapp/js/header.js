@@ -2,13 +2,16 @@
  *
  */
 // 1. 현재 로그인된 회원정보 요청
-getMemberInfo();
+
 let loginState = false;
+let loginMid ='';
+getMemberInfo();
 function getMemberInfo(){
 	// 1, ajax 이용한 서블릿세션 정보 가져오기
 	$.ajax({
 		url:"/jspweb/MemberInfoController",
 		method:"get",
+		async: false,/* 동기화., 비동기화(기본값 = true) 설정하는 속성*/
 		data:{type:"login"},
 		success: r =>{
 
@@ -16,7 +19,8 @@ function getMemberInfo(){
 			let submenu = document.querySelector('.submenu');
 			let html = ``;
 			if(r==null){
-				loginState = false;
+				loginState = false; 
+				loginMid = '';
 	            html +=` <li><a href="/jspweb/index.jsp">홈으로</a></li>
 	            		 <li><a href="/jspweb/member/signup.jsp">회원가입</a></li>
 	            		 <li><a href="/jspweb/member/login.jsp"">로그인</a></li>
@@ -25,6 +29,7 @@ function getMemberInfo(){
 
 			}else {
 				loginState = true;
+				loginMid = r.mid;
 				console.log("이미지" + r.mfile)
 	           html += ` <li><a href="/jspweb/index.jsp">홈으로</a></li>
 	        	   		 <li>${r.mid}님</li>
