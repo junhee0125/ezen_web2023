@@ -14,7 +14,7 @@ public class BoardDao extends Dao{
 
 
 	//1 .리스트 출력
-		public ArrayList<BoardDto> boardList(int bcno, int listsize , int startrow) {
+		public ArrayList<BoardDto> boardList(int bcno, int listsize , int startrow, String searchType ,String keyword) {
 			// * 게시물 레코드 정보의 DTO를 여러개 저장하는 리스트 선언
 			ArrayList<BoardDto> list = new ArrayList<>();
 			try {
@@ -24,6 +24,18 @@ public class BoardDao extends Dao{
 					+ "		natural join member m ";
 			if(bcno != 0 ) {
 					sql += "where bcno = " + bcno;
+			}
+			
+			//검색이 있다 vs  없다
+				//if(searchType.length()==0) {} // 같은 기능
+			
+			// 검색타입과 키워드가 있으면
+			
+			if(!searchType.isEmpty() && !keyword.isEmpty()) {//띄어쓰기 주의!!
+				// 만약에 카테고리선택된 후 검색이면 where구문이 존재하기 때문에 and가 추가되고 아닌경우 where가 추가될수 있도록
+				if(bcno != 0 ) { sql += " and ";} 
+				else { sql += " where " ; }
+				sql += " " + searchType + " like '%"+keyword+"%' ";
 			}
 			
 			// 공통
@@ -69,6 +81,7 @@ public class BoardDao extends Dao{
 			ps.setString(3,boardDto.getBfile());
 			ps.setInt(4,boardDto.getMno());
 			ps.setInt(5,boardDto.getBcno());
+			System.out.println("boardSave  :: SQL >> "+ps);
 			int rs = ps.executeUpdate();
 			if(rs ==1 ) return true;
 
@@ -174,16 +187,25 @@ public class BoardDao extends Dao{
 		}
 		
 	// 7. 전체레코드 수
-		public int getTotalCount (int bcno) {
+		public int getTotalCount (int bcno, String searchType, String keyword) {
 			
 			// 7-1 전체레코드수
 			
 			try {
-				String sql = " select count(*)  from board ";
+				String sql = " select count(*)  from board b natural join member m";
 				if(bcno != 0) {
-					sql += " where bcno = ? " + bcno;
+					sql += " where bcno = " + bcno;
 				}
+				//만약에 검색이 있으면
+				if(!searchType.isEmpty() && !keyword.isEmpty()) {
+					// 만약에 카테고리선택된 후 검색이면 where구문이 존재하기 때문에 and가 추가되고 아닌경우 where가 추가될수 있도록
+					if(bcno != 0 ) { sql += " and ";} 
+					else { sql += " where " ; }
+					sql +=  searchType + " like '%" + keyword+ "%'";
+				}
+				
 				ps= conn.prepareStatement(sql);
+				System.out.println("getTotalCount  SQL >> " + ps);
 				rs = ps.executeQuery();
 				if(rs.next()) return rs.getInt(1);
 				

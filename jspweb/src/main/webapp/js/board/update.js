@@ -10,6 +10,8 @@ let bno = urlParams.get("bno"); // rul주소에서 bno의 데이터 가져오기
 	// new URL(location.href).searchParams.get("매개변수명")
 	console.log( "bno  >>"+ bno );
 	
+
+	
 	
 getBoard();
  function getBoard(){
@@ -23,13 +25,28 @@ getBoard();
 		success : r => {  console.log(r);
 			document.querySelector('.bcno').value = `${r.bcno }`;
 			document.querySelector('.btitle').value = `${r.btitle}`;
-			document.querySelector('.bcontent').value = `${r.bcontent}`;
+			//서머노트사용하기 위해  value에서 innerHTML로 변경
+			document.querySelector('.bcontent').innerHTML = `${r.bcontent}`; 
 			document.querySelector('.oldfile').innerHTML = `${r.bfile}`;
+			
+			/* 썸머노트 실행 */
+			$(document).ready(function() {
+			
+			   let option = { // 썸머노트 옵션관련 객체 만들기 
+			      lang : 'ko-KR' , 
+			      height : 500 , 
+			      placeholder : '여기에 내용작성'
+			   }
+			   
+			   $('#summernote').summernote( option );
+			  
+			});
 			},
 		error : e =>{ 	console.log(e);
 		}
 	});
 }
+
 
 function onUpdate(){
 	console.log('onUpdate');

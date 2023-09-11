@@ -56,13 +56,14 @@
     </div>
     <div class="boradBottom">
     	<div class="searchBox">
-			<select>
-				<option value="">제목</option>
-				<option value="">내용</option>
-				<option value="">작성자</option>
+			<select class="searchType">
+			<!-- * 검색할 필드명 -->
+				<option value="b.btitle">제목</option>
+				<option value="b.content">내용</option>
+				<option value="m.mid">작성자</option>
 			</select>
 			<input class="keyword" type="text">
-			<button class="searchBtn" type="button">검색</button>
+			<button onclick="onSearch()" class="searchBtn" type="button">검색</button>
 		</div>
 		<!-- 페이징 구역 -->
 		<div class="pageBox">

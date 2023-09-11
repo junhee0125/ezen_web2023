@@ -21,7 +21,7 @@ function onWrite(){
 	listSize : 하나의 페이지에 최대표시할 게시물수 [기본값은 10]
 	page:  조회할 페이지 번호 [기본값은 1]
 */
-let pageObject = {type : 1, bcno: 0 , listSize : 10, page:1 }
+let pageObject = {type : 1, bcno: 0 , listSize : 10, page:1 , searchType :'', keyword:''}
 // 2. 모든 글 조회 [ js열렸을때 1회 자동실행 ]
 getList(1);
 function getList(page){
@@ -77,7 +77,14 @@ function getList(page){
 			
 			//총 게시룰 수
 			let boardcount = document.querySelector('.boardcount')
-			boardcount.innerHTML = `총 게시물 수 : ${r.totalsize}`
+			
+				// 검색이 있는 경우 와 없는 경우
+				if(pageObject.keyword == '' && pageObject.searchType ){
+					boardcount.innerHTML = `총 게시물 수 : ${r.totalsize}`
+				} else {
+					boardcount.innerHTML = `검색된 게시물 수 : ${r.totalsize}`
+				}
+				
 		}, 
 		error : e => {}
 	})
@@ -90,6 +97,9 @@ function onCategory(bcno){
 	console.log('클릭된 카테고리번호 :: ' +bcno);
 	
 	pageObject.bcno = bcno;
+	pageObject.keyword=''; 		//검색해제
+	pageObject.searchType='';	//검색해제
+
 	getList(1)
 	
 }
@@ -99,6 +109,17 @@ function onCategory(bcno){
 function onListSize(){
 	let listSize = document.querySelector('.listSize').value;
 	pageObject.listSize = listSize;
+	getList(1);
+}
+
+
+//검색
+function onSearch() {
+	console.log("onSearch()::: ")
+	pageObject.searchType = document.querySelector('.searchType').value;
+	console.log("searchType::: "+pageObject.searchType)
+	pageObject.keyword = document.querySelector('.keyword').value;
+	console.log("keyword::: "+pageObject.keyword)
 	getList(1);
 }
 /*
