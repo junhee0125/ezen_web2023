@@ -45,7 +45,7 @@ public class ChattingSocket {
 		System.out.println("접속명단 : " + 접속명단);
 	}
 
-	
+
 
 	
 	// 2 . 클라이언트가 서버소켓의 닫혔을때 맵핑 연결 (JS,에서 new WebSocket 객체 초기화될때, 새로고침f5] ,페이지전환 등등])
@@ -83,3 +83,9 @@ public class ChattingSocket {
 //	}
 		
 }
+
+
+
+
+
+
