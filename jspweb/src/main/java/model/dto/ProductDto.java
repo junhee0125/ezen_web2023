@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class ProductDto {
 
-	private int	cno;
-	private String cname;
+	private int	pcno;
+	private String pcname;
 	private int pno;				// 제품번호
 	private String pname; 			// 제품명
-	private String pcoment ;		// 제품설명
+	private String pcomment ;		// 제품설명
     private int pprice;				// 제품가격 signed(기본값, 음수사용,int의 경우 ) / unsigned(음수사용안함, int의 경우 41억까지 표현가능) : 음수사용여부
     private int pstatus;    		// 제품상태 0:판매중/ 1:거래중/ 2:판매대기 / 3 판매완료 
     private String pdate;  			// 등록일
@@ -25,14 +25,14 @@ public class ProductDto {
 	}
 
 
-	public ProductDto(int cno, String cname, int pno, String pname, String pcoment, int pprice, int pstatus,
+	public ProductDto(int pcno, String pcname, int pno, String pname, String pcomment, int pprice, int pstatus,
 			String pdate, String plat, String plng, int mno, Map<Integer, String> imgList, String mid) {
 		super();
-		this.cno = cno;
-		this.cname = cname;
+		this.pcno = pcno;
+		this.pcname = pcname;
 		this.pno = pno;
 		this.pname = pname;
-		this.pcoment = pcoment;
+		this.pcomment = pcomment;
 		this.pprice = pprice;
 		this.pstatus = pstatus;
 		this.pdate = pdate;
@@ -46,12 +46,12 @@ public class ProductDto {
 	
 
 
-	public ProductDto(int cno, String pname, String pcoment, int pprice, String plat, String plng, int mno,
+	public ProductDto(int pcno, String pname, String pcomment, int pprice, String plat, String plng, int mno,
 			Map<Integer, String> imgList) {
 		super();
-		this.cno = cno;
+		this.pcno = pcno;
 		this.pname = pname;
-		this.pcoment = pcoment;
+		this.pcomment = pcomment;
 		this.pprice = pprice;
 		this.plat = plat;
 		this.plng = plng;
@@ -60,23 +60,26 @@ public class ProductDto {
 	}
 
 
-	public int getCno() {
-		return cno;
+	
+
+
+	public int getPcno() {
+		return pcno;
 	}
 
 
-	public void setCno(int cno) {
-		this.cno = cno;
+	public void setPcno(int pcno) {
+		this.pcno = pcno;
 	}
 
 
-	public String getCname() {
-		return cname;
+	public String getPcname() {
+		return pcname;
 	}
 
 
-	public void setCname(String cname) {
-		this.cname = cname;
+	public void setPcname(String pcname) {
+		this.pcname = pcname;
 	}
 
 
@@ -100,13 +103,16 @@ public class ProductDto {
 	}
 
 
-	public String getPcoment() {
-		return pcoment;
+	
+
+
+	public String getPcomment() {
+		return pcomment;
 	}
 
 
-	public void setPcoment(String pcoment) {
-		this.pcoment = pcoment;
+	public void setPcomment(String pcomment) {
+		this.pcomment = pcomment;
 	}
 
 
@@ -192,8 +198,8 @@ public class ProductDto {
 
 	@Override
 	public String toString() {
-		return "ProductDto [cno=" + cno + ", cname=" + cname + ", pno=" + pno + ", pname=" + pname + ", pcoment="
-				+ pcoment + ", pprice=" + pprice + ", pstatus=" + pstatus + ", pdate=" + pdate + ", plat=" + plat
+		return "ProductDto [pcno=" + pcno + ", pcname=" + pcname + ", pno=" + pno + ", pname=" + pname + ", pcomment="
+				+ pcomment + ", pprice=" + pprice + ", pstatus=" + pstatus + ", pdate=" + pdate + ", plat=" + plat
 				+ ", plng=" + plng + ", mno=" + mno + ", imgList=" + imgList + ", mid=" + mid + "]";
 	}
 	

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +17,8 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import model.dao.ProductDao;
+import model.dto.MemberDto;
 import model.dto.ProductDto;
 
 /**
@@ -51,8 +54,8 @@ public class ProductInfoController extends HttpServlet {
 		//1 . 저장경로 [첨부파일이 저장될 폴더 위치]
 		String uploadPath = request.getServletContext().getRealPath("/product/img");
 		
-		//2.업로드 객체 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-		// 파일 아이템저장소 객체
+		// 2. 파일아이템저장소 객체 : 업로드할 옵션  [ import org.apache.commons.fileupload.FileItem; ]
+		// 파일 아이템저장소 객체에 업로드 옵션을 set함
 		DiskFileItemFactory itemFactory = new DiskFileItemFactory();
 		//파일타입으로
 		itemFactory.setRepository(new File(uploadPath)); // 저장위치
@@ -79,30 +82,63 @@ public class ProductInfoController extends HttpServlet {
 				//item.isFormField() true : 일반필드 / false 첨부파일필드
 				// 1. 일반필드인지 
 					if(item.isFormField()) {
+						System.out.println( item.getString() ); // .getString() : 해당 요청 input의 value 호출 
 						
 					}else {
 				//2/. 파일필드인지 
-						//getName 파일명가져옴
-						System.out.println("업로드할 파일명 :: "+item.getName());
-						File fileUploadPath = new File(uploadPath + "/"+ item.getName());
-						System.out.println("fileUploadPath  :: "+fileUploadPath);
+						// 만약에 파일 필드이면 업로드 진행
+						System.out.println( "업로드할 파일명 : " + item.getName() ); // .getName()
+					// 6.업로드 경로 + 파일명 [ 조합 ] 
+					
+						// 파일명에 중복이 있을때 식별 생성 
+						UUID uuid = UUID.randomUUID();
+							// UUID 클래스 : 고유성을 보장하는 ID를 만들기 위한 식별자 표준 규약  [ - 하이픈 4개 구역 ]
+						String filename = uuid+"-"+ item.getName().replaceAll("-", "_");
+												// 만약에 파일명에 - 하이픈 존재하면 _언더바로 변경 
+												// 왜?? 파일명과 UUID 간의 식별하기 위해 구분 -하이픈 사용하기 때문에.
+												// 추후에 파일명만 추출시 사용자가 파일명에 - 이 있으면 파일명 추출시 쪼개기가 힘듬.
+						// UUID[ - - -  ] - 파일명 : 추후에 파일명만 추출시 -하이픈 기준으로 쪼개기 
+						
+					File fileUploadPath = new File( uploadPath +"/"+ filename ) ;
+							System.out.println("fileUploadPath  :: "+fileUploadPath);
 						//.write("저장할 경로 파일명포함") vkdlfdjqfhemgkf rudfhfmf file타입으로 제공
 						item.write( fileUploadPath); // 업로드할 경로 file타입으로
 						
 						i++;
-						imgList.put(i, item.getName());
+						imgList.put(i,filename);
 						
 					}
+					
+					
 				}
-		
+			//회원번호
+			Object object = request.getSession().getAttribute("loginDto");
+			MemberDto memberDto = (MemberDto)object;
+			int mno = memberDto.getMno();
+			//	public ProductDto(int cno, String pname, String pcoment, int pprice, String plat, String plng, int mno,Map<Integer, String> imgList) {
+
 			ProductDto productDto = new ProductDto(
-					Integer.parseInt(fileList.get(0).getString()),
-					fileList.get(1).getString(),
-					fileList.get(2).getString(),
-					Integer.parseInt(fileList.get(3).getString()),
-					null, null,0,
-					imgList
-					); 
+					Integer.parseInt( fileList.get(0).getString() ), // fileList.get(0) : name = pcno 호출 
+					fileList.get(1).getString(),  // fileList.get(1) : name = pname 값 호출
+					fileList.get(2).getString(), // fileList.get(2) : pcontent 값 호출 
+					Integer.parseInt( fileList.get(3).getString() ), // fileList.get(3) : pprice 값 호출 
+					fileList.get(4).getString(),  // formData.set( 'plat' , plat );
+					fileList.get(5).getString(),  //formData.set( 'plng' , plng );
+					mno , // 현재 로그인된[제품등록한] 회원의 번호 호출 
+					imgList ); // 여러개 이미지는 위에서 리스트로 구성후 대입 	// 업로드한 파일명의 개수만큼 MAP 리스트
+					
+					
+					
+			
+		
+			
+			
+			System.out.println(productDto);
+			boolean result = ProductDao.getInstance().register(productDto);
+			
+			//
+			response.setContentType("application/json;charset=utf-8");
+			response.getWriter().print(result);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
