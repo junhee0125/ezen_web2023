@@ -2,6 +2,7 @@ package model.dao;
 
 
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import model.dto.ProductDto;
 
@@ -10,6 +11,7 @@ public class ProductDao extends Dao{
 	private static ProductDao productDao = new ProductDao();
 	public static ProductDao getInstance() {return productDao;}
 	private ProductDao() { }
+
 
 
 	// 제품 등록
@@ -61,8 +63,44 @@ public class ProductDao extends Dao{
 	
 	// 제품삭제
 	
+	public ArrayList<ProductDto> getNewItem(int cnt ) {
+		return null;
+	}
 	
-
-
+	public ArrayList<ProductDto> getItemLocation(String e, String w, String s,String n ) {
+		return null;
+	}
+	
+	public ProductDto getItemDetail(int pno ) {
+		return null;
+	}
+	public ArrayList<ProductDto> getItemList() {
+		return null;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+/* 어떤통신방식으로 / 
+ 	1. 메인페이지에 N개(정해진 갯수)만큼 출력 - 최신순으로 정렬하고 / ---- Main NewItem  		
+ 	2. 카카오지도에서 현재 보고있는 범위 만큼의 좌표(동서남북)의 범위 안에서 	Map
+ 	3. 선택된제품의 개별출력 - 개별 상품의 상세페이지
+ 	4. 관리자입장에서의 제품 모두 출력 [페이지 처리]
+ 
+ 	[제출] 백엔드입장 
+ 		. 프론트엔드와 통신방법 : 아작스 or 소켓
+ 		. 통신방법에 따른  servlet Ser
+ 		- 서블릿(두겟) onMessage
+ 		- 프론트엔드와 백엔드가 요청 응답할때 주고 받을 데이터 선택
+ 		- 서블릿,소켓은 Dao와 무엇을 주고 받을지 데이터
+ 		
+ */		
+ 

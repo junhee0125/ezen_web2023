@@ -2,6 +2,7 @@ package controller.Product;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import model.dao.ProductDao;
 import model.dto.MemberDto;
@@ -40,8 +43,42 @@ public class ProductInfoController extends HttpServlet {
 	 * 1. 제품조회
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String json =null;
+		String type = request.getParameter("type");
+		ObjectMapper mapper = new ObjectMapper();
+		
+		if(type.equals("M")){
+			
+			int cnt = Integer.parseInt(request.getParameter("nItemCount"));
+			ArrayList<ProductDto> result = ProductDao.getInstance().getNewItem(cnt);
+			json = mapper.writeValueAsString(result);
+			
+		} else if(type.equals("K")) {
+			String eL = request.getParameter("e");
+			String wL = request.getParameter("w");
+			String sL = request.getParameter("s");
+			String nL = request.getParameter("n");
+			
+			ArrayList<ProductDto> result = ProductDao.getInstance().getItemLocation(eL,wL,sL,nL);
+			json = mapper.writeValueAsString(result);
+			
+		} else if(type.equals("D")) {
+			int pno = Integer.parseInt(request.getParameter("pno"));
+			ProductDto productDto = ProductDao.getInstance().getItemDetail(pno);
+			json = mapper.writeValueAsString(productDto);
+			
+		} else if(type.equals("A")) {
+			
+			ArrayList<ProductDto>  result = ProductDao.getInstance().getItemList();
+			json = mapper.writeValueAsString(result);
+
+			
+		}
+		
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(  json );
+
+		
 	}
 
 	/**
