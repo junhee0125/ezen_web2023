@@ -1,8 +1,13 @@
 package model.dao;
 
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import model.dto.ProductDto;
 
@@ -63,18 +68,126 @@ public class ProductDao extends Dao{
 	
 	// 제품삭제
 	
-	public ArrayList<ProductDto> getNewItem(int cnt ) {
+	
+	
+	//0 제품의 해당하는 이미지 출력하는 함수
+	public Map<Integer, String> getProductImg(int pno){
+		
+		try {
+			Map<Integer, String> imgList = new HashMap<>(); //제품의 다수 이미지정보
+			String sql = " select * from productimg where pno ="+pno;
+			PreparedStatement ps = conn.prepareStatement(sql);
+			//System.out.println("getProductImg(int pno) :: SQL"+ ps);
+			ResultSet rs = ps.executeQuery();
+				while(rs.next()) {
+					imgList.put(rs.getInt("pino"), rs.getString("pimg"));
+				}	
+			return imgList;
+			
+		} catch (Exception ex) {
+			System.out.println("getProductImg::Exception :: "+ ex );
+		}
 		return null;
 	}
 	
-	public ArrayList<ProductDto> getItemLocation(String e, String w, String s,String n ) {
-		return null;
-	}
 	
+	//3. 
 	public ProductDto getItemDetail(int pno ) {
+		
+		try {
+			String sql = " select * from product p natural join pcategory pc natural join member m where p.pno = "+pno;  
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			//System.out.println(" getItemDetail(int pno ) :: SQL"+ ps);
+			ResultSet rs= ps.executeQuery();
+			if(rs.next()) {
+				ProductDto productDto = new ProductDto(
+						  rs.getInt("pcno")
+						, rs.getString("pcname") 
+						, rs.getInt("pno")  
+						, rs.getString("pname") 
+						, rs.getString("pcomment") 
+						, rs.getInt("pprice") 
+						, rs.getInt("pstatus")
+						, rs.getString("pdate")
+						, rs.getString("plat") 
+						, rs.getString("plng") 
+						, rs.getInt("mno") 
+						, getProductImg( rs.getInt("pno"))
+						, rs.getString("mid") );
+						System.out.println(productDto.toString());
+			return productDto;
+			}
+		} catch (Exception e) {
+			System.out.println("getItemDetail ::Exception :: "+ e );
+		}
+		
+		return null;
+		
+	}
+	// cnt만큼 제품 가져오기
+	public List<ProductDto> getNewItem(int cnt ) {
+		List<ProductDto> list = new ArrayList<>();
+		try {
+			String sql = " select pno from product order by pdate desc limit "+cnt;
+			ps = conn.prepareStatement(sql);
+			rs= ps.executeQuery();
+			while(rs.next()) { list.add(getItemDetail(rs.getInt("pno"))); } return list;
+		} catch (Exception e) {
+			System.out.println(" getNewItem :: Exception :: "+ e );
+		}
+		
+		
 		return null;
 	}
-	public ArrayList<ProductDto> getItemList() {
+	
+	public List<ProductDto> getItemLocation(String e, String w, String s,String n ) {
+			List<ProductDto> list = new ArrayList<>();
+		try {
+			//제품의 좌표가 동쪽 경도보다 크고 서쪽 경도보다 작고 남위도보다 크고 북 위도보다 작은.
+			String sql = "select * from product "
+					+ "	where	plat <= ?  "
+					+ "	  and	plat >= ?  "
+					+ "	  and	plng >= ?  "
+					+ "	  and	plng <= ? "
+					+ " order by pdate desc ";
+			ps = conn.prepareStatement(sql);
+			ps.setString(4, e);
+			ps.setString(3, w);
+			ps.setString(2, s);
+			ps.setString(1, n);
+			
+			
+			rs = ps.executeQuery();
+			System.out.println("DAO ::getItemLocation  ::" + ps);
+			while(rs.next()) {
+				
+				list.add(getItemDetail(rs.getInt("pno")));			
+						
+			}
+			
+			return list;
+		} catch (Exception ex) {
+			System.out.println("getItemLocation Exception :: "+ ex );
+		}
+		return null;
+	}
+	
+	//모든 제품 가져오기
+	public List<ProductDto> getItemList() {
+		try {
+			List<ProductDto> list = new ArrayList<>();
+			String sql = " select * from product ";  
+			ps= conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) { 
+				
+				list.add( getItemDetail(rs.getInt("pno")));
+			}
+			return list;
+		} catch (Exception e) {
+			System.out.println("Exception :: "+ e );
+		}
 		return null;
 	}
 

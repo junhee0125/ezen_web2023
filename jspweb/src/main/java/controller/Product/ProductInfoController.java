@@ -50,7 +50,8 @@ public class ProductInfoController extends HttpServlet {
 		if(type.equals("M")){
 			
 			int cnt = Integer.parseInt(request.getParameter("nItemCount"));
-			ArrayList<ProductDto> result = ProductDao.getInstance().getNewItem(cnt);
+			System.out.println("cnt :: "+ cnt);
+			List<ProductDto> result = ProductDao.getInstance().getNewItem(cnt);
 			json = mapper.writeValueAsString(result);
 			
 		} else if(type.equals("K")) {
@@ -59,7 +60,8 @@ public class ProductInfoController extends HttpServlet {
 			String sL = request.getParameter("s");
 			String nL = request.getParameter("n");
 			
-			ArrayList<ProductDto> result = ProductDao.getInstance().getItemLocation(eL,wL,sL,nL);
+			System.out.println("eL  : "+eL);
+			List<ProductDto> result = ProductDao.getInstance().getItemLocation(eL,wL,sL,nL);
 			json = mapper.writeValueAsString(result);
 			
 		} else if(type.equals("D")) {
@@ -69,7 +71,7 @@ public class ProductInfoController extends HttpServlet {
 			
 		} else if(type.equals("A")) {
 			
-			ArrayList<ProductDto>  result = ProductDao.getInstance().getItemList();
+			List<ProductDto>  result = ProductDao.getInstance().getItemList();
 			json = mapper.writeValueAsString(result);
 
 			

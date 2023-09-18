@@ -18,7 +18,8 @@ public class ProductDto {
     private int mno ;				// 회원번호
     private Map<Integer,String>  imgList = new HashMap<>();	// 이미지이름.경로
     private String mid;
-    
+    private String pino;
+    private String pimg;
     
 	public ProductDto() {
 		// TODO Auto-generated constructor stub
@@ -59,8 +60,19 @@ public class ProductDto {
 		this.imgList = imgList;
 	}
 
+		
+	
 
 	
+
+
+	public ProductDto(int pno, String pname, String plat, String plng) {
+		super();
+		this.pno = pno;
+		this.pname = pname;
+		this.plat = plat;
+		this.plng = plng;
+	}
 
 
 	public int getPcno() {
