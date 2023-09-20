@@ -11,6 +11,9 @@
 	height:600px;
 	object-fit:cover;
 }
+.productBox{
+display: flex;
+justify-content: space-between;}
 
 </style>
 </head>
@@ -44,11 +47,11 @@
 
 
 
-	<div class="container">
-		<div class="productBox row row-cols-1 row-cols-md-4 g-4">
-		  
-		</div>
-	
+	<!-- 카드(bs) : 다양한 컨텐츠를 표시하는 컨테이너[구역]  -->
+	<div class="container"> <!-- container(bs) : 컨테이너 구역  --> 
+		<h1 class="text-center my-5" style="color: #312a55;font-weight: bold;"> NEW ITEM</h1>
+		<!-- JS에서 HTML 넣어주는 위치 -->
+		<div class="productBox my-5 row row-cols-1 row-cols-md-4 g-4"> </div>
 	</div>
 
 

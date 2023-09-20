@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.productBox{
+	width:30%;
+	margin: 0 auto;
+}
+.imgbox{height:400px;}
+.imgbox img{
+	height:400px;
+	object-fit:cover;
+	object-position:center;}
+.pInfo div{
+	padding:10px;
+}
+.categoryDate{ display: flex; justify-content: space-between;}
+.pbtnBox{ display: flex; flex-wrap: nowrap;}
+.pInfo button{
+	height:50px;
+	width:100%;
+	border:none;
+	font-size: 1.2rem
+}
+
+.pbtnBox button:nth-child(1){
+	background-color: yellow;
+}
+.pbtnBox button:nth-child(2){
+	background-color: black;
+	color:#fff; 
+}

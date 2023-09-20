@@ -61,9 +61,10 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
         map.setLevel(level, {anchor: cluster.getCenter()});
     });
 //현재보고있는 지도의 동서남북 얻기
+
 getInfo();   
 function getInfo() {
-        
+        clusterer.clear();
     // 지도의 현재 영역을 얻어옵니다 
     var bounds = map.getBounds();
     
@@ -110,6 +111,31 @@ function getItemLocation(e,w,s,n) {
 			});
 			// 클러스터러에 마커들을 추가합니다
 	    	clusterer.addMarkers(markers);
+	
+		// 2. 사이드바에 제품 출력
+		
+		let sidebar = document.querySelector('.sidebar');
+		let html =``;
+		jsonArray.forEach((p) => {
+		console.log(p)
+		html += `<div class="card mb-3" style="max-width: 540px;">	
+				  <div class="row g-0">	
+				    <div class="col-md-5">
+				      <a href="/jspweb/product/view.jsp?pno=${p.pno}"><img src="/jspweb/product/img/${ Object.values(p.imgList)[0] }" class="img-fluid rounded-start" alt="..."></a>
+				    </div>
+				    <div class="col-md-7">
+				      <div class="card-body">
+				        <h5 class="card-title">${ p.pname }</h5>
+				        <p class="card-text">
+				        	<div> ${ p.pcontent } </div>
+				        	<div> ${ p.pprice.toLocaleString() } 원 </div>
+				        </p>
+				      </div>
+				    </div>
+				  </div>
+				</div>`
+		});					
+		sidebar.innerHTML = html; 
 		},
 		error : e => {} 
 	});
@@ -118,3 +144,5 @@ function getItemLocation(e,w,s,n) {
 kakao.maps.event.addListener(map, 'dragend', function() {
    getInfo();
 });
+
+
