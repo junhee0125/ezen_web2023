@@ -1,0 +1,27 @@
+@charset "UTF-8";
+img{object-fit:cover; width:100%;}
+.checkbox{
+	zoom :1.5; /*1 = 100%*/
+	vertical-align: middle;
+	margin-top: 4px;
+}
+.table-light {text-align: center;}
+tbody tr{ text-align: center;}
+tbody button {
+	border: none;
+	background-color: #fff;
+	font-size: 1.2rem;
+}
+.delbtnBox button {
+	
+}
+.buybtnBox{display: flex;
+	justify-content: center;
+	align-items: center;}
+.buybtnBox button {
+	
+	margin:10px;
+	width:20%;
+	background-color: #000;
+	color:#fff;
+}

@@ -73,7 +73,6 @@ public class ProductInfoController extends HttpServlet {
 			
 			List<ProductDto>  result = ProductDao.getInstance().getItemList();
 			json = mapper.writeValueAsString(result);
-
 			
 		}
 		
