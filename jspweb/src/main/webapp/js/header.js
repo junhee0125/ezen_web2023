@@ -32,7 +32,8 @@ function getMemberInfo(){
 				console.log("이미지" + r.mfile)
 	           html += ` <li><a href="/jspweb/index.jsp">홈으로</a></li>
 	        	   		 <li>${r.mid}님</li>
-	        	   		 <li><img src="/jspweb/member/img/${r.mfile}" > </li>	        	   		 
+	        	   		 <li><img src="/jspweb/member/img/${r.mfile}" > </li>
+	        	   		 <li><a href="/jspweb/member/payment.jsp">포인트</a></li>	        	   		 
 	        	   		 <li><a href="/jspweb/product/wishlist.jsp">찜목록</a></li>
 	        	   		 <li><a href="/jspweb/member/info.jsp">마이페이지</a></li>
 	        	   		 <li><a onclick="logout()">로그아웃</a></li>
