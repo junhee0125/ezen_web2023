@@ -69,8 +69,8 @@ public class MpointController extends HttpServlet {
 		String mpno = UUID.randomUUID().toString();
 		int mno = ((MemberDto)request.getSession().getAttribute("loginDto")).getMno();
 		long mpamount = Long.parseLong(request.getParameter("mpamount"));
-		String mpcommnet = request.getParameter("mpcommnet");
-		MpointDto mpointDto = new MpointDto(mpno, mno, mpamount, mpcommnet);
+		String mpcomment = request.getParameter("mpcomment");
+		MpointDto mpointDto = new MpointDto(mpno, mno, mpamount, mpcomment);
 		boolean result = MemberDao.getInstance().setPoint(mpointDto);
 		
 		response.setContentType("application/json;charset=utf-8");
