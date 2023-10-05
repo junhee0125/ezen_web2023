@@ -69,7 +69,7 @@ public class BoardDao extends Dao{
 				System.out.println("Exception :: "+ e);
 			}
 			return list;
-		}
+		}   
 
 // 2. 글 등록
 	public boolean boardSave(BoardDto boardDto) {
