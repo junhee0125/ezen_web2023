@@ -15,16 +15,42 @@
 	
 	<aside class="maside">
 		<div class="logobox"><img src="./images/logo_is.png"></div>
+		<!-- 사이드 메뉴 -->
+		
+		<ul class="nav">
+			<li class="tmenu">인사관리</li>
+			<li>A메뉴서브1</li>
+			<li>A메뉴서브2</li>
+			<li class="smenu">A메뉴서브3</li>
+			<li>A메뉴서브4</li>
+		</ul>
+		
+		
+		
+		
+		<div class="attendence" onClick="changeState()"><i class="fa-solid fa-arrow-right-to-bracket"></i> 출 근</div>
 	</aside>
 	<div class="mrside">
 		<header>
-			
-				<div class="topmenu">탑메뉴</div>
-				<div class="userbox">김이젠님<img src="./images/user_photo.jpeg"/></div>
+				<!-- 상단대메뉴 -->
+				<div class="topmenu">
+					<ul class="topMenuList">
+						<li class="">인사관리</li>
+						<li class="">프로젝트팀관리</li>
+						<li class="">근태관리</li>
+						<li class="">급여관리</li>
+						<li class="">결제관리</li>
+					</ul>
+				
+				
+				</div>
+				
+				<div class="userbox"><span>김이젠 님</span><img src="./images/user_photo.jpeg"/></div>
 				
 		</header>
 		<div class="contentBox">
-		메인컨텐트
+			
+			<div class="pageStep"> 인사관리 > A메뉴서브3 </div>
 		
 		</div>
 	
@@ -40,5 +66,8 @@
 
 
 </div>
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/bfee791ec9.js" crossorigin="anonymous"></script>
+<script src="./js/index.js"></script>
 </body>
 </html>
