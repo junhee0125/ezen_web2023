@@ -41,19 +41,84 @@
 						<li class="">급여관리</li>
 						<li class="">결제관리</li>
 					</ul>
-				
-				
 				</div>
 				
-				<div class="userbox"><span>김이젠 님</span><img src="./images/user_photo.jpeg"/></div>
+				<div class="userbox"><span class="emp_name">김이젠</span>님 <br/> 좋은 하루되세요!<!-- <img src="./images/user_photo.jpeg"/>--></div>
 				
 		</header>
 		<div class="contentBox">
 			
-			<div class="pageStep"> 인사관리 > A메뉴서브3 </div>
+			<div class="pageinfo"><span class="lv0">인사관리</span>  > <span class="lv1">사원등록</span> </div>
+			
+			<!-- 메인 컨텐츠 구역 -->
+			<div class="emp_regs_content">
+			
+				<div class="eregInputBox">
+					<div class="input_title ls23"> 사원명</div>
+					<div class="input_box"><input type="text" class="" name="empName" /></div>
+				</div>
+				<div  class="eregInputBox">
+					<div class="input_title ws55"> 성 별</div>
+					<div class="input_box">
+						<input type="radio" name="empSex" value="M" checked> 남 
+						<input type="radio" name="empSex" value="M" checked> 여
+					</div>
+				</div>
+				<div  class="eregInputBox">
+					<div class="input_title ">사 원  연 락 처</div>
+					<div class="input_box"><input type="text" class="" name="empPhone" /></div>
+				</div>
+				<div  class="eregInputBox">
+					<div class="input_title">사원 비밀번호</div>
+					<div class="input_box"><input type="text" class="" name="empPwd" /></div>
+				</div>
+				<div  class="eregInputBox">
+					<div class="input_title"> 사원 계좌번호</div>
+					<div class="input_box"><input type="text" class="" name="empAcn" /></div>
+				</div>
+				<div  class="eregInputBox">
+					<div class="input_title ls3"> 근 무 상 태</div>
+					<div class="input_box">
+						<input type="radio" name="empSta" value="0" checked> 재 직
+						<input type="radio" name="empSta" value="1" checked> 휴 직
+					</div>
+				</div>
+				<div  class="eregInputBox">
+					<div class="input_title ws55">부 서</div>
+					<select name="">
+						<option value="">부서를 선택하세요</option>
+						<option value="">뚱뚱</option>
+						<option value="">삥삥</option>
+						<option value="">꽁꽁</option>
+					</select>
+				</div>
+				<div  class="eregInputBox">
+					<div class="input_title ws55">직 급</div>
+					<select name="">
+						<option value="">직급을 선택하세요</option>
+						<option value="">대리</option>
+						<option value="">과장</option>
+						<option value="">기타</option>
+					</select>
+				</div>
+				<div class="eregBtnBox"><button onClick ="onModal()" class="btn01" type="button">사 원 정 보 저 장</button></div>
+			<!-- 메인 컨텐츠 구역 end -->
+			
 		
 		</div>
-	
+	<div class="approv_modal">
+				<div class="modal">
+				<form class="Approv_form">	
+					<div class="amodalTitle">결제요청내용</div>
+					<textarea class="aprv_cont"></textarea>
+					<div class="aprvBtnBox">
+						<button onClick=""  class="btn02" type="button">취 소</button>
+						<button onclick="" class="btn02"type="button">결제요청하기</button>
+					</div>
+				</form>
+				</div>
+			
+			</div>
 	
 	</div>
 	

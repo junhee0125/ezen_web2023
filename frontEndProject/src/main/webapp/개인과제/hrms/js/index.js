@@ -20,7 +20,8 @@ function changeState(){
 		}
 	}
 	
-	
-	
-	
+}
+
+function onModal(){
+	document.querySelector('.approv_modal').style.display = 'flex';
 }

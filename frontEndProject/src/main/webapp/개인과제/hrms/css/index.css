@@ -21,6 +21,7 @@
 	--main04: #27374d;
 	--lsand :#f1f0e8;
 	--dsand:#dac0a3;
+	--yellow:#f1c232;
 }
 @font-face {
     font-family: 'ONE-Mobile-Regular';
@@ -40,6 +41,29 @@ a:link { text-decoration: none;  }
 a:visited {text-decoration: none; }
 a:active { text-decoration: none;  }
 input:focus {outline:none;}
+input,select, textarea{border:none;
+	   outline:none;
+	   box-shadow: 0 0 3px var(--main02);}
+button{
+	padding:15px 20px;
+	border:none;
+	border-radius: 10px;
+}
+/* btn정의 */
+.btn01{
+	width:100%;	
+	background-color: var(--main02);
+	color:var(--white);
+}
+button:hover{		
+	background-color: var(--main03);
+	color:var(--yellow);
+}
+.btn02{
+	width:49%;	
+	background-color: var(--main02);
+	color:var(--white);
+}
 .scrollbox{
     overflow-y: none;
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
@@ -134,14 +158,58 @@ input:focus {outline:none;}
 }
 .mrside .contentBox{
 	height:90%;
-	padding:30px;
+	padding:20px 30px;
 	border-bottom-right-radius: 30px;
 	color:var(--dgray);
+}
+.contentBox .emp_regs_content{
+	height:90%;
+	width:60%;
+	padding: 30px;
+	margin: 0 auto;
+}
+.eregInputBox{
+	display: flex;
+	padding:13px;
+	
+}
+.ls3{  /*자간*/ 	letter-spacing: 3px;}
+.ls5{  /*자간*/ 	letter-spacing: 5px;}
+.ls7{  /*자간*/ 	letter-spacing: 7px;}
+.ls9{  /*자간*/ 	letter-spacing: 9px;}
+.ls15{  /*자간*/ 	letter-spacing: 23px;}
+.ls23{  /*자간*/ 	letter-spacing: 23px;}
+.ws55{  /*자간*/ 	word-spacing: 55px;}
+.eregInputBox .input_title{
+	width:30%;
+	
+}
+.eregInputBox .input_box{
+	width:70%;
+	
+}
+.emp_regs_content input[type="text"]{
+	padding:7px;
+	width:100%;
+	padding-left:20px;
+	
+}
+.emp_regs_content input[type="radio"]:not(:first-of-type){
+	margin-left:20px;
+}
+.emp_regs_content select{
+	padding:7px;
+	width:70%;
+	padding-left:10px;
+	border:none;
+	   
 }
 header .topmenu{
 	width:80%;
 	height:60px;
+	border-bottom: solid 1px var(--lgray);
 }
+
 .topMenuList{
 	display: flex;
 	justify-content: space-around;
@@ -153,16 +221,19 @@ header .topmenu{
 	color:var(--main02);
 }
 .topMenuList li:hover{
-
 	color:var(--main03);
 }
 header .userbox{
 	width:18%;	
 	padding-right: 20px;
-	justify-content:right;
-	display: flex;
+	justify-content:right;	
 	align-items: center;
 }
+.emp_name{
+	font-weight:bold;
+	color:var(--main04);
+}
+.emp_name:hover{color:pink; }
 
 header .userbox img{
 	width:60px;
@@ -170,4 +241,51 @@ header .userbox img{
 	margin-left:10px;
 	object-fit:contain;
 	border-radius: 50%;
+}
+.eregBtnBox{
+	padding:30px 0;
+}
+
+/*모달영역*/
+.approv_modal{
+	position: absolute; /*화면고정*/
+	width:100%;
+	height: 100%;
+	top:0px;
+	left:0px;
+	background-color: rgba(0,0,0,0.4); /*검정색바탕에 투명도 50%*/
+	display: none;
+	justify-content: center;
+	align-items: center;
+	
+}
+.modal{
+	background-color: #fff;
+	width:500px;
+	height:350px;
+	border-radius: 30px;
+	padding:20px 20px;
+	text-align: center;
+}
+.amodalTitle{
+	text-align: center;
+	padding:10px 0;
+}
+.aprvBtnBox {
+	display: flex;
+	padding:10px 30px ;
+	justify-content: space-between;
+	align-items: center;
+}
+.aprv_cont{
+	width:400px;
+	height:200px;
+	resize: none;
+	padding:20px;
+	font-size:0.9em;
+	line-height:1.8em;
+	border-radius: 15px;
+	
+	
+	
 }
