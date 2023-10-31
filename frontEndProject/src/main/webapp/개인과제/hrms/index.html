@@ -39,7 +39,7 @@
 						<li class="">프로젝트팀관리</li>
 						<li class="">근태관리</li>
 						<li class="">급여관리</li>
-						<li class="">결제관리</li>
+						<li class="">결재관리</li>
 					</ul>
 				</div>
 				
@@ -50,6 +50,79 @@
 			
 			<div class="pageinfo"><span class="lv0">인사관리</span>  > <span class="lv1">사원등록</span> </div>
 			
+			<!--근태 달력 -->
+			<div class="attd_cal">
+				<div class="calYM"><span> < </span> 2023년 10월 <span> > </span></div>
+				<div class="calBox">
+					<ul class="calDay">
+						<li class="sun" >SUN</li>	
+						<li >MON</li>
+						<li >TUE</li>
+						<li >WEN</li>
+						<li >TUR</li>
+						<li >FRI</li>
+						<li class="sat">SAT</li>
+											
+					</ul>
+					<ul class="calDate">
+						<li >
+							<span class="sun" >1</span>
+							<span class="att"> 정상출근 </span>	
+						</li>
+						<li >2
+							<span class="att">조퇴</span>
+						</li>
+						<li >3</li>
+						<li >4</li>
+						<li >5</li>
+						<li >6</li>
+						<li ><span class="sat" >7</span></li>						
+					</ul>
+					<ul class="calDate">
+						<li ><span class="sun" >8</span></li>
+						<li >9</li>
+						<li >10</li>
+						<li >11 <span class="att">휴가</span></li>
+						<li >12 <span class="att">휴가</span></li>
+						<li >13
+						<span class="att">휴가</span>
+						</li>
+						<li ><span class="sat" >14</span></li>						
+					</ul>
+					<ul class="calDate">
+						<li ><span class="sun" >15</span></li>
+						<li >2</li>
+						<li >3</li>
+						<li >4</li>
+						<li >5</li>
+						<li >6</li>
+						<li ><span class="sat" >21</span></li>						
+					</ul>
+					<ul class="calDate">
+						<li ><span class="sun" >22</span></li>
+						<li >2</li>
+						<li >3</li>
+						<li >4</li>
+						<li >5</li>
+						<li >6</li>
+						<li ><span class="sat" >29</span></li>						
+					</ul>
+					<ul class="calDate">
+						<li ><span class="sun" >30</span></li>
+						<li >31</li>
+						<li ></li>
+						<li ></li>
+						<li ></li>
+						<li ></li>
+						<li ><span class="sat" >9</span></li>						
+					</ul>
+				
+				</div>
+					
+				
+				
+			
+			</div>
 			<!-- 메인 컨텐츠 구역 -->
 			<div class="emp_regs_content">
 			
@@ -106,24 +179,148 @@
 			
 		
 		</div>
-	<div class="approv_modal">
-				<div class="modal">
-				<form class="Approv_form">	
-					<div class="amodalTitle">결제요청내용</div>
-					<textarea class="aprv_cont"></textarea>
-					<div class="aprvBtnBox">
-						<button onClick=""  class="btn02" type="button">취 소</button>
-						<button onclick="" class="btn02"type="button">결제요청하기</button>
-					</div>
-				</form>
-				</div>
+		<!-- 결제 모달 Start -->
+		<div class="approv_modal">
 			
-			</div>
-	
+				<form class="Approv_form">
+				<div class="modal">
+				<!-- 1 -->
+					<div class="section">
+						<div class="amodalTitle">결제요청내용</div>
+						<textarea class="aprv_cont"></textarea>
+						
+					</div>	
+				<!-- 2 -->
+					<div class="section">
+						<div class="amodalTitle">전체사원리스트</div>
+							<div class="aprvList">
+								<div class="aprvListHeader">
+									<span class="apDept">부서</span>
+									<span class="apLv">직급</span>
+									<span class="apDeptEmp">이름</span>
+								</div>
+								<!-- 사원목록 -->
+								<div class="aprvListContentBox">
+								<!-- 반복구간 -->
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+									<div class="aprvListContent">
+										<span class="apDept">인사</span>
+										<span class="apLv">부장</span>
+										<span class="apDeptEmp">김아무개</span>
+									</div>
+								<!-- 반복구간 e -->	
+								</div>
+							</div>
+						</div>
+					<!-- 3 -->
+						<div class="section">
+							<div class="amodalTitle">결제요청리스트</div>
+								<div class="aprvList reqlist">
+									<div class="aprvListHeader">
+										<span class="apDept">부서</span>
+										<span class="apLv">직급</span>
+										<span class="apDeptEmp">이름</span>
+									</div>
+									<!-- 사원목록 -->
+									<div class="aprvListContentBox">
+									<!-- 반복구간 -->
+										<div class="aprvListContent">
+											<span class="apDept">인사</span>
+											<span class="apLv">부장</span>
+											<span class="apDeptEmp">김아무개</span>
+										</div>
+										<div class="aprvListContent">
+											<span class="apDept">인사</span>
+											<span class="apLv">부장</span>
+											<span class="apDeptEmp">김아무개</span>
+										</div>
+										<div class="aprvListContent">
+											<span class="apDept">인사</span>
+											<span class="apLv">부장</span>
+											<span class="apDeptEmp">김아무개</span>
+										</div>
+										
+									<!-- 반복구간 e -->	
+									</div>
+								</div>
+								<div class="aprvBtnBox">
+									<button onClick=""  class="btn02" type="button">취 소</button>
+									<button onclick="" class="btn02"type="button">결제요청하기</button>
+								</div>
+							</div>		
+						
+						
+				</div>
+				</form>
+			
+		</div>
+		
 	</div>
-	
-	</div>
-	
+
 
 
 
