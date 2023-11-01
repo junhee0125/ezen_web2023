@@ -95,7 +95,7 @@ function calPrint(){
 		for (let b = 1 ; b <= blankDate ; b++  ){ // 1일이 시작되는 요일이 되기 전까지 공란으로 만들어주기
 			console.log("blankDate  :: "+blankDate);
 			html +=`<div class="invalidDate">${b}  </div>`;
-		}			
+		}			//
 		
 	calendar.innerHTML = html;
 	

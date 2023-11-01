@@ -350,7 +350,7 @@ header .userbox img{
 	border-left:solid 1px var(--main02);
 }
 .calDate {flex-wrap: wrap;}
-.calBox .calDate div{
+.calBox .calDate div{//
 	font-size:0.9em;
 	width:128.5px;
 	height:85px;
